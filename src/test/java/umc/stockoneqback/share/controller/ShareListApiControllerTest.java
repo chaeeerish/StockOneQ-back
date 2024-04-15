@@ -32,7 +32,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.ShareFixture.*;
@@ -161,7 +161,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     "ShareApi/List/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
@@ -215,7 +215,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
@@ -269,7 +269,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
@@ -316,7 +316,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),

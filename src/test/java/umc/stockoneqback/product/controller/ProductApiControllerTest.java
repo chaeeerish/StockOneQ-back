@@ -161,7 +161,7 @@ public class ProductApiControllerTest extends ControllerTest {
                                             fieldWithPath("siteToOrder").type(JsonFieldType.STRING).description("발주사이트").optional(),
                                             fieldWithPath("orderFreq").type(JsonFieldType.NUMBER).description("발주 빈도")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -235,7 +235,7 @@ public class ProductApiControllerTest extends ControllerTest {
                                             fieldWithPath("siteToOrder").type(JsonFieldType.STRING).description("발주사이트").optional(),
                                             fieldWithPath("orderFreq").type(JsonFieldType.NUMBER).description("발주 빈도")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -302,7 +302,7 @@ public class ProductApiControllerTest extends ControllerTest {
                                             fieldWithPath("siteToOrder").type(JsonFieldType.STRING).description("발주사이트").optional(),
                                             fieldWithPath("orderFreq").type(JsonFieldType.NUMBER).description("발주 빈도")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),

@@ -32,7 +32,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.ProductFixture.*;
@@ -84,7 +84,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -132,7 +132,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -180,7 +180,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -228,7 +228,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -276,7 +276,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -335,7 +335,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("name").description("검색할 제품명")
@@ -388,7 +388,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("name").description("검색할 제품명")
@@ -455,7 +455,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -542,7 +542,7 @@ public class FriendProductApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("friend").description("요청한 친구 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("search").description("현재 설정된 탐색 조건"),

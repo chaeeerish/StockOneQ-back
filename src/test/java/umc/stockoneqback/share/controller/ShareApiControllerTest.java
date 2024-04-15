@@ -83,7 +83,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
                                     ),
                                     requestParts(
@@ -151,7 +151,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
                                     ),
                                     requestParts(
@@ -210,7 +210,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
                                     ),
                                     requestParts(
@@ -267,7 +267,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     "ShareApi/Update/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
@@ -332,7 +332,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
@@ -388,7 +388,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
@@ -560,7 +560,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     "ShareApi/Delete/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("shareId").description("선택된 게시글들 ID")
                                     ),
                                     responseFields(
@@ -606,7 +606,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("shareId").description("선택된 게시글들 ID")
                                     ),
                                     responseFields(
@@ -643,7 +643,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("shareId").description("선택된 게시글들 ID")
                                     )
                             )

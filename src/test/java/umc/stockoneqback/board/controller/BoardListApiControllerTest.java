@@ -28,7 +28,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.BoardFixture.*;
@@ -78,7 +78,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     "BoardApi/List/All/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -130,7 +130,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -182,7 +182,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -227,7 +227,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -286,7 +286,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     "BoardApi/List/My/View/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -338,7 +338,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -390,7 +390,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -435,7 +435,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -490,7 +490,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     "BoardApi/List/My/Delete/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("boardId").description("선택된 게시글들 ID")
                                     )
                             )
@@ -531,7 +531,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("boardId").description("선택된 게시글들 ID")
                                     )
                             )
@@ -563,7 +563,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("boardId").description("선택된 게시글들 ID")
                                     )
                             )

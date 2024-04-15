@@ -74,7 +74,7 @@ class CommentListApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("boardId").description("댓글을 조회할 게시글 ID")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)")
                                     ),
                                     responseFields(
@@ -116,7 +116,7 @@ class CommentListApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("boardId").description("댓글을 조회할 게시글 ID")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)")
                                     ),
                                     responseFields(
