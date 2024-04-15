@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.user.domain.User;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

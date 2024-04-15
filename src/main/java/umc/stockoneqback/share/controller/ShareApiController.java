@@ -10,7 +10,7 @@ import umc.stockoneqback.share.controller.dto.ShareRequest;
 import umc.stockoneqback.share.controller.dto.ShareResponse;
 import umc.stockoneqback.share.service.ShareService;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 

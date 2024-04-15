@@ -13,7 +13,7 @@ import umc.stockoneqback.auth.service.dto.response.TokenResponse;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.global.annotation.ExtractToken;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

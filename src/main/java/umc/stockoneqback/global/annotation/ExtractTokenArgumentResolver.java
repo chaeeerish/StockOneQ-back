@@ -11,7 +11,7 @@ import umc.stockoneqback.auth.utils.AuthorizationExtractor;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.global.exception.BaseException;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 @RequiredArgsConstructor
 public class ExtractTokenArgumentResolver implements HandlerMethodArgumentResolver {

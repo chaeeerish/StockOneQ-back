@@ -6,8 +6,8 @@ import umc.stockoneqback.user.domain.Password;
 import umc.stockoneqback.user.domain.Role;
 import umc.stockoneqback.user.domain.User;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;

@@ -8,7 +8,7 @@ import umc.stockoneqback.admin.dto.request.AddFARequest;
 import umc.stockoneqback.admin.service.AdminStaticService;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

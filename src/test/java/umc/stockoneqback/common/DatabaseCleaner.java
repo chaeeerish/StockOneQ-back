@@ -3,9 +3,9 @@ package umc.stockoneqback.common;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Table;
-import javax.persistence.metamodel.Type;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Table;
+import jakarta.persistence.metamodel.Type;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -11,7 +11,7 @@ import umc.stockoneqback.user.controller.dto.request.ValidateUpdatePasswordReque
 import umc.stockoneqback.user.service.UserUpdateService;
 import umc.stockoneqback.user.service.dto.response.UpdatePasswordResponse;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

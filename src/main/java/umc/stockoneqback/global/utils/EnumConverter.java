@@ -3,8 +3,8 @@ package umc.stockoneqback.global.utils;
 import lombok.extern.slf4j.Slf4j;
 import umc.stockoneqback.global.exception.BaseException;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 import java.util.Objects;
 
 import static umc.stockoneqback.global.exception.GlobalErrorCode.INVALID_ENUM;

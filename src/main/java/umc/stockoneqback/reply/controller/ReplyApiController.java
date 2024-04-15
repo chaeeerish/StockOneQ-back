@@ -9,7 +9,7 @@ import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.reply.controller.dto.ReplyRequest;
 import umc.stockoneqback.reply.service.ReplyService;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

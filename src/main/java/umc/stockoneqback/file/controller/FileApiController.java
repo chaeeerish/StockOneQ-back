@@ -9,7 +9,7 @@ import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.global.exception.BaseException;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.io.IOException;
 
 import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;

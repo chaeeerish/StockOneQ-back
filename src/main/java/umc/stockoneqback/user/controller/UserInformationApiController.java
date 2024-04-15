@@ -14,7 +14,7 @@ import umc.stockoneqback.user.service.UserInformationService;
 import umc.stockoneqback.user.service.dto.response.LoginIdResponse;
 import umc.stockoneqback.user.service.dto.response.UserInformationResponse;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

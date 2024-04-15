@@ -18,7 +18,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.global.exception.dto.request.DiscordMessage;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.List;
 
