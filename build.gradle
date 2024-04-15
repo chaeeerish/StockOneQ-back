@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.7.13'
-    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'org.springframework.boot' version '3.1.5'
+    id 'io.spring.dependency-management' version '1.1.3'
     id "org.asciidoctor.jvm.convert" version "3.3.2"
 }
 
@@ -17,6 +17,7 @@ configurations {
         extendsFrom annotationProcessor
     }
     asciidoctorExt
+    querydsl.extendsFrom compileClasspath
 }
 
 repositories {
@@ -26,13 +27,13 @@ repositories {
 dependencies {
     // JPA & DB
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    testImplementation 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.springframework.data:spring-data-jpa:3.1.0'
     runtimeOnly 'com.mysql:mysql-connector-j'
     runtimeOnly 'com.h2database:h2'
 
     // Querydsl
-    implementation 'com.querydsl:querydsl-jpa'
-    annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jpa"
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
     annotationProcessor "jakarta.annotation:jakarta.annotation-api"
     annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 
@@ -42,19 +43,21 @@ dependencies {
 
     // Lombok
     compileOnly("org.projectlombok:lombok")
+    testImplementation ('org.projectlombok:lombok')
     testCompileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     testAnnotationProcessor("org.projectlombok:lombok")
 
     // Spring Security
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.4.5'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
 
     // Mail
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
     // Amazon S3 (NCP Object Storage)
     implementation 'com.amazonaws:aws-java-sdk-s3:1.12.232'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE' // add
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
 
     // JWT
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
@@ -69,9 +72,6 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'io.findify:s3mock_2.13:0.2.6'
-
-    // validation
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     // Redis
     implementation 'it.ozimov:embedded-redis:0.7.2'
@@ -127,6 +127,23 @@ task copyDocument(type: Copy) {
     dependsOn asciidoctor
     from file("build/docs/asciidoc")
     into file("src/main/resources/static/docs")
+}
+
+// QueryDsl QClass Generated Position
+def qTypeGeneratedPosition = "src/main/generated"
+
+tasks.withType(JavaCompile).configureEach {
+    options.getGeneratedSourceOutputDirectory().set(file(qTypeGeneratedPosition))
+}
+
+// add QueryDsl QClass to Java Source Set
+sourceSets {
+    main.java.srcDirs += [qTypeGeneratedPosition]
+}
+
+// delete QueryDsl QClass
+clean {
+    delete file(qTypeGeneratedPosition)
 }
 
 tasks.named('test') {
