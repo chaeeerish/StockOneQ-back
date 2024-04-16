@@ -60,7 +60,7 @@ include::{snippets}/ShareApi/SelectBox/Failure/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/SelectBox/Failure/http-response.adoc[]
-include::{snippets}/ShareApi/SelectBox/Failure/response-fields.adoc[]
+include::{snippets}/ShareApi/SelectBox/Failure/response-body.adoc[]
 
 === 2. 유저 셀렉트박스 반환에 성공한다
 HTTP Request
@@ -69,45 +69,45 @@ include::{snippets}/ShareApi/SelectBox/Success/request-headers.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/SelectBox/Success/http-response.adoc[]
-include::{snippets}/ShareApi/SelectBox/Success/response-fields.adoc[]
+include::{snippets}/ShareApi/SelectBox/Success/response-body.adoc[]
 
 
 == 커넥트 - 자료 전체 글 목록 API
 === 1. Authorization Header에 AccessToken이 없으면 전체 글 목록 조회에 실패한다
 HTTP Request
 include::{snippets}/ShareApi/List/Failure/Case1/http-request.adoc[]
-include::{snippets}/ShareApi/List/Failure/Case1/request-parameters.adoc[]
+include::{snippets}/ShareApi/List/Failure/Case1/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/List/Failure/Case1/http-response.adoc[]
-include::{snippets}/ShareApi/List/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ShareApi/List/Failure/Case1/response-body.adoc[]
 
 === 2. 유효하지 않은 카테고리라면 전체 글 목록 조회에 실패한다
 HTTP Request
 include::{snippets}/ShareApi/List/Failure/Case2/http-request.adoc[]
 include::{snippets}/ShareApi/List/Failure/Case2/request-headers.adoc[]
-include::{snippets}/ShareApi/List/Failure/Case2/request-parameters.adoc[]
+include::{snippets}/ShareApi/List/Failure/Case2/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/List/Failure/Case2/http-response.adoc[]
-include::{snippets}/ShareApi/List/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ShareApi/List/Failure/Case2/response-body.adoc[]
 
 === 3. 유효하지 않은 검색 조건이라면 자료 검색에 실패한다
 HTTP Request
 include::{snippets}/ShareApi/List/Failure/Case3/http-request.adoc[]
 include::{snippets}/ShareApi/List/Failure/Case3/request-headers.adoc[]
-include::{snippets}/ShareApi/List/Failure/Case3/request-parameters.adoc[]
+include::{snippets}/ShareApi/List/Failure/Case3/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/List/Failure/Case3/http-response.adoc[]
-include::{snippets}/ShareApi/List/Failure/Case3/response-fields.adoc[]
+include::{snippets}/ShareApi/List/Failure/Case3/response-body.adoc[]
 
 === 4. 커넥트 - 자료 글 목록 조회에 성공한다
 HTTP Request
 include::{snippets}/ShareApi/List/Success/http-request.adoc[]
 include::{snippets}/ShareApi/List/Success/request-headers.adoc[]
-include::{snippets}/ShareApi/List/Success/request-parameters.adoc[]
+include::{snippets}/ShareApi/List/Success/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/List/Success/http-response.adoc[]
-include::{snippets}/ShareApi/List/Success/response-fields.adoc[]
+include::{snippets}/ShareApi/List/Success/response-body.adoc[]

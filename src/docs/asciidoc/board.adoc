@@ -12,7 +12,7 @@ include::{snippets}/BoardApi/Create/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Create/Failure/Case1/http-response.adoc[]
-include::{snippets}/BoardApi/Create/Failure/Case1/response-fields.adoc[]
+include::{snippets}/BoardApi/Create/Failure/Case1/response-body.adoc[]
 
 === 2. 게시글 등록에 성공한다
 HTTP Request
@@ -29,7 +29,7 @@ include::{snippets}/BoardApi/Update/Failure/Case1/http-request.adoc[]
 include::{snippets}/BoardApi/Update/Failure/Case1/request-fields.adoc[]
 HTTP Response
 include::{snippets}/BoardApi/Update/Failure/Case1/http-response.adoc[]
-include::{snippets}/BoardApi/Update/Failure/Case1/response-fields.adoc[]
+include::{snippets}/BoardApi/Update/Failure/Case1/response-body.adoc[]
 
 === 2. 다른 사람의 게시글은 수정할 수 없다
 HTTP Request
@@ -39,7 +39,7 @@ include::{snippets}/BoardApi/Update/Failure/Case2/path-parameters.adoc[]
 include::{snippets}/BoardApi/Update/Failure/Case1/request-fields.adoc[]
 HTTP Response
 include::{snippets}/BoardApi/Update/Failure/Case2/http-response.adoc[]
-include::{snippets}/BoardApi/Update/Failure/Case2/response-fields.adoc[]
+include::{snippets}/BoardApi/Update/Failure/Case2/response-body.adoc[]
 
 === 3. 게시글 수정에 성공한다
 HTTP Request
@@ -61,7 +61,7 @@ include::{snippets}/BoardApi/Like/Cancel/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Like/Register/Failure/Case1/http-response.adoc[]
-include::{snippets}/BoardApi/Like/Register/Failure/Case1/response-fields.adoc[]
+include::{snippets}/BoardApi/Like/Register/Failure/Case1/response-body.adoc[]
 
 === 2. 본인의 게시글에는 좋아요를 누를 수 없다
 HTTP Request
@@ -71,7 +71,7 @@ include::{snippets}/BoardApi/Like/Register/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Like/Register/Failure/Case2/http-response.adoc[]
-include::{snippets}/BoardApi/Like/Register/Failure/Case2/response-fields.adoc[]
+include::{snippets}/BoardApi/Like/Register/Failure/Case2/response-body.adoc[]
 
 ==== 3. 한 게시글에 두 번 이상 좋아요를 누를 수 없다
 HTTP Request
@@ -81,7 +81,7 @@ include::{snippets}/BoardApi/Like/Register/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Like/Register/Failure/Case3/http-response.adoc[]
-include::{snippets}/BoardApi/Like/Register/Failure/Case3/response-fields.adoc[]
+include::{snippets}/BoardApi/Like/Register/Failure/Case3/response-body.adoc[]
 
 === 4. 게시글 좋아요 등록에 성공한다
 HTTP Request
@@ -100,7 +100,7 @@ include::{snippets}/BoardApi/Like/Cancel/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Like/Cancel/Failure/Case1/http-response.adoc[]
-include::{snippets}/BoardApi/Like/Cancel/Failure/Case1/response-fields.adoc[]
+include::{snippets}/BoardApi/Like/Cancel/Failure/Case1/response-body.adoc[]
 
 === 2. 좋아요를 누르지 않은 게시글의 좋아요는 취소할 수 없다
 HTTP Request
@@ -110,7 +110,7 @@ include::{snippets}/BoardApi/Like/Register/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Like/Cancel/Failure/Case2/http-response.adoc[]
-include::{snippets}/BoardApi/Like/Cancel/Failure/Case2/response-fields.adoc[]
+include::{snippets}/BoardApi/Like/Cancel/Failure/Case2/response-body.adoc[]
 
 === 3. 게시글좋아요 취소에 성공한다
 HTTP Request
@@ -135,7 +135,7 @@ include::{snippets}/BoardApi/Detail/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Detail/Failure/Case1/http-response.adoc[]
-include::{snippets}/BoardApi/Detail/Failure/Case1/response-fields.adoc[]
+include::{snippets}/BoardApi/Detail/Failure/Case1/response-body.adoc[]
 
 === 2. 게시글 상세조회에 성공한다
 HTTP Request
@@ -145,7 +145,7 @@ include::{snippets}/BoardApi/Detail/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Detail/Success/http-response.adoc[]
-include::{snippets}/BoardApi/Detail/Success/response-fields.adoc[]
+include::{snippets}/BoardApi/Detail/Success/response-body.adoc[]
 
 
 
@@ -161,7 +161,7 @@ include::{snippets}/BoardApi/Update/Hit/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/BoardApi/Update/Hit/Failure/Case1/http-response.adoc[]
-include::{snippets}/BoardApi/Update/Hit/Failure/Case1/response-fields.adoc[]
+include::{snippets}/BoardApi/Update/Hit/Failure/Case1/response-body.adoc[]
 
 === 2. 게시글 조회수 증가에 성공한다
 HTTP Request

@@ -83,33 +83,33 @@
 HTTP Request
 include::{snippets}/ShareApi/Create/Failure/Case1/http-request.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case1/path-parameters.adoc[]
-include::{snippets}/ShareApi/Create/Failure/Case1/request-parameters.adoc[]
+include::{snippets}/ShareApi/Create/Failure/Case1/query-parameters.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case1/request-parts.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case1/request-part-request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Create/Failure/Case1/http-response.adoc[]
-include::{snippets}/ShareApi/Create/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ShareApi/Create/Failure/Case1/response-body.adoc[]
 
 === 2. 유효하지 않은 카테고리라면 글을 등록할 수 없다
 HTTP Request
 include::{snippets}/ShareApi/Create/Failure/Case2/http-request.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case2/request-headers.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case2/path-parameters.adoc[]
-include::{snippets}/ShareApi/Create/Failure/Case2/request-parameters.adoc[]
+include::{snippets}/ShareApi/Create/Failure/Case2/query-parameters.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case2/request-parts.adoc[]
 include::{snippets}/ShareApi/Create/Failure/Case2/request-part-request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Create/Failure/Case2/http-response.adoc[]
-include::{snippets}/ShareApi/Create/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ShareApi/Create/Failure/Case2/response-body.adoc[]
 
 === 3. 게시글 등록에 성공한다
 HTTP Request
 include::{snippets}/ShareApi/Create/Success/http-request.adoc[]
 include::{snippets}/ShareApi/Create/Success/request-headers.adoc[]
 include::{snippets}/ShareApi/Create/Success/path-parameters.adoc[]
-include::{snippets}/ShareApi/Create/Success/request-parameters.adoc[]
+include::{snippets}/ShareApi/Create/Success/query-parameters.adoc[]
 include::{snippets}/ShareApi/Create/Success/request-parts.adoc[]
 include::{snippets}/ShareApi/Create/Success/request-part-request-fields.adoc[]
 
@@ -121,31 +121,31 @@ include::{snippets}/ShareApi/Create/Success/http-response.adoc[]
 === 1. Authorization Header에 AccessToken이 없으면 글 수정에 실패한다
 HTTP Request
 include::{snippets}/ShareApi/Update/Failure/Case1/http-request.adoc[]
-include::{snippets}/ShareApi/Update/Failure/Case1/request-parameters.adoc[]
+include::{snippets}/ShareApi/Update/Failure/Case1/query-parameters.adoc[]
 include::{snippets}/ShareApi/Update/Failure/Case1/request-parts.adoc[]
 include::{snippets}/ShareApi/Update/Failure/Case1/request-part-request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Update/Failure/Case1/http-response.adoc[]
-include::{snippets}/ShareApi/Update/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ShareApi/Update/Failure/Case1/response-body.adoc[]
 
 === 2. 게시글 작성자가 아니라면 수정에 실패한다
 HTTP Request
 include::{snippets}/ShareApi/Update/Failure/Case2/http-request.adoc[]
 include::{snippets}/ShareApi/Update/Failure/Case2/request-headers.adoc[]
-include::{snippets}/ShareApi/Update/Failure/Case2/request-parameters.adoc[]
+include::{snippets}/ShareApi/Update/Failure/Case2/query-parameters.adoc[]
 include::{snippets}/ShareApi/Update/Failure/Case2/request-parts.adoc[]
 include::{snippets}/ShareApi/Update/Failure/Case2/request-part-request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Update/Failure/Case2/http-response.adoc[]
-include::{snippets}/ShareApi/Update/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ShareApi/Update/Failure/Case2/response-body.adoc[]
 
 === 3. 게시글 수정에 성공한다
 HTTP Request
 include::{snippets}/ShareApi/Update/Success/http-request.adoc[]
 include::{snippets}/ShareApi/Update/Success/request-headers.adoc[]
-include::{snippets}/ShareApi/Update/Success/request-parameters.adoc[]
+include::{snippets}/ShareApi/Update/Success/query-parameters.adoc[]
 include::{snippets}/ShareApi/Update/Success/request-parts.adoc[]
 include::{snippets}/ShareApi/Update/Success/request-part-request-fields.adoc[]
 
@@ -161,7 +161,7 @@ include::{snippets}/ShareApi/Detail/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Detail/Failure/Case1/http-response.adoc[]
-include::{snippets}/ShareApi/Detail/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ShareApi/Detail/Failure/Case1/response-body.adoc[]
 
 === 2. 글의 작성자와 비즈니스 관계에 있지 않은 사용자는 상세조회에 실패한다
 HTTP Request
@@ -171,7 +171,7 @@ include::{snippets}/ShareApi/Detail/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Detail/Failure/Case2/http-response.adoc[]
-include::{snippets}/ShareApi/Detail/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ShareApi/Detail/Failure/Case2/response-body.adoc[]
 
 === 3. 게시글 상세조회에 성공한다
 HTTP Request
@@ -181,34 +181,34 @@ include::{snippets}/ShareApi/Detail/Success/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Detail/Success/http-response.adoc[]
-include::{snippets}/ShareApi/Detail/Success/response-fields.adoc[]
+include::{snippets}/ShareApi/Detail/Success/response-body.adoc[]
 
 
 == 커넥트 자료 글 삭제 API
 === 1. Authorization Header에 AccessToken이 없으면 글 삭제에 실패한다
 HTTP Request
 include::{snippets}/ShareApi/Delete/Failure/Case1/http-request.adoc[]
-include::{snippets}/ShareApi/Delete/Failure/Case1/request-parameters.adoc[]
+include::{snippets}/ShareApi/Delete/Failure/Case1/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Delete/Failure/Case1/http-response.adoc[]
-include::{snippets}/ShareApi/Delete/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ShareApi/Delete/Failure/Case1/response-body.adoc[]
 
 === 2. 다른 사람의 게시글은 삭제할 수 없다
 HTTP Request
 include::{snippets}/ShareApi/Delete/Failure/Case2/http-request.adoc[]
 include::{snippets}/ShareApi/Delete/Failure/Case2/request-headers.adoc[]
-include::{snippets}/ShareApi/Delete/Failure/Case2/request-parameters.adoc[]
+include::{snippets}/ShareApi/Delete/Failure/Case2/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Delete/Failure/Case2/http-response.adoc[]
-include::{snippets}/ShareApi/Delete/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ShareApi/Delete/Failure/Case2/response-body.adoc[]
 
 === 3. 게시글 삭제에 성공한다
 HTTP Request
 include::{snippets}/ShareApi/Delete/Success/http-request.adoc[]
 include::{snippets}/ShareApi/Delete/Success/request-headers.adoc[]
-include::{snippets}/ShareApi/Delete/Success/request-parameters.adoc[]
+include::{snippets}/ShareApi/Delete/Success/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/ShareApi/Delete/Success/http-response.adoc[]

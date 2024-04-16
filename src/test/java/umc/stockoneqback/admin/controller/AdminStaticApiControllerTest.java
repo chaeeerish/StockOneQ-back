@@ -87,8 +87,8 @@ public class AdminStaticApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    queryParameters(
-                                            parameterWithName("question").description("삭제할 질문")
+                                    requestBody(
+                                            parameterWithName("question").description("삭제할 질문").getAttributes()
                                     ),
                                     responseFields(
                                             fieldWithPath("status").type(JsonFieldType.NUMBER).description("HTTP 상태 코드"),
@@ -176,8 +176,8 @@ public class AdminStaticApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    queryParameters(
-                                            parameterWithName("question").description("삭제할 질문")
+                                    requestBody(
+                                            parameterWithName("question").description("삭제할 질문").getAttributes()
                                     )
                             )
                     );
