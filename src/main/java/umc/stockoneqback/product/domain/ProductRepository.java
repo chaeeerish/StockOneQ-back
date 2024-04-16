@@ -12,45 +12,45 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long>, ProductFindQueryRepository {
-    @Query(value = "SELECT p.* FROM product p WHERE p.status = '정상' AND p.store = :store " +
-            "AND p.store_condition = :storeCondition AND p.name = :name", nativeQuery = true)
+    @Query("SELECT p FROM Product p WHERE p.status = '정상' AND p.store = :store " +
+            "AND p.storeCondition = :storeCondition AND p.name = :name")
     Optional<Product> isExistProductByName(@Param("store") Store store,
-                                           @Param("storeCondition") String storeCondition,
+                                           @Param("storeCondition") StoreCondition storeCondition,
                                            @Param("name") String productName);
 
-    @Query(value = "SELECT p.* FROM product p WHERE p.id = :id AND p.status = '정상'", nativeQuery = true)
+    @Query("SELECT p FROM Product p WHERE p.id = :id AND p.status = '정상'")
     Optional<Product> findProductById(@Param("id") Long productId);
 
-    @Query(value = "SELECT count(*) FROM product p WHERE p.store = :store " +
-            "AND p.store_condition = :storeCondition AND p.status = '정상'", nativeQuery = true)
+    @Query("SELECT count(p) FROM Product p WHERE p.store = :store " +
+            "AND p.storeCondition = :storeCondition AND p.status = '정상'")
     Integer countProductAll(@Param("store") Store store,
-                            @Param("storeCondition") String storeCondition);
+                            @Param("storeCondition") StoreCondition storeCondition);
 
-    @Query(value = "SELECT count(*) FROM product p WHERE p.store = :store AND p.store_condition = :storeCondition " +
-            "AND p.expiration_date < :currentDate AND p.status = '정상'", nativeQuery = true)
+    @Query("SELECT count(p) FROM Product p WHERE p.store = :store AND p.storeCondition = :storeCondition " +
+            "AND p.expirationDate < :currentDate AND p.status = '정상'")
     Integer countProductPass(@Param("store") Store store,
-                             @Param("storeCondition") String storeCondition,
+                             @Param("storeCondition") StoreCondition storeCondition,
                              @Param("currentDate") LocalDate currentDate);
 
-    @Query(value = "SELECT count(*) FROM product p WHERE p.store = :store AND p.store_condition = :storeCondition " +
-            "AND (p.expiration_date >= :currentDate AND p.expiration_date <= :standardDate) AND p.status = '정상'", nativeQuery = true)
+    @Query("SELECT count(p) FROM Product p WHERE p.store = :store AND p.storeCondition = :storeCondition " +
+            "AND (p.expirationDate >= :currentDate AND p.expirationDate <= :standardDate) AND p.status = '정상'")
     Integer countProductClose(@Param("store") Store store,
-                              @Param("storeCondition") String storeCondition,
+                              @Param("storeCondition") StoreCondition storeCondition,
                               @Param("currentDate") LocalDate currentDate,
                               @Param("standardDate") LocalDate standardDate);
 
-    @Query(value = "SELECT count(*) FROM product p WHERE p.store = :store AND p.store_condition = :storeCondition " +
-            "AND p.require_quant >= p.stock_quant AND p.status = '정상'", nativeQuery = true)
+    @Query("SELECT count(p) FROM Product p WHERE p.store = :store AND p.storeCondition = :storeCondition " +
+            "AND p.requireQuant >= p.stockQuant AND p.status = '정상'")
     Integer countProductLack(@Param("store") Store store,
-                             @Param("storeCondition") String storeCondition);
+                             @Param("storeCondition") StoreCondition storeCondition);
 
-    @Query(value = "SELECT p.* FROM product p WHERE p.status = '정상' AND p.expiration_date < :currentDate AND " +
-            "p.store = (SELECT s.id FROM store s WHERE s.manager_id = :manager) ORDER BY p.name", nativeQuery = true)
+    @Query("SELECT p FROM Product p WHERE p.status = '정상' AND p.expirationDate < :currentDate AND " +
+            "p.store.id = (SELECT s.id FROM Store s WHERE s.manager = :manager) ORDER BY p.name")
     List<Product> findPassByManager(@Param("manager") User user,
                                     @Param("currentDate") LocalDate currentDate);
 
-    @Query(value = "SELECT p.* FROM product p WHERE p.status = '정상' AND p.expiration_date < :currentDate AND " +
-            "p.store = (SELECT t.store_id FROM part_timer t WHERE t.part_timer_id = :partTimer) ORDER BY p.name", nativeQuery = true)
+    @Query("SELECT p FROM Product p WHERE p.status = '정상' AND p.expirationDate < :currentDate AND " +
+            "p.store.id = (SELECT t.store.id FROM PartTimer t WHERE t.partTimer = :partTimer) ORDER BY p.name")
     List<Product> findPassByPartTimer(@Param("partTimer") User user,
                                       @Param("currentDate") LocalDate currentDate);
 }

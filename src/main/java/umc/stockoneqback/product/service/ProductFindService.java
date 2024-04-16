@@ -84,13 +84,13 @@ public class ProductFindService {
         LocalDate currentDate = LocalDate.now();
         LocalDate standardDate = currentDate.plusDays(3);
         countList.add(new GetTotalProductResponse
-                ("Total", productRepository.countProductAll(store, storeCondition.getValue())));
+                ("Total", productRepository.countProductAll(store, storeCondition)));
         countList.add(new GetTotalProductResponse
-                ("Pass", productRepository.countProductPass(store, storeCondition.getValue(), currentDate)));
+                ("Pass", productRepository.countProductPass(store, storeCondition, currentDate)));
         countList.add(new GetTotalProductResponse
-                ("Close", productRepository.countProductClose(store, storeCondition.getValue(), currentDate, standardDate)));
+                ("Close", productRepository.countProductClose(store, storeCondition, currentDate, standardDate)));
         countList.add(new GetTotalProductResponse
-                ("Lack", productRepository.countProductLack(store, storeCondition.getValue())));
+                ("Lack", productRepository.countProductLack(store, storeCondition)));
         return countList;
     }
 

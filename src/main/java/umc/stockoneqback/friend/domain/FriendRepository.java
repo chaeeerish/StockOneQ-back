@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface FriendRepository extends JpaRepository<Friend, Long>, FriendInformationQueryRepository, FriendFindQueryRepository {
     // @Query
     @Modifying(flushAutomatically = true, clearAutomatically = true)
-    @Query(value = "DELETE FROM friend WHERE sender_id = :user OR receiver_id = :user", nativeQuery = true)
+    @Query("DELETE FROM Friend f WHERE f.sender = :user OR f.receiver = :user")
     void deleteFriendByUser(@Param("user") User user);
 
     // QueryMethod

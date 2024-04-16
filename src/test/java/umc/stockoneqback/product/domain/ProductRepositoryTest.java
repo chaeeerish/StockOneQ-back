@@ -45,8 +45,8 @@ public class ProductRepositoryTest extends RepositoryTest {
     @DisplayName("입력된 이름을 가지는 제품이 있다면 반환한다")
     void isExistProductByName() {
         // when - then
-        Optional<Product> existProduct = productRepository.isExistProductByName(store, StoreCondition.ROOM.getValue(), "수박");
-        Optional<Product> notExistProduct = productRepository.isExistProductByName(store, StoreCondition.ROOM.getValue(), "꽃게");
+        Optional<Product> existProduct = productRepository.isExistProductByName(store, StoreCondition.ROOM, "수박");
+        Optional<Product> notExistProduct = productRepository.isExistProductByName(store, StoreCondition.ROOM, "꽃게");
 
         assertAll(
                 () -> assertThat(existProduct.isPresent()).isEqualTo(true),
@@ -69,7 +69,7 @@ public class ProductRepositoryTest extends RepositoryTest {
     @DisplayName("전체 제품 개수를 반환한다")
     void countProductAll() {
         // when
-        Integer total = productRepository.countProductAll(store, StoreCondition.ROOM.getValue());
+        Integer total = productRepository.countProductAll(store, StoreCondition.ROOM);
 
         // then
         assertThat(total).isEqualTo(16);
@@ -79,7 +79,7 @@ public class ProductRepositoryTest extends RepositoryTest {
     @DisplayName("유통기한을 경과한 제품 개수를 반환한다")
     void countProductPass() {
         // when
-        Integer total = productRepository.countProductPass(store, StoreCondition.ROOM.getValue(), LocalDate.now());
+        Integer total = productRepository.countProductPass(store, StoreCondition.ROOM, LocalDate.now());
 
         // then
         assertThat(total).isEqualTo(2);
@@ -90,7 +90,7 @@ public class ProductRepositoryTest extends RepositoryTest {
     void countProductClose() {
         // when
         Integer total = productRepository.countProductClose(
-                store, StoreCondition.ROOM.getValue(), LocalDate.now(), LocalDate.now().plusDays(3));
+                store, StoreCondition.ROOM, LocalDate.now(), LocalDate.now().plusDays(3));
 
         // then
         assertThat(total).isEqualTo(5);
@@ -99,7 +99,7 @@ public class ProductRepositoryTest extends RepositoryTest {
     @Test
     @DisplayName("재고가 부족한 제품 개수를 반환한다")
     void countProductLack() {
-        Integer total = productRepository.countProductLack(store, StoreCondition.ROOM.getValue());
+        Integer total = productRepository.countProductLack(store, StoreCondition.ROOM);
 
         assertThat(total).isEqualTo(5);
     }
