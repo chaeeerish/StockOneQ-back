@@ -1,12 +1,11 @@
 package umc.stockoneqback.board.domain.like;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.user.domain.User;
-
-import jakarta.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

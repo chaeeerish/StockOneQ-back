@@ -1,5 +1,6 @@
 package umc.stockoneqback.board.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -8,8 +9,6 @@ import umc.stockoneqback.board.controller.dto.BoardRequest;
 import umc.stockoneqback.board.controller.dto.BoardResponse;
 import umc.stockoneqback.board.service.BoardService;
 import umc.stockoneqback.global.annotation.ExtractPayload;
-
-import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

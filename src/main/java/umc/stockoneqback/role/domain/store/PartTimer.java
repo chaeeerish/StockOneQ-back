@@ -1,12 +1,11 @@
 package umc.stockoneqback.role.domain.store;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.user.domain.User;
-
-import jakarta.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

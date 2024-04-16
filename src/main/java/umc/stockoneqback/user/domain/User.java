@@ -1,5 +1,6 @@
 package umc.stockoneqback.user.domain;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +12,6 @@ import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.role.domain.company.Company;
 import umc.stockoneqback.role.domain.store.Store;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

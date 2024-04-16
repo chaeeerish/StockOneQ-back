@@ -1,5 +1,6 @@
 package umc.stockoneqback.product.domain;
 
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,6 @@ import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.role.domain.store.Store;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Getter

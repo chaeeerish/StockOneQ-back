@@ -1,5 +1,6 @@
 package umc.stockoneqback.comment.domain;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +11,6 @@ import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.reply.domain.Reply;
 import umc.stockoneqback.user.domain.User;
 
-import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 

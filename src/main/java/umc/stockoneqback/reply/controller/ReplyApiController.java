@@ -1,5 +1,6 @@
 package umc.stockoneqback.reply.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -8,8 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.reply.controller.dto.ReplyRequest;
 import umc.stockoneqback.reply.service.ReplyService;
-
-import jakarta.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
