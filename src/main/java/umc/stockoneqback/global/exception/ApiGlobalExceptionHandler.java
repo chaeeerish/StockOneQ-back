@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
@@ -13,7 +13,6 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
@@ -150,22 +149,22 @@ public class ApiGlobalExceptionHandler {
     }
 
     private void sendDiscordAlertErrorLog(ErrorCode code, HttpServletRequest request) {
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Content-Type", "application/json; utf-8");
-
-        HttpEntity<DiscordMessage> messageEntity = new HttpEntity<>(getDiscordMessage(code, request), httpHeaders);
-
-        RestTemplate template = new RestTemplate();
-        ResponseEntity<String> response = template.exchange(
-                "https://discord.com/api/webhooks/" + DISCORD_WEBHOOK_ID + "/" + DISCORD_WEBHOOK_TOKEN,
-                HttpMethod.POST,
-                messageEntity,
-                String.class
-        );
-
-        if(response.getStatusCode().value() != HttpStatus.NO_CONTENT.value()) {
-            log.error("메시지 전송 이후 에러 발생");
-        }
+//        HttpHeaders httpHeaders = new HttpHeaders();
+//        httpHeaders.add("Content-Type", "application/json; utf-8");
+//
+//        HttpEntity<DiscordMessage> messageEntity = new HttpEntity<>(getDiscordMessage(code, request), httpHeaders);
+//
+//        RestTemplate template = new RestTemplate();
+//        ResponseEntity<String> response = template.exchange(
+//                "https://discord.com/api/webhooks/" + DISCORD_WEBHOOK_ID + "/" + DISCORD_WEBHOOK_TOKEN,
+//                HttpMethod.POST,
+//                messageEntity,
+//                String.class
+//        );
+//
+//        if(response.getStatusCode().value() != HttpStatus.NO_CONTENT.value()) {
+//            log.error("메시지 전송 이후 에러 발생");
+//        }
     }
 
     private DiscordMessage getDiscordMessage(ErrorCode code, HttpServletRequest request) {

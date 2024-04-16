@@ -46,9 +46,6 @@ import umc.stockoneqback.friend.service.FriendFindService;
 import umc.stockoneqback.friend.service.FriendInformationService;
 import umc.stockoneqback.friend.service.FriendProductService;
 import umc.stockoneqback.friend.service.FriendService;
-import umc.stockoneqback.global.security.handler.JwtAccessDeniedHandler;
-import umc.stockoneqback.global.security.handler.JwtAuthenticationEntryPoint;
-import umc.stockoneqback.global.security.service.CustomUserDetailsService;
 import umc.stockoneqback.product.controller.ProductApiController;
 import umc.stockoneqback.product.controller.ProductFindApiController;
 import umc.stockoneqback.product.service.ProductFindService;
@@ -143,15 +140,6 @@ public abstract class ControllerTest {
 
     @MockBean
     protected AuthService authService;
-
-    @MockBean
-    protected CustomUserDetailsService customUserDetailsService;
-
-    @MockBean
-    protected JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
-
-    @MockBean
-    protected JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
     @MockBean
     protected CommentFindService commentFindService;

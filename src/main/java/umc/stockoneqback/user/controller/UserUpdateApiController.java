@@ -3,7 +3,6 @@ package umc.stockoneqback.user.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.user.controller.dto.request.UpdatePasswordRequest;
@@ -18,7 +17,6 @@ import umc.stockoneqback.user.service.dto.response.UpdatePasswordResponse;
 public class UserUpdateApiController {
     private final UserUpdateService userUpdateService;
 
-    @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @PutMapping("/update")
     public ResponseEntity<Void> updateInformation(@ExtractPayload Long userId, @RequestBody @Valid UserInfoRequest request) {
         userUpdateService.updateInformation(userId, request.name(), request.birth(), request.email(), request.loginId(), request.password(), request.phoneNumber());
