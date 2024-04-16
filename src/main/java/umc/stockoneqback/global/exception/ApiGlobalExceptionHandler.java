@@ -150,22 +150,22 @@ public class ApiGlobalExceptionHandler {
     }
 
     private void sendDiscordAlertErrorLog(ErrorCode code, HttpServletRequest request) {
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Content-Type", "application/json; utf-8");
-
-        HttpEntity<DiscordMessage> messageEntity = new HttpEntity<>(getDiscordMessage(code, request), httpHeaders);
-
-        RestTemplate template = new RestTemplate();
-        ResponseEntity<String> response = template.exchange(
-                "https://discord.com/api/webhooks/" + DISCORD_WEBHOOK_ID + "/" + DISCORD_WEBHOOK_TOKEN,
-                HttpMethod.POST,
-                messageEntity,
-                String.class
-        );
-
-        if(response.getStatusCode().value() != HttpStatus.NO_CONTENT.value()) {
-            log.error("메시지 전송 이후 에러 발생");
-        }
+//        HttpHeaders httpHeaders = new HttpHeaders();
+//        httpHeaders.add("Content-Type", "application/json; utf-8");
+//
+//        HttpEntity<DiscordMessage> messageEntity = new HttpEntity<>(getDiscordMessage(code, request), httpHeaders);
+//
+//        RestTemplate template = new RestTemplate();
+//        ResponseEntity<String> response = template.exchange(
+//                "https://discord.com/api/webhooks/" + DISCORD_WEBHOOK_ID + "/" + DISCORD_WEBHOOK_TOKEN,
+//                HttpMethod.POST,
+//                messageEntity,
+//                String.class
+//        );
+//
+//        if(response.getStatusCode().value() != HttpStatus.NO_CONTENT.value()) {
+//            log.error("메시지 전송 이후 에러 발생");
+//        }
     }
 
     private DiscordMessage getDiscordMessage(ErrorCode code, HttpServletRequest request) {
