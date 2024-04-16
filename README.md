@@ -1,7 +1,7 @@
 ### NFL
 - [X] Spring Boot 버전을 3.X로 업그레이드한다
 - [ ] Spring Security 버전을 6으로 업그레이드한다
-- [ ] Swagger를 적용한다
+- [X] Swagger를 적용한다
 - [ ] Artillery를 이용하여 성능을 측정한다
 - [ ] MySQL Lock을 이용하여 재고 동시성 문제를 해결한다
 - [ ] Logback을 적용하여 로깅한다
