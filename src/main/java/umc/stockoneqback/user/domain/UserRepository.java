@@ -37,6 +37,12 @@ public interface UserRepository extends JpaRepository<User, Long>, UserFindQuery
             " WHERE u.loginId = :loginId")
     Optional<User> findByLoginIdWithRoles(@Param("loginId") String loginId);
 
+    @Query("SELECT u" +
+            " FROM User u" +
+            " JOIN FETCH u.roles" +
+            " WHERE u.id = :userId")
+    Optional<User> findByIdWithRoles(@Param("userId") Long userId);
+
     // Query Method
     boolean existsByLoginIdAndStatus(String loginId, Status status);
     boolean existsByEmailAndStatus(Email email, Status status);

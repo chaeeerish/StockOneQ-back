@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.business.exception.BusinessErrorCode;
 import umc.stockoneqback.common.ServiceTest;
+import umc.stockoneqback.field.domain.company.Company;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.role.domain.company.Company;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.service.UserFindService;
 

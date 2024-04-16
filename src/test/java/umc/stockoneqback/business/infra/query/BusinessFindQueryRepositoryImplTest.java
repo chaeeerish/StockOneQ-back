@@ -9,10 +9,10 @@ import umc.stockoneqback.business.domain.BusinessRepository;
 import umc.stockoneqback.business.infra.query.dto.FilteredBusinessUser;
 import umc.stockoneqback.business.infra.query.dto.FindBusinessUser;
 import umc.stockoneqback.common.RepositoryTest;
-import umc.stockoneqback.role.domain.store.PartTimer;
-import umc.stockoneqback.role.domain.store.PartTimerRepository;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.domain.store.StoreRepository;
+import umc.stockoneqback.field.domain.store.PartTimer;
+import umc.stockoneqback.field.domain.store.PartTimerRepository;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.StoreRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 

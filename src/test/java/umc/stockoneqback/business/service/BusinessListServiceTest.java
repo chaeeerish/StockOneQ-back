@@ -8,8 +8,8 @@ import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.business.infra.query.dto.BusinessList;
 import umc.stockoneqback.business.service.dto.BusinessListResponse;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.role.domain.company.Company;
-import umc.stockoneqback.role.domain.store.Store;
+import umc.stockoneqback.field.domain.company.Company;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;

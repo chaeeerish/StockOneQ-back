@@ -5,10 +5,11 @@ import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.domain.Password;
-import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.User;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;
 
@@ -49,7 +50,7 @@ public record SignUpManagerRequest(
                         name,
                         birth,
                         phoneNumber,
-                        Role.MANAGER
+                        Set.of(RoleType.MANAGER)
                 );
         }
 }

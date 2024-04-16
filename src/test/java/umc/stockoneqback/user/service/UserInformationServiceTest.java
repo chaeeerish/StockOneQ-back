@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.role.domain.store.Store;
 import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
@@ -83,7 +83,7 @@ class UserInformationServiceTest extends ServiceTest {
                     () -> assertThat(response.name()).isEqualTo(user.getName()),
                     () -> assertThat(response.birth()).isEqualTo(user.getBirth()),
                     () -> assertThat(response.phoneNumber()).isEqualTo(user.getPhoneNumber()),
-                    () -> assertThat(response.role()).isEqualTo(user.getRole().getAuthority()),
+                    () -> assertThat(response.role()).isEqualTo(user.getRoles().get(0).getRoleType().getAuthority()),
                     () -> assertThat(response.storeName()).isEqualTo(user.getManagerStore().getName()),
                     () -> assertThat(response.storeCode()).isEqualTo(user.getManagerStore().getCode()),
                     () -> assertThat(response.storeAddress()).isEqualTo(user.getManagerStore().getAddress()),

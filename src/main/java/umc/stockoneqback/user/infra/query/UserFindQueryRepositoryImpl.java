@@ -5,7 +5,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.search.UserSearchType;
 import umc.stockoneqback.user.infra.query.dto.FindManager;
 import umc.stockoneqback.user.infra.query.dto.QFindManager;
@@ -24,7 +24,8 @@ public class UserFindQueryRepositoryImpl implements UserFindQueryRepository {
         return query
                 .selectDistinct(new QFindManager(user.id, user.name, user.managerStore.name, user.phoneNumber))
                 .from(user)
-                .where(search(userSearchType, searchWord), user.role.eq(Role.MANAGER), user.status.eq(Status.NORMAL), user.id.ne(userId))
+                .join(user.roles)
+                .where(search(userSearchType, searchWord), user.status.eq(Status.NORMAL), user.id.ne(userId))
                 .orderBy(user.id.asc())
                 .fetch();
     }

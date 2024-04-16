@@ -7,12 +7,12 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.common.ControllerTest;
+import umc.stockoneqback.field.exception.StoreErrorCode;
 import umc.stockoneqback.fixture.ProductFixture;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.product.exception.ProductErrorCode;
 import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
 import umc.stockoneqback.product.service.dto.response.SearchProductResponse;
-import umc.stockoneqback.role.exception.StoreErrorCode;
 
 import java.util.ArrayList;
 import java.util.List;

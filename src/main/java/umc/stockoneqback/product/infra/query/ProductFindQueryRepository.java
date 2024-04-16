@@ -1,10 +1,10 @@
 package umc.stockoneqback.product.infra.query;
 
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.product.domain.ProductSortCondition;
 import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;
 import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
-import umc.stockoneqback.role.domain.store.Store;
 
 import java.util.List;
 

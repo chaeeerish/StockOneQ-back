@@ -3,6 +3,9 @@ package umc.stockoneqback.product.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.service.PartTimerService;
+import umc.stockoneqback.field.service.StoreService;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.global.exception.GlobalErrorCode;
 import umc.stockoneqback.product.domain.*;
@@ -10,10 +13,7 @@ import umc.stockoneqback.product.exception.ProductErrorCode;
 import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
 import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
 import umc.stockoneqback.product.service.dto.response.SearchProductResponse;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.service.PartTimerService;
-import umc.stockoneqback.role.service.StoreService;
-import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
@@ -110,13 +110,13 @@ public class ProductFindService {
 
     public void checkRequestIdHasRequestStore(Long userId, Store store) {
         User user = userFindService.findById(userId);
-        if (user.getRole() == Role.SUPERVISOR)
+        if (user.getRoles().get(0).getRoleType() == RoleType.SUPERVISOR)
             throw BaseException.type(GlobalErrorCode.INVALID_USER);
-        else if (user.getRole() == Role.MANAGER) {
+        else if (user.getRoles().get(0).getRoleType() == RoleType.MANAGER) {
             if (storeService.findByUser(user) == store)
                 return;
             throw BaseException.type(UserErrorCode.USER_STORE_MATCH_FAIL);
-        } else if (user.getRole() == Role.PART_TIMER) {
+        } else if (user.getRoles().get(0).getRoleType() == RoleType.PART_TIMER) {
             if (partTimerService.findByUser(user).getStore() == store)
                 return;
             throw BaseException.type(UserErrorCode.USER_STORE_MATCH_FAIL);

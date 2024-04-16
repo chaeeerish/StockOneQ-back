@@ -24,6 +24,7 @@ public enum UserErrorCode implements ErrorCode {
     INVALID_SEARCH_TYPE(HttpStatus.NOT_FOUND, "USER_014", "유효하지 않은 검색 조건입니다."),
     USER_NOT_ALLOWED(HttpStatus.BAD_REQUEST, "USER_015", "해당 페이지에 접근할 수 없는 사용자입니다."),
     INPUT_VALUE_REQUIRED(HttpStatus.NOT_FOUND, "USER_016", "검색어를 입력해주세요."),
+    WRONG_PASSWORD(HttpStatus.UNAUTHORIZED, "USER_017", "비밀번호가 일치하지 않습니다."),
     ;
 
     private final HttpStatus status;

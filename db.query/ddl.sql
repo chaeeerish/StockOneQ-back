@@ -35,7 +35,7 @@ CREATE TABLE users
     name varchar(255) null,
     password varchar(200) not null,
     phone_number varchar(255) null,
-    role varchar(255) null,
+    roleType varchar(255) null,
     status varchar(255) null,
     company_id bigint null,
     manager_store_id bigint null,

@@ -5,11 +5,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.friend.domain.Friend;
 import umc.stockoneqback.friend.infra.query.dto.response.FriendInformation;
 import umc.stockoneqback.friend.service.dto.FriendAssembler;
 import umc.stockoneqback.global.base.RelationStatus;
-import umc.stockoneqback.role.domain.store.Store;
 import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;

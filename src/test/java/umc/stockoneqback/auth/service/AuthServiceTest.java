@@ -2,14 +2,15 @@ package umc.stockoneqback.auth.service;
 
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.auth.domain.FcmToken;
-import umc.stockoneqback.auth.domain.RefreshToken;
+import umc.stockoneqback.auth.domain.model.FcmToken;
+import umc.stockoneqback.auth.domain.model.RefreshToken;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.service.dto.response.LoginResponse;
+import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.common.ServiceTest;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.role.domain.store.Store;
 
 import java.util.Optional;
 

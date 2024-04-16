@@ -9,8 +9,8 @@ import umc.stockoneqback.user.infra.query.dto.QFindManager;
 
 import java.util.List;
 
+import static umc.stockoneqback.field.domain.store.QStore.store;
 import static umc.stockoneqback.friend.domain.QFriend.friend;
-import static umc.stockoneqback.role.domain.store.QStore.store;
 import static umc.stockoneqback.user.domain.QUser.user;
 
 @Transactional(readOnly = true)

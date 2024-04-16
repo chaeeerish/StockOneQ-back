@@ -5,12 +5,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.auth.service.AuthService;
+import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.common.ServiceTest;
+import umc.stockoneqback.field.domain.company.Company;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.role.domain.company.Company;
-import umc.stockoneqback.role.domain.store.Store;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
@@ -46,7 +46,7 @@ class UserServiceTest extends ServiceTest {
                 () -> assertThat(findManager.getPassword().isSamePassword(ELLA.getPassword(), ENCODER)).isTrue(),
                 () -> assertThat(findManager.getBirth()).isEqualTo(ELLA.getBirth()),
                 () -> assertThat(findManager.getPhoneNumber()).isEqualTo(ELLA.getPhoneNumber()),
-                () -> assertThat(findManager.getRole()).isEqualTo(ELLA.getRole())
+                () -> assertThat(findManager.getRoleType()).isEqualTo(ELLA.getRoleType())
         );
     }
 
@@ -88,7 +88,7 @@ class UserServiceTest extends ServiceTest {
                     () -> assertThat(findPartTimer.getPassword().isSamePassword(SAEWOO.getPassword(), ENCODER)).isTrue(),
                     () -> assertThat(findPartTimer.getBirth()).isEqualTo(SAEWOO.getBirth()),
                     () -> assertThat(findPartTimer.getPhoneNumber()).isEqualTo(SAEWOO.getPhoneNumber()),
-                    () -> assertThat(findPartTimer.getRole()).isEqualTo(SAEWOO.getRole()),
+                    () -> assertThat(findPartTimer.getRoleType()).isEqualTo(SAEWOO.getRoleType()),
                     () -> assertThat(findStore.getPartTimers().getPartTimers().size()).isEqualTo(1),
                     () -> assertThat(findStore.getPartTimers().getPartTimers().get(0).getPartTimer().getId()).isEqualTo(savedPartTimerId)
             );
@@ -135,7 +135,7 @@ class UserServiceTest extends ServiceTest {
                     () -> assertThat(findSupervisor.getPassword().isSamePassword(JACK.getPassword(), ENCODER)).isTrue(),
                     () -> assertThat(findSupervisor.getBirth()).isEqualTo(JACK.getBirth()),
                     () -> assertThat(findSupervisor.getPhoneNumber()).isEqualTo(JACK.getPhoneNumber()),
-                    () -> assertThat(findSupervisor.getRole()).isEqualTo(JACK.getRole()),
+                    () -> assertThat(findSupervisor.getRoleType()).isEqualTo(JACK.getRoleType()),
                     () -> assertThat(findCompany.getEmployees().size()).isEqualTo(1),
                     () -> assertThat(findCompany.getEmployees()).contains(findSupervisor),
                     () -> assertThat(findSupervisor.getCompany()).isEqualTo(findCompany)

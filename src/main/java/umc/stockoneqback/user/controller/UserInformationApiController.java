@@ -27,7 +27,6 @@ public class UserInformationApiController {
         return ResponseEntity.ok(response);
     }
 
-    @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @GetMapping("/information")
     public ResponseEntity<UserInformationResponse> getInformation(@ExtractPayload Long userId) {
         UserInformationResponse response = userInformationService.getInformation(userId);

@@ -5,8 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-import umc.stockoneqback.auth.domain.FcmToken;
-import umc.stockoneqback.auth.service.TokenService;
+import umc.stockoneqback.auth.domain.model.FcmToken;
+import umc.stockoneqback.auth.service.fcm.FcmTokenService;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.service.PartTimerService;
+import umc.stockoneqback.field.service.StoreService;
 import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.global.exception.GlobalErrorCode;
@@ -18,10 +21,7 @@ import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
 import umc.stockoneqback.product.service.dto.response.GetRequiredInfoResponse;
 import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
 import umc.stockoneqback.product.service.dto.response.LoadProductResponse;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.service.PartTimerService;
-import umc.stockoneqback.role.service.StoreService;
-import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
@@ -39,7 +39,7 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final StoreService storeService;
     private final FileService fileService;
-    private final TokenService tokenService;
+    private final FcmTokenService fcmTokenService;
     private final UserFindService userFindService;
     private final PartTimerService partTimerService;
     private final PassProductFCMService passProductFCMService;
@@ -49,9 +49,9 @@ public class ProductService {
         User user = userFindService.findById(userId);
         Store store = null;
 
-        if (user.getRole() == Role.MANAGER) {
+        if (user.getRoles().get(0).getRoleType() == RoleType.MANAGER) {
             store = storeService.findByUser(user);
-        } else if (user.getRole() == Role.PART_TIMER) {
+        } else if (user.getRoles().get(0).getRoleType() == RoleType.PART_TIMER) {
             store = partTimerService.findByUser(user).getStore();
         }
 
@@ -113,19 +113,19 @@ public class ProductService {
 
     @Transactional
     public void pushAlarmOfPassProductByOnlineUsers() throws FirebaseMessagingException {
-        List<FcmToken> fcmTokenList = tokenService.findAllOnlineUsers();
+        List<FcmToken> fcmTokenList = fcmTokenService.findAllOnlineUsers();
         LocalDate currentDate = LocalDate.now();
         for (FcmToken fcmToken: fcmTokenList) {
             User user = userFindService.findById(fcmToken.getId());
-            if (user.getRole() == Role.SUPERVISOR || user.getRole() == Role.ADMINISTRATOR)
+            if (user.getRoles().get(0).getRoleType() == RoleType.SUPERVISOR || user.getRoles().get(0).getRoleType() == RoleType.ADMINISTRATOR)
                 continue;
-            if (user.getRole() == Role.MANAGER) {
+            if (user.getRoles().get(0).getRoleType() == RoleType.MANAGER) {
                 List<Product> productList = productRepository.findPassByManager(user, currentDate);
                 for (Product product: productList) {
                     passProductFCMService.sendNotification
                             (fcmToken.getToken(), product.getStoreCondition().getValue(), product.getName());
                 }
-            } else if (user.getRole() == Role.PART_TIMER) {
+            } else if (user.getRoles().get(0).getRoleType() == RoleType.PART_TIMER) {
                 List<Product> productList = productRepository.findPassByPartTimer(user, currentDate);
                 for (Product product: productList) {
                     passProductFCMService.sendNotification
@@ -182,13 +182,13 @@ public class ProductService {
 
     public void checkRequestIdHasRequestStore(Long userId, Store store) {
         User user = userFindService.findById(userId);
-        if (user.getRole() == Role.SUPERVISOR)
+        if (user.getRoles().get(0).getRoleType() == RoleType.SUPERVISOR)
             throw BaseException.type(GlobalErrorCode.INVALID_USER);
-        else if (user.getRole() == Role.MANAGER) {
+        else if (user.getRoles().get(0).getRoleType() == RoleType.MANAGER) {
             if (storeService.findByUser(user) == store)
                 return;
             throw BaseException.type(UserErrorCode.USER_STORE_MATCH_FAIL);
-        } else if (user.getRole() == Role.PART_TIMER) {
+        } else if (user.getRoles().get(0).getRoleType() == RoleType.PART_TIMER) {
             if (partTimerService.findByUser(user).getStore() == store)
                 return;
             throw BaseException.type(UserErrorCode.USER_STORE_MATCH_FAIL);
@@ -197,13 +197,13 @@ public class ProductService {
 
     private void checkRequestIdHasRequestProduct(Long userId, Product product) {
         User user = userFindService.findById(userId);
-        if (user.getRole() == Role.SUPERVISOR)
+        if (user.getRoles().get(0).getRoleType() == RoleType.SUPERVISOR)
             throw BaseException.type(GlobalErrorCode.INVALID_USER);
-        else if (user.getRole() == Role.MANAGER) {
+        else if (user.getRoles().get(0).getRoleType() == RoleType.MANAGER) {
             if (storeService.findByUser(user) == product.getStore())
                 return;
             throw BaseException.type(UserErrorCode.USER_STORE_MATCH_FAIL);
-        } else if (user.getRole() == Role.PART_TIMER) {
+        } else if (user.getRoles().get(0).getRoleType() == RoleType.PART_TIMER) {
             if (partTimerService.findByUser(user).getStore() == product.getStore())
                 return;
             throw BaseException.type(UserErrorCode.USER_STORE_MATCH_FAIL);

@@ -7,14 +7,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import umc.stockoneqback.board.domain.Board;
+import umc.stockoneqback.field.domain.company.Company;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.role.domain.company.Company;
-import umc.stockoneqback.role.domain.store.Store;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import static jakarta.persistence.CascadeType.PERSIST;
 
@@ -42,8 +43,8 @@ public class User extends BaseTimeEntity {
 
     private String phoneNumber;
 
-    @Convert(converter = Role.RoleConverter.class)
-    private Role role;
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    private final List<Role> roles = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "manager_store_id", referencedColumnName = "id")
@@ -61,19 +62,23 @@ public class User extends BaseTimeEntity {
     private List<Board> boardList = new ArrayList<>();
 
     @Builder
-    private User(Email email, String loginId, Password password, String username, LocalDate birth, String phoneNumber, Role role) {
+    private User(Email email, String loginId, Password password, String username, LocalDate birth, String phoneNumber, Set<RoleType> roleTypes) {
         this.email = email;
         this.loginId = loginId;
         this.password = password;
         this.name = username;
         this.phoneNumber = phoneNumber;
-        this.role = role;
+        this.roles.addAll(
+                roleTypes.stream()
+                        .map(roleType -> Role.createRole(this, roleType))
+                        .toList()
+        );
         this.birth = birth;
         this.status = Status.NORMAL;
     }
 
-    public static User createUser(Email email, String loginId, Password password, String username, LocalDate birth, String phoneNumber, Role role) {
-        return new User(email, loginId, password, username, birth, phoneNumber, role);
+    public static User createUser(Email email, String loginId, Password password, String username, LocalDate birth, String phoneNumber, Set<RoleType> roleTypes) {
+        return new User(email, loginId, password, username, birth, phoneNumber, roleTypes);
     }
 
     public void registerManagerStore(Store store) {

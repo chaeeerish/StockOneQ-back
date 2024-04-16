@@ -13,4 +13,3 @@
 - [ ] 자주 호출되는 API에 캐시를 적용하여 성능을 향상한다
 - [ ] AWS Load Balancer를 사용하여 부하 분산을 처리한다
 - [ ] @RestAssured를 적용하여 HTTP 요청과 응답을 검증한다
-- [ ] 헬스 체크용 ping controller를 추가한다

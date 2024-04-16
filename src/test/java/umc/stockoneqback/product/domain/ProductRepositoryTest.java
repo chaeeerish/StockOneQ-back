@@ -5,9 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.RepositoryTest;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.StoreRepository;
 import umc.stockoneqback.fixture.ProductFixture;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.domain.store.StoreRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 

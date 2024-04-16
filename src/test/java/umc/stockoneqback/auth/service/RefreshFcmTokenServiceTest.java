@@ -4,8 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.auth.domain.FcmToken;
-import umc.stockoneqback.auth.domain.RefreshToken;
+import umc.stockoneqback.auth.domain.model.FcmToken;
+import umc.stockoneqback.auth.domain.model.RefreshToken;
+import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.common.ServiceTest;
 
 import java.util.Comparator;
@@ -16,9 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static umc.stockoneqback.fixture.TokenFixture.FCM_TOKEN;
 
 @DisplayName("Auth [Service Layer] -> TokenService 테스트")
-class RefreshTokenServiceTest extends ServiceTest {
+class RefreshFcmTokenServiceTest extends ServiceTest {
     @Autowired
-    private TokenService tokenService;
+    private FcmTokenService fcmTokenService;
 
     private final Long USER_ID = 1L;
     private final String REFRESH_TOKEN = "example_refresh_token";
@@ -30,7 +31,7 @@ class RefreshTokenServiceTest extends ServiceTest {
         @DisplayName("RefreshToken을 보유하지 않은 사용자에게 새로운 RefreshToken을 발급한다")
         void newUser() {
             // when
-            tokenService.synchronizeRefreshToken(USER_ID, REFRESH_TOKEN);
+            fcmTokenService.synchronizeRefreshToken(USER_ID, REFRESH_TOKEN);
 
             // then
             RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(USER_ID).orElseThrow();
@@ -45,7 +46,7 @@ class RefreshTokenServiceTest extends ServiceTest {
 
             // when
             String newRefreshToken = REFRESH_TOKEN + "_new";
-            tokenService.synchronizeRefreshToken(USER_ID, newRefreshToken);
+            fcmTokenService.synchronizeRefreshToken(USER_ID, newRefreshToken);
 
             // then
             RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(USER_ID).orElseThrow();
@@ -61,7 +62,7 @@ class RefreshTokenServiceTest extends ServiceTest {
 
         // when
         final String newRefreshToken = REFRESH_TOKEN + "_new";
-        tokenService.reissueRefreshTokenByRtrPolicy(USER_ID, newRefreshToken);
+        fcmTokenService.reissueRefreshTokenByRtrPolicy(USER_ID, newRefreshToken);
 
         // then
         RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(USER_ID).orElseThrow();
@@ -75,7 +76,7 @@ class RefreshTokenServiceTest extends ServiceTest {
         refreshTokenRedisRepository.save(RefreshToken.createRefreshToken(USER_ID, REFRESH_TOKEN));
 
         // when
-        tokenService.deleteRefreshTokenByMemberId(USER_ID);
+        fcmTokenService.deleteRefreshTokenByMemberId(USER_ID);
 
         // then
         assertThat(refreshTokenRedisRepository.findById(USER_ID)).isEmpty();
@@ -89,8 +90,8 @@ class RefreshTokenServiceTest extends ServiceTest {
 
         // when
         final String fakeRefreshToken = REFRESH_TOKEN + "_fake";
-        boolean actual1 = tokenService.isRefreshTokenExists(USER_ID, REFRESH_TOKEN);
-        boolean actual2 = tokenService.isRefreshTokenExists(USER_ID, fakeRefreshToken);
+        boolean actual1 = fcmTokenService.isRefreshTokenExists(USER_ID, REFRESH_TOKEN);
+        boolean actual2 = fcmTokenService.isRefreshTokenExists(USER_ID, fakeRefreshToken);
 
         // then
         assertAll(
@@ -109,7 +110,7 @@ class RefreshTokenServiceTest extends ServiceTest {
 
         // when
         final String newFcmToken = FCM_TOKEN + "_new";
-        tokenService.saveFcmToken(USER_ID, newFcmToken);
+        fcmTokenService.saveFcmToken(USER_ID, newFcmToken);
 
         // then
         FcmToken findToken = fcmTokenRedisRepository.findById(USER_ID).orElseThrow();
@@ -123,7 +124,7 @@ class RefreshTokenServiceTest extends ServiceTest {
         fcmTokenRedisRepository.save(FcmToken.createFcmToken(USER_ID, FCM_TOKEN));
 
         // when
-        tokenService.deleteFcmToken(USER_ID);
+        fcmTokenService.deleteFcmToken(USER_ID);
 
         // then
         assertThat(fcmTokenRedisRepository.findById(USER_ID)).isEmpty();
@@ -139,7 +140,7 @@ class RefreshTokenServiceTest extends ServiceTest {
         fcmTokenRedisRepository.save(FcmToken.createFcmToken(SECOND_USER_ID, SECOND_USER_FCM_TOKEN));
 
         // when
-        List<FcmToken> fcmTokenList = tokenService.findAllOnlineUsers();
+        List<FcmToken> fcmTokenList = fcmTokenService.findAllOnlineUsers();
         fcmTokenList.sort(Comparator.comparing(FcmToken::getId));
 
         // then

@@ -3,22 +3,22 @@ package umc.stockoneqback.user.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.auth.service.AuthService;
+import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.board.service.BoardService;
 import umc.stockoneqback.board.service.like.BoardLikeService;
 import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.business.service.BusinessService;
 import umc.stockoneqback.comment.service.CommentService;
+import umc.stockoneqback.field.domain.company.Company;
+import umc.stockoneqback.field.domain.store.PartTimer;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.service.CompanyService;
+import umc.stockoneqback.field.service.PartTimerService;
+import umc.stockoneqback.field.service.StoreService;
 import umc.stockoneqback.friend.service.FriendService;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.reply.service.ReplyService;
-import umc.stockoneqback.role.domain.company.Company;
-import umc.stockoneqback.role.domain.store.PartTimer;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.service.CompanyService;
-import umc.stockoneqback.role.service.PartTimerService;
-import umc.stockoneqback.role.service.StoreService;
 import umc.stockoneqback.share.service.ShareService;
 import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.domain.User;
@@ -111,7 +111,7 @@ public class UserService {
     @Transactional
     public void withdrawUser(Long userId) {
         User user = userFindService.findById(userId);
-        switch (user.getRole()) {
+        switch (user.getRoles().get(0).getRoleType()) {
             case MANAGER -> deleteInfoByManager(user);
             case PART_TIMER -> deleteInfoByPartTimer(user);
             case SUPERVISOR -> deleteInfoBySupervisor(user);

@@ -3,14 +3,14 @@ package umc.stockoneqback.product.infra.query;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.RepositoryTest;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.StoreRepository;
 import umc.stockoneqback.fixture.ProductFixture;
 import umc.stockoneqback.product.domain.ProductRepository;
 import umc.stockoneqback.product.domain.ProductSortCondition;
 import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;
 import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.domain.store.StoreRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 
