@@ -14,22 +14,28 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long>, UserFindQueryRepository {
     // @Query
     @Modifying(flushAutomatically = true, clearAutomatically = true)
-    @Query(value = "UPDATE users SET status = '소멸' WHERE id = :userId", nativeQuery = true)
+    @Query("UPDATE User u SET u.status = '소멸' WHERE u.id = :userId")
     void expireById(@Param("userId") Long userId);
 
     @Modifying(flushAutomatically = true, clearAutomatically = true)
-    @Query(value = "DELETE FROM users WHERE modified_date <= :overYear and status = '소멸'", nativeQuery = true)
+    @Query("DELETE FROM User u WHERE u.modifiedDate <= :overYear and u.status = '소멸'")
     void deleteModifiedOverYearAndExpireUser(@Param("overYear") LocalDate overYear);
 
     @Transactional
     @Modifying(flushAutomatically = true, clearAutomatically = true)
-    @Query(value = "UPDATE users SET modified_date = :modifiedDate WHERE id = :userId", nativeQuery = true)
+    @Query("UPDATE User u SET u.modifiedDate = :modifiedDate WHERE u.id = :userId")
     void updateModifiedDateById(@Param("userId") Long userId, @Param("modifiedDate") LocalDate modifiedDate);
 
     @Transactional
     @Modifying(flushAutomatically = true, clearAutomatically = true)
-    @Query(value = "UPDATE users SET manager_store_id = :storeId WHERE id = :userId", nativeQuery = true)
+    @Query("UPDATE User u SET u.managerStore.id = :storeId WHERE u.id = :userId")
     void updateManagerStoreIdById(@Param("userId") Long userId, @Param("storeId") Long storeId);
+
+    @Query("SELECT u" +
+            " FROM User u" +
+            " JOIN FETCH u.roles" +
+            " WHERE u.loginId = :loginId")
+    Optional<User> findByLoginIdWithRoles(@Param("loginId") String loginId);
 
     // Query Method
     boolean existsByLoginIdAndStatus(String loginId, Status status);
