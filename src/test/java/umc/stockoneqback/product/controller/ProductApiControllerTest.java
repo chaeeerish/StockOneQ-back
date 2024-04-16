@@ -120,8 +120,8 @@ public class ProductApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("store", String.valueOf(ERROR_STORE_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("store", String.valueOf(ERROR_STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -194,8 +194,8 @@ public class ProductApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", ERROR_STORE_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", ERROR_STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -268,8 +268,8 @@ public class ProductApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

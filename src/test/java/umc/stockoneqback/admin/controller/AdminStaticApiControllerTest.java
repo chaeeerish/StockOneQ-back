@@ -64,7 +64,7 @@ public class AdminStaticApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("question", questionList.get(0))
+                    .queryParam("question", questionList.get(0))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -160,7 +160,7 @@ public class AdminStaticApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("question", questionList.get(0))
+                    .queryParam("question", questionList.get(0))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

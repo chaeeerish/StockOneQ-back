@@ -51,9 +51,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -97,9 +97,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", INVALID_SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", INVALID_SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -147,9 +147,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", INVALID_SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", INVALID_SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -199,9 +199,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -249,9 +249,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -295,9 +295,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", INVALID_SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", INVALID_SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -345,9 +345,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", INVALID_SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", INVALID_SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -397,9 +397,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

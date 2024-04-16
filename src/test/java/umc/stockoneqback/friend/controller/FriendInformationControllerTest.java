@@ -46,7 +46,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -90,7 +90,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -133,7 +133,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -177,7 +177,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -220,7 +220,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -264,7 +264,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

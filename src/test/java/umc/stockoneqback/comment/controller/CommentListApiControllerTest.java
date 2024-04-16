@@ -52,7 +52,7 @@ class CommentListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL, BOARD_ID)
-                    .param("page", String.valueOf(PAGE));
+                    .queryParam("page", String.valueOf(PAGE));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -99,7 +99,7 @@ class CommentListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL, BOARD_ID)
-                    .param("page", String.valueOf(PAGE))
+                    .queryParam("page", String.valueOf(PAGE))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

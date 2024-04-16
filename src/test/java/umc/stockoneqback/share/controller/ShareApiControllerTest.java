@@ -61,7 +61,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("category", CATEGORY);
+                    .queryParam("category", CATEGORY);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -125,7 +125,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("category", INVALID_CATEGORY)
+                    .queryParam("category", INVALID_CATEGORY)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -193,7 +193,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("category", CATEGORY)
+                    .queryParam("category", CATEGORY)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -248,7 +248,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("id", String.valueOf(SHARE_ID));
+                    .queryParam("id", String.valueOf(SHARE_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -309,7 +309,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("id", String.valueOf(SHARE_ID))
+                    .queryParam("id", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -374,7 +374,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("id", String.valueOf(SHARE_ID))
+                    .queryParam("id", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -541,7 +541,7 @@ class ShareApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("shareId", String.valueOf(SHARE_ID));
+                    .queryParam("shareId", String.valueOf(SHARE_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -583,7 +583,7 @@ class ShareApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("shareId", String.valueOf(SHARE_ID))
+                    .queryParam("shareId", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -629,7 +629,7 @@ class ShareApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("shareId", String.valueOf(SHARE_ID))
+                    .queryParam("shareId", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

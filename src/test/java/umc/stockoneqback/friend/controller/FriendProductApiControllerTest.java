@@ -60,8 +60,8 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -108,8 +108,8 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -156,8 +156,8 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -204,8 +204,8 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -252,8 +252,8 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", ERROR_STORE_CONDITION)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", ERROR_STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -310,9 +310,9 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("name", ERROR_NAME)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("name", ERROR_NAME)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -360,9 +360,9 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("name", NAME)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("name", NAME)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -425,8 +425,8 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -495,10 +495,10 @@ public class FriendProductApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("friend", String.valueOf(FRIEND_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("search", SEARCH_CONDITION)
-                    .param("last", String.valueOf(PRODUCT_ID))
+                    .queryParam("friend", String.valueOf(FRIEND_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("search", SEARCH_CONDITION)
+                    .queryParam("last", String.valueOf(PRODUCT_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

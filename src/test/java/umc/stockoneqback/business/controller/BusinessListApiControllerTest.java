@@ -49,8 +49,8 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
-                    .param("search", SEARCH);
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -93,8 +93,8 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
-                    .param("search", SEARCH)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -143,8 +143,8 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
-                    .param("search", SEARCH)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -187,7 +187,7 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -229,7 +229,7 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -277,7 +277,7 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

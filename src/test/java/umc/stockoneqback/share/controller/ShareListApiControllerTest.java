@@ -138,11 +138,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(USER_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", CATEGORY)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD);
+                    .queryParam("user", String.valueOf(USER_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", CATEGORY)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -188,11 +188,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(USER_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", INVALID_CATEGORY)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("user", String.valueOf(USER_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", INVALID_CATEGORY)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -242,11 +242,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(USER_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", CATEGORY)
-                    .param("search", INVALID_SEARCH)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("user", String.valueOf(USER_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", CATEGORY)
+                    .queryParam("search", INVALID_SEARCH)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -298,11 +298,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(SELECTED_BUSINESS_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", CATEGORY)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("user", String.valueOf(SELECTED_BUSINESS_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", CATEGORY)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then

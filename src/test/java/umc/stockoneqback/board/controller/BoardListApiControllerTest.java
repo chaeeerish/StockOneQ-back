@@ -56,10 +56,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD);
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -104,10 +104,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", INVALID_SORT)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", INVALID_SORT)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -156,10 +156,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", INVALID_SEARCH)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", INVALID_SEARCH)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -210,10 +210,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -264,10 +264,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD);
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -312,10 +312,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", INVALID_SORT)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", INVALID_SORT)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -364,10 +364,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", INVALID_SEARCH)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", INVALID_SEARCH)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -418,10 +418,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -471,7 +471,7 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("boardId", String.valueOf(BOARD_ID));
+                    .queryParam("boardId", String.valueOf(BOARD_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -508,7 +508,7 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("boardId", String.valueOf(BOARD_ID))
+                    .queryParam("boardId", String.valueOf(BOARD_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -549,7 +549,7 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("boardId", String.valueOf(BOARD_ID))
+                    .queryParam("boardId", String.valueOf(BOARD_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
