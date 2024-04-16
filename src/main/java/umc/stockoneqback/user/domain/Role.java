@@ -22,7 +22,7 @@ public enum Role implements EnumStandard {
         return authority;
     }
 
-    @javax.persistence.Converter
+    @jakarta.persistence.Converter
     public static class RoleConverter extends EnumConverter<Role> {
         public RoleConverter() {
             super(Role.class);

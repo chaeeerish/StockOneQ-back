@@ -61,7 +61,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("category", CATEGORY);
+                    .queryParam("category", CATEGORY);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -83,7 +83,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
                                     ),
                                     requestParts(
@@ -125,7 +125,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("category", INVALID_CATEGORY)
+                    .queryParam("category", INVALID_CATEGORY)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -151,7 +151,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
                                     ),
                                     requestParts(
@@ -193,7 +193,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("category", CATEGORY)
+                    .queryParam("category", CATEGORY)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -210,7 +210,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
                                     ),
                                     requestParts(
@@ -248,7 +248,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("id", String.valueOf(SHARE_ID));
+                    .queryParam("id", String.valueOf(SHARE_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -267,7 +267,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     "ShareApi/Update/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
@@ -309,7 +309,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("id", String.valueOf(SHARE_ID))
+                    .queryParam("id", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -332,7 +332,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
@@ -374,7 +374,7 @@ class ShareApiControllerTest extends ControllerTest {
                     .file(file)
                     .file(mockRequest)
                     .accept(APPLICATION_JSON)
-                    .param("id", String.valueOf(SHARE_ID))
+                    .queryParam("id", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -388,7 +388,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
@@ -541,7 +541,7 @@ class ShareApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("shareId", String.valueOf(SHARE_ID));
+                    .queryParam("shareId", String.valueOf(SHARE_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -560,7 +560,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     "ShareApi/Delete/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("shareId").description("선택된 게시글들 ID")
                                     ),
                                     responseFields(
@@ -583,7 +583,7 @@ class ShareApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("shareId", String.valueOf(SHARE_ID))
+                    .queryParam("shareId", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -606,7 +606,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("shareId").description("선택된 게시글들 ID")
                                     ),
                                     responseFields(
@@ -629,7 +629,7 @@ class ShareApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("shareId", String.valueOf(SHARE_ID))
+                    .queryParam("shareId", String.valueOf(SHARE_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -643,7 +643,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("shareId").description("선택된 게시글들 ID")
                                     )
                             )

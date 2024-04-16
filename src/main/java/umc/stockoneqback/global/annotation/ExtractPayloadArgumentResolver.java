@@ -1,5 +1,6 @@
 package umc.stockoneqback.global.annotation;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -10,8 +11,6 @@ import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.utils.AuthorizationExtractor;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.global.exception.BaseException;
-
-import javax.servlet.http.HttpServletRequest;
 
 @RequiredArgsConstructor
 public class ExtractPayloadArgumentResolver implements HandlerMethodArgumentResolver {

@@ -12,7 +12,7 @@ include::{snippets}/ReplyApi/Create/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/ReplyApi/Create/Failure/Case1/http-response.adoc[]
-include::{snippets}/ReplyApi/Create/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ReplyApi/Create/Failure/Case1/response-body.adoc[]
 
 ==== 2. 대댓글 등록에 성공한다
 HTTP Request
@@ -32,7 +32,7 @@ include::{snippets}/ReplyApi/Update/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/ReplyApi/Update/Failure/Case1/http-response.adoc[]
-include::{snippets}/ReplyApi/Update/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ReplyApi/Update/Failure/Case1/response-body.adoc[]
 
 === 2. 다른 사람의 대댓글은 수정할 수 없다
 HTTP Request
@@ -44,7 +44,7 @@ include::{snippets}/CommentApi/Create/Success/request-part-request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/ReplyApi/Update/Failure/Case2/http-response.adoc[]
-include::{snippets}/ReplyApi/Update/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ReplyApi/Update/Failure/Case2/response-body.adoc[]
 
 === 3. 대댓글 수정에 성공한다
 HTTP Request
@@ -64,7 +64,7 @@ include::{snippets}/ReplyApi/Delete/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/ReplyApi/Delete/Failure/Case1/http-response.adoc[]
-include::{snippets}/ReplyApi/Delete/Failure/Case1/response-fields.adoc[]
+include::{snippets}/ReplyApi/Delete/Failure/Case1/response-body.adoc[]
 
 === 2. 다른 사람의 대댓글은 삭제할 수 없다
 HTTP Request
@@ -76,7 +76,7 @@ include::{snippets}/CommentApi/Create/Success/request-part-request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/ReplyApi/Delete/Failure/Case2/http-response.adoc[]
-include::{snippets}/ReplyApi/Delete/Failure/Case2/response-fields.adoc[]
+include::{snippets}/ReplyApi/Delete/Failure/Case2/response-body.adoc[]
 
 === 3. 대댓글 삭제에 성공한다
 HTTP Request

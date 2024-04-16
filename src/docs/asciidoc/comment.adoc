@@ -12,7 +12,7 @@ include::{snippets}/CommentApi/Create/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/CommentApi/Create/Failure/Case1/http-response.adoc[]
-include::{snippets}/CommentApi/Create/Failure/Case1/response-fields.adoc[]
+include::{snippets}/CommentApi/Create/Failure/Case1/response-body.adoc[]
 
 ==== 2. 댓글 등록에 성공한다
 HTTP Request
@@ -32,7 +32,7 @@ include::{snippets}/CommentApi/Update/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/CommentApi/Update/Failure/Case1/http-response.adoc[]
-include::{snippets}/CommentApi/Update/Failure/Case1/response-fields.adoc[]
+include::{snippets}/CommentApi/Update/Failure/Case1/response-body.adoc[]
 
 === 2. 다른 사람의 댓글은 수정할 수 없다
 HTTP Request
@@ -44,7 +44,7 @@ include::{snippets}/CommentApi/Update/Failure/Case2/request-part-request-fields.
 
 HTTP Response
 include::{snippets}/CommentApi/Update/Failure/Case2/http-response.adoc[]
-include::{snippets}/CommentApi/Update/Failure/Case2/response-fields.adoc[]
+include::{snippets}/CommentApi/Update/Failure/Case2/response-body.adoc[]
 
 === 3. 댓글 수정에 성공한다
 HTTP Request
@@ -64,7 +64,7 @@ include::{snippets}/CommentApi/Delete/Failure/Case1/http-request.adoc[]
 
 HTTP Response
 include::{snippets}/CommentApi/Delete/Failure/Case1/http-response.adoc[]
-include::{snippets}/CommentApi/Delete/Failure/Case1/response-fields.adoc[]
+include::{snippets}/CommentApi/Delete/Failure/Case1/response-body.adoc[]
 
 === 2. 다른 사람의 댓글은 삭제할 수 없다
 HTTP Request
@@ -74,7 +74,7 @@ include::{snippets}/CommentApi/Delete/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/CommentApi/Delete/Failure/Case2/http-response.adoc[]
-include::{snippets}/CommentApi/Delete/Failure/Case2/response-fields.adoc[]
+include::{snippets}/CommentApi/Delete/Failure/Case2/response-body.adoc[]
 
 === 3. 댓글 삭제에 성공한다
 HTTP Request

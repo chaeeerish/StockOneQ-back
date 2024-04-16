@@ -26,7 +26,7 @@ public enum Category implements EnumStandard {
                 .orElseThrow(() -> BaseException.type(ShareErrorCode.NOT_FOUND_CATEGORY));
     }
 
-    @javax.persistence.Converter
+    @jakarta.persistence.Converter
     public static class CategoryConverter extends EnumConverter<Category> {
         public CategoryConverter() {
             super(Category.class);

@@ -1,7 +1,7 @@
 package umc.stockoneqback.board.controller.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public record BoardRequest(
         @NotBlank(message = "제목 작성은 필수입니다.")

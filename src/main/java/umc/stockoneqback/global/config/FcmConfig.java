@@ -32,7 +32,7 @@ public class FcmConfig {
     private String authUri;
     @Value("${firebase.token_uri}")
     private String tokenUri;
-    @Value("${firebase.auth_provider_x509_cert_url}")
+    @Value("${firebase.auth_provider_x509_cert_uri}")
     private String authProviderCertUrl;
     @Value("${firebase.client_x509_cert_url}")
     private String clientCertUrl;

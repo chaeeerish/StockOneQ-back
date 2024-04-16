@@ -1,7 +1,7 @@
 package umc.stockoneqback.user.controller.dto.request;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record UpdatePasswordRequest(
         @NotNull(message = "비밀번호 변경 가능 검증 여부는 필수입니다.")

@@ -1,5 +1,6 @@
 package umc.stockoneqback.user.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,8 +11,6 @@ import umc.stockoneqback.user.controller.dto.request.SignUpManagerRequest;
 import umc.stockoneqback.user.controller.dto.request.SignUpPartTimerRequest;
 import umc.stockoneqback.user.controller.dto.request.SignUpSupervisorRequest;
 import umc.stockoneqback.user.service.UserService;
-
-import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

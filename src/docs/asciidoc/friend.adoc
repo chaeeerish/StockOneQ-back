@@ -13,7 +13,7 @@ include::{snippets}/FriendApi/Request/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Request/Failure/Case1/http-response.adoc[]
-include::{snippets}/FriendApi/Request/Failure/Case1/response-fields.adoc[]
+include::{snippets}/FriendApi/Request/Failure/Case1/response-body.adoc[]
 
 === 2. 본인에게 친구 신청을 할 수 없다
 HTTP Request
@@ -23,7 +23,7 @@ include::{snippets}/FriendApi/Request/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Request/Failure/Case2/http-response.adoc[]
-include::{snippets}/FriendApi/Request/Failure/Case2/response-fields.adoc[]
+include::{snippets}/FriendApi/Request/Failure/Case2/response-body.adoc[]
 
 === 3. 사장님이 아니라면 친구 요청을 하거나 받을 수 없다
 HTTP Request
@@ -33,7 +33,7 @@ include::{snippets}/FriendApi/Request/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Request/Failure/Case3/http-response.adoc[]
-include::{snippets}/FriendApi/Request/Failure/Case3/response-fields.adoc[]
+include::{snippets}/FriendApi/Request/Failure/Case3/response-body.adoc[]
 
 === 4. 이미 친구 관계이거나 요청된 관계라면 추가로 요청할 수 없다
 HTTP Request
@@ -43,7 +43,7 @@ include::{snippets}/FriendApi/Request/Failure/Case4/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Request/Failure/Case4/http-response.adoc[]
-include::{snippets}/FriendApi/Request/Failure/Case4/response-fields.adoc[]
+include::{snippets}/FriendApi/Request/Failure/Case4/response-body.adoc[]
 
 === 5. 친구 요청에 성공한다
 HTTP Request
@@ -62,7 +62,7 @@ include::{snippets}/FriendApi/Cancel/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Cancel/Failure/Case1/http-response.adoc[]
-include::{snippets}/FriendApi/Cancel/Failure/Case1/response-fields.adoc[]
+include::{snippets}/FriendApi/Cancel/Failure/Case1/response-body.adoc[]
 
 === 2. 요청된 관계가 존재하지 않는다면 친구 신청 취소에 실패한다
 HTTP Request
@@ -72,7 +72,7 @@ include::{snippets}/FriendApi/Cancel/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Cancel/Failure/Case2/http-response.adoc[]
-include::{snippets}/FriendApi/Cancel/Failure/Case2/response-fields.adoc[]
+include::{snippets}/FriendApi/Cancel/Failure/Case2/response-body.adoc[]
 
 === 3. 이미 승인된 친구 관계라면 친구 신청 취소에 실패한다
 HTTP Request
@@ -82,7 +82,7 @@ include::{snippets}/FriendApi/Cancel/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Cancel/Failure/Case3/http-response.adoc[]
-include::{snippets}/FriendApi/Cancel/Failure/Case3/response-fields.adoc[]
+include::{snippets}/FriendApi/Cancel/Failure/Case3/response-body.adoc[]
 
 === 4. 친구 신청 취소에 성공한다
 HTTP Request
@@ -101,7 +101,7 @@ include::{snippets}/FriendApi/Accept/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Accept/Failure/Case1/http-response.adoc[]
-include::{snippets}/FriendApi/Accept/Failure/Case1/response-fields.adoc[]
+include::{snippets}/FriendApi/Accept/Failure/Case1/response-body.adoc[]
 
 === 2. 요청된 관계가 존재하지 않는다면 친구 수락에 실패한다
 HTTP Request
@@ -111,7 +111,7 @@ include::{snippets}/FriendApi/Accept/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Accept/Failure/Case2/http-response.adoc[]
-include::{snippets}/FriendApi/Accept/Failure/Case2/response-fields.adoc[]
+include::{snippets}/FriendApi/Accept/Failure/Case2/response-body.adoc[]
 
 === 3. 이미 승인된 친구 관계라면 친구 수락에 실패한다
 HTTP Request
@@ -121,7 +121,7 @@ include::{snippets}/FriendApi/Accept/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Accept/Failure/Case3/http-response.adoc[]
-include::{snippets}/FriendApi/Accept/Failure/Case3/response-fields.adoc[]
+include::{snippets}/FriendApi/Accept/Failure/Case3/response-body.adoc[]
 
 === 4. 친구 수락에 성공한다
 HTTP Request
@@ -140,7 +140,7 @@ include::{snippets}/FriendApi/Reject/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Reject/Failure/Case1/http-response.adoc[]
-include::{snippets}/FriendApi/Reject/Failure/Case1/response-fields.adoc[]
+include::{snippets}/FriendApi/Reject/Failure/Case1/response-body.adoc[]
 
 === 2. 요청된 관계가 존재하지 않는다면 친구 신청 거절에 실패한다
 HTTP Request
@@ -150,7 +150,7 @@ include::{snippets}/FriendApi/Reject/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Reject/Failure/Case2/http-response.adoc[]
-include::{snippets}/FriendApi/Reject/Failure/Case2/response-fields.adoc[]
+include::{snippets}/FriendApi/Reject/Failure/Case2/response-body.adoc[]
 
 === 3. 이미 승인된 친구 관계라면 친구 신청 거절에 실패한다
 HTTP Request
@@ -160,7 +160,7 @@ include::{snippets}/FriendApi/Reject/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Reject/Failure/Case3/http-response.adoc[]
-include::{snippets}/FriendApi/Reject/Failure/Case3/response-fields.adoc[]
+include::{snippets}/FriendApi/Reject/Failure/Case3/response-body.adoc[]
 
 === 4. 친구 신청 거절에 성공한다
 HTTP Request
@@ -179,7 +179,7 @@ include::{snippets}/FriendApi/Delete/Failure/Case1/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Delete/Failure/Case1/http-response.adoc[]
-include::{snippets}/FriendApi/Delete/Failure/Case1/response-fields.adoc[]
+include::{snippets}/FriendApi/Delete/Failure/Case1/response-body.adoc[]
 
 === 2. 아직 요청된 친구 관계라면 친구 관계를 삭제할 수 없다
 HTTP Request
@@ -189,7 +189,7 @@ include::{snippets}/FriendApi/Delete/Failure/Case2/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Delete/Failure/Case2/http-response.adoc[]
-include::{snippets}/FriendApi/Delete/Failure/Case2/response-fields.adoc[]
+include::{snippets}/FriendApi/Delete/Failure/Case2/response-body.adoc[]
 
 === 3. 요청된 친구 관계가 존재하지 않는다면 친구 관계를 삭제할 수 없다
 HTTP Request
@@ -199,7 +199,7 @@ include::{snippets}/FriendApi/Delete/Failure/Case3/path-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/FriendApi/Delete/Failure/Case3/http-response.adoc[]
-include::{snippets}/FriendApi/Delete/Failure/Case3/response-fields.adoc[]
+include::{snippets}/FriendApi/Delete/Failure/Case3/response-body.adoc[]
 
 === 4. 친구 관계 삭제에 성공한다
 HTTP Request

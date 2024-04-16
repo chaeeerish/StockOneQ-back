@@ -15,7 +15,7 @@ public enum RelationStatus implements EnumStandard {
 
     private final String value;
 
-    @javax.persistence.Converter
+    @jakarta.persistence.Converter
     public static class RelationConverter extends EnumConverter<RelationStatus> {
         public RelationConverter() {
             super(RelationStatus.class);

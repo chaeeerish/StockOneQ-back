@@ -30,7 +30,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.ProductFixture.*;
@@ -63,9 +63,9 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(ERROR_STORE_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("name", NAME)
+                    .queryParam("store", String.valueOf(ERROR_STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("name", NAME)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -88,7 +88,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("name").description("검색할 제품명")
@@ -113,9 +113,9 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", ERROR_STORE_CONDITION)
-                    .param("name", NAME)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", ERROR_STORE_CONDITION)
+                    .queryParam("name", NAME)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -138,7 +138,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("name").description("검색할 제품명")
@@ -163,9 +163,9 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("name", NAME)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("name", NAME)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -188,7 +188,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("name").description("검색할 제품명")
@@ -224,8 +224,8 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(ERROR_STORE_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("store", String.valueOf(ERROR_STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -248,7 +248,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -272,8 +272,8 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", ERROR_STORE_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", ERROR_STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -296,7 +296,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -320,8 +320,8 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", STORE_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -350,7 +350,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법")
                                     ),
@@ -391,11 +391,11 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(ERROR_STORE_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("search", SEARCH_CONDITION)
-                    .param("last", String.valueOf(PRODUCT_ID))
-                    .param("sort", SORT_CONDITION)
+                    .queryParam("store", String.valueOf(ERROR_STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("search", SEARCH_CONDITION)
+                    .queryParam("last", String.valueOf(PRODUCT_ID))
+                    .queryParam("sort", SORT_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -418,7 +418,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("search").description("현재 설정된 탐색 조건"),
@@ -445,11 +445,11 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", ERROR_STORE_CONDITION)
-                    .param("search", SEARCH_CONDITION)
-                    .param("last", String.valueOf(PRODUCT_ID))
-                    .param("sort", SORT_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", ERROR_STORE_CONDITION)
+                    .queryParam("search", SEARCH_CONDITION)
+                    .queryParam("last", String.valueOf(PRODUCT_ID))
+                    .queryParam("sort", SORT_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -472,7 +472,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("search").description("현재 설정된 탐색 조건"),
@@ -499,11 +499,11 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("search", ERROR_SEARCH_CONDITION)
-                    .param("last", String.valueOf(PRODUCT_ID))
-                    .param("sort", SORT_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("search", ERROR_SEARCH_CONDITION)
+                    .queryParam("last", String.valueOf(PRODUCT_ID))
+                    .queryParam("sort", SORT_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -526,7 +526,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("search").description("현재 설정된 탐색 조건"),
@@ -553,11 +553,11 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("search", SEARCH_CONDITION)
-                    .param("last", String.valueOf(PRODUCT_ID))
-                    .param("sort", ERROR_SORT_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("search", SEARCH_CONDITION)
+                    .queryParam("last", String.valueOf(PRODUCT_ID))
+                    .queryParam("sort", ERROR_SORT_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -580,7 +580,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("search").description("현재 설정된 탐색 조건"),
@@ -607,11 +607,11 @@ public class ProductFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("store", String.valueOf(STORE_ID))
-                    .param("condition", STORE_CONDITION)
-                    .param("search", SEARCH_CONDITION)
-                    .param("last", String.valueOf(PRODUCT_ID))
-                    .param("sort", SORT_CONDITION)
+                    .queryParam("store", String.valueOf(STORE_ID))
+                    .queryParam("condition", STORE_CONDITION)
+                    .queryParam("search", SEARCH_CONDITION)
+                    .queryParam("last", String.valueOf(PRODUCT_ID))
+                    .queryParam("sort", SORT_CONDITION)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -652,7 +652,7 @@ public class ProductFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("store").description("현재 가게 ID"),
                                             parameterWithName("condition").description("현재 설정된 보관방법"),
                                             parameterWithName("search").description("현재 설정된 탐색 조건"),

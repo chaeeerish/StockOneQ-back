@@ -32,7 +32,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.ShareFixture.*;
@@ -138,11 +138,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(USER_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", CATEGORY)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD);
+                    .queryParam("user", String.valueOf(USER_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", CATEGORY)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -161,7 +161,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     "ShareApi/List/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
@@ -188,11 +188,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(USER_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", INVALID_CATEGORY)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("user", String.valueOf(USER_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", INVALID_CATEGORY)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -215,7 +215,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
@@ -242,11 +242,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(USER_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", CATEGORY)
-                    .param("search", INVALID_SEARCH)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("user", String.valueOf(USER_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", CATEGORY)
+                    .queryParam("search", INVALID_SEARCH)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -269,7 +269,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
@@ -298,11 +298,11 @@ class ShareListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("user", String.valueOf(SELECTED_BUSINESS_ID))
-                    .param("page", String.valueOf(PAGE))
-                    .param("category", CATEGORY)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("user", String.valueOf(SELECTED_BUSINESS_ID))
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("category", CATEGORY)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -316,7 +316,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),

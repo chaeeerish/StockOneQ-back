@@ -27,7 +27,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.TokenFixture.ACCESS_TOKEN;
@@ -52,9 +52,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -73,7 +73,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     "UserApi/Find/Friend/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명/지역명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -98,9 +98,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", INVALID_SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", INVALID_SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -123,7 +123,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명/지역명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -148,9 +148,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", INVALID_SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", INVALID_SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -173,7 +173,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명/지역명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -200,9 +200,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -216,7 +216,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명/지역명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -250,9 +250,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -271,7 +271,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     "UserApi/Find/Business/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -296,9 +296,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", INVALID_SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", INVALID_SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -321,7 +321,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -346,9 +346,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", INVALID_SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", INVALID_SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -371,7 +371,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
@@ -398,9 +398,9 @@ class UserFindApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -414,7 +414,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("search").description("검색 조건(이름/상호명)"),
                                             parameterWithName("word").description("검색어"),
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")

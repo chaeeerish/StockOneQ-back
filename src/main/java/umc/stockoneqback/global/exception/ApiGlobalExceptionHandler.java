@@ -1,5 +1,6 @@
 package umc.stockoneqback.global.exception;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +19,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.global.exception.dto.request.DiscordMessage;
 
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.List;
 

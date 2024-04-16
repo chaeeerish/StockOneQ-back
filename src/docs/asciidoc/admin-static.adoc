@@ -12,11 +12,11 @@ include::{snippets}/AdminStaticApi/CommonError/Case1/http-request.adoc[]
 Request Header
 include::{snippets}/AdminStaticApi/CommonError/Case1/request-headers.adoc[]
 Request Parameter
-include::{snippets}/AdminStaticApi/CommonError/Case1/request-parameters.adoc[]
+include::{snippets}/AdminStaticApi/CommonError/Case1/request-body.adoc[]
 
 ==== HTTP Response
 include::{snippets}/AdminStaticApi/CommonError/Case1/http-response.adoc[]
-include::{snippets}/AdminStaticApi/CommonError/Case1/response-fields.adoc[]
+include::{snippets}/AdminStaticApi/CommonError/Case1/response-body.adoc[]
 
 == F&A 추가
 === 1. F&A 추가에 성공한다
@@ -37,7 +37,7 @@ include::{snippets}/AdminStaticApi/DeleteFA/Success/http-request.adoc[]
 Request Header
 include::{snippets}/AdminStaticApi/DeleteFA/Success/request-headers.adoc[]
 Request Parameter
-include::{snippets}/AdminStaticApi/DeleteFA/Success/request-parameters.adoc[]
+include::{snippets}/AdminStaticApi/DeleteFA/Success/request-body.adoc[]
 
 ==== HTTP Response
 include::{snippets}/AdminStaticApi/DeleteFA/Success/http-response.adoc[]

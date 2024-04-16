@@ -1,5 +1,6 @@
 package umc.stockoneqback.comment.domain;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,11 +11,10 @@ import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.reply.domain.Reply;
 import umc.stockoneqback.user.domain.User;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.CascadeType.PERSIST;
+import static jakarta.persistence.CascadeType.PERSIST;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

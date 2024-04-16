@@ -40,4 +40,4 @@ include::{snippets}/TokenReissueApi/Success/request-fields.adoc[]
 
 HTTP Response
 include::{snippets}/TokenReissueApi/Success/response-body.adoc[]
-include::{snippets}/TokenReissueApi/Success/response-fields.adoc[]
+include::{snippets}/TokenReissueApi/Success/response-body.adoc[]

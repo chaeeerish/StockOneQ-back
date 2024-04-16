@@ -61,79 +61,79 @@ default value는 -1입니다.
 === 1. Authorization Header에 AccessToken이 없으면 친구 찾기에 실패한다
 HTTP Request
 include::{snippets}/UserApi/Find/Friend/Failure/Case1/http-request.adoc[]
-include::{snippets}/UserApi/Find/Friend/Failure/Case1/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Friend/Failure/Case1/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Friend/Failure/Case1/http-response.adoc[]
-include::{snippets}/UserApi/Find/Friend/Failure/Case1/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Friend/Failure/Case1/response-body.adoc[]
 
 === 2. 유효하지 않은 검색 조건이라면 친구 찾기에 실패한다
 HTTP Request
 include::{snippets}/UserApi/Find/Friend/Failure/Case2/http-request.adoc[]
 include::{snippets}/UserApi/Find/Friend/Failure/Case2/request-headers.adoc[]
-include::{snippets}/UserApi/Find/Friend/Failure/Case2/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Friend/Failure/Case2/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Friend/Failure/Case2/http-response.adoc[]
-include::{snippets}/UserApi/Find/Friend/Failure/Case2/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Friend/Failure/Case2/response-body.adoc[]
 
 === 3. 검색어를 입력하지 않았다면 친구 찾기에 실패한다
 HTTP Request
 include::{snippets}/UserApi/Find/Friend/Failure/Case3/http-request.adoc[]
 include::{snippets}/UserApi/Find/Friend/Failure/Case3/request-headers.adoc[]
-include::{snippets}/UserApi/Find/Friend/Failure/Case3/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Friend/Failure/Case3/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Friend/Failure/Case3/http-response.adoc[]
-include::{snippets}/UserApi/Find/Friend/Failure/Case3/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Friend/Failure/Case3/response-body.adoc[]
 
 === 4. 검색 조건에 따른 친구 찾기에 성공한다
 HTTP Request
 include::{snippets}/UserApi/Find/Friend/Success/http-request.adoc[]
 include::{snippets}/UserApi/Find/Friend/Success/request-headers.adoc[]
-include::{snippets}/UserApi/Find/Friend/Success/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Friend/Success/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Friend/Success/http-response.adoc[]
-include::{snippets}/UserApi/Find/Friend/Success/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Friend/Success/response-body.adoc[]
 
 
 == 점주 찾기 API
 === 1. Authorization Header에 AccessToken이 없으면 점주 찾기에 실패한다
 HTTP Request
 include::{snippets}/UserApi/Find/Business/Failure/Case1/http-request.adoc[]
-include::{snippets}/UserApi/Find/Business/Failure/Case1/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Business/Failure/Case1/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Business/Failure/Case1/http-response.adoc[]
-include::{snippets}/UserApi/Find/Business/Failure/Case1/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Business/Failure/Case1/response-body.adoc[]
 
 === 2. 유효하지 않은 검색 조건이라면 점주 찾기에 실패한다
 HTTP Request
 include::{snippets}/UserApi/Find/Business/Failure/Case2/http-request.adoc[]
 include::{snippets}/UserApi/Find/Business/Failure/Case2/request-headers.adoc[]
-include::{snippets}/UserApi/Find/Business/Failure/Case2/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Business/Failure/Case2/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Business/Failure/Case2/http-response.adoc[]
-include::{snippets}/UserApi/Find/Business/Failure/Case2/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Business/Failure/Case2/response-body.adoc[]
 
 === 3. 검색어를 입력하지 않았다면 점주 찾기에 실패한다
 HTTP Request
 include::{snippets}/UserApi/Find/Business/Failure/Case3/http-request.adoc[]
 include::{snippets}/UserApi/Find/Business/Failure/Case3/request-headers.adoc[]
-include::{snippets}/UserApi/Find/Business/Failure/Case3/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Business/Failure/Case3/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Business/Failure/Case3/http-response.adoc[]
-include::{snippets}/UserApi/Find/Business/Failure/Case3/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Business/Failure/Case3/response-body.adoc[]
 
 === 4. 검색 조건에 따른 점주 찾기에 성공한다
 HTTP Request
 include::{snippets}/UserApi/Find/Business/Success/http-request.adoc[]
 include::{snippets}/UserApi/Find/Business/Success/request-headers.adoc[]
-include::{snippets}/UserApi/Find/Business/Success/request-parameters.adoc[]
+include::{snippets}/UserApi/Find/Business/Success/query-parameters.adoc[]
 
 HTTP Response
 include::{snippets}/UserApi/Find/Business/Success/http-response.adoc[]
-include::{snippets}/UserApi/Find/Business/Success/response-fields.adoc[]
+include::{snippets}/UserApi/Find/Business/Success/response-body.adoc[]

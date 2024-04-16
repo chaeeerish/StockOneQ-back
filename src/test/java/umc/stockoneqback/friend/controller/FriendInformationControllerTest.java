@@ -25,7 +25,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.TokenFixture.ACCESS_TOKEN;
@@ -46,7 +46,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -65,7 +65,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                     "FriendApi/Information/Friends/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
@@ -90,7 +90,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -104,7 +104,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
@@ -133,7 +133,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -152,7 +152,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                     "FriendApi/Information/WaitingFriends/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
@@ -177,7 +177,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -191,7 +191,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
@@ -220,7 +220,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -239,7 +239,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                     "FriendApi/Information/RequestedFriends/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
@@ -264,7 +264,7 @@ class FriendInformationControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -278,7 +278,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(

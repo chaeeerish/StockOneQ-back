@@ -25,7 +25,7 @@ public enum StoreCondition implements EnumStandard {
                 .orElseThrow(() -> BaseException.type(ProductErrorCode.NOT_FOUND_STORE_CONDITION));
     }
 
-    @javax.persistence.Converter
+    @jakarta.persistence.Converter
     public static class StoreConditionConverter extends EnumConverter<StoreCondition> {
         public StoreConditionConverter() {
             super(StoreCondition.class);

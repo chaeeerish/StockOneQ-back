@@ -52,7 +52,7 @@ class CommentListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL, BOARD_ID)
-                    .param("page", String.valueOf(PAGE));
+                    .queryParam("page", String.valueOf(PAGE));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -74,7 +74,7 @@ class CommentListApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("boardId").description("댓글을 조회할 게시글 ID")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)")
                                     ),
                                     responseFields(
@@ -99,7 +99,7 @@ class CommentListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL, BOARD_ID)
-                    .param("page", String.valueOf(PAGE))
+                    .queryParam("page", String.valueOf(PAGE))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -116,7 +116,7 @@ class CommentListApiControllerTest extends ControllerTest {
                                     pathParameters(
                                             parameterWithName("boardId").description("댓글을 조회할 게시글 ID")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)")
                                     ),
                                     responseFields(

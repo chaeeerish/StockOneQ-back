@@ -1,11 +1,10 @@
 package umc.stockoneqback.share.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.global.base.Status;
-
-import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

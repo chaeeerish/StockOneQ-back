@@ -27,7 +27,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.TokenFixture.ACCESS_TOKEN;
@@ -49,8 +49,8 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
-                    .param("search", SEARCH);
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -69,7 +69,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                     "BusinessApi/List/Supervisors/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID"),
                                             parameterWithName("search").description("검색어")
                                     ),
@@ -93,8 +93,8 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
-                    .param("search", SEARCH)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -117,7 +117,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID"),
                                             parameterWithName("search").description("검색어")
                                     ),
@@ -143,8 +143,8 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
-                    .param("search", SEARCH)
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("search", SEARCH)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -158,7 +158,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID"),
                                             parameterWithName("search").description("검색어")
                                     ),
@@ -187,7 +187,7 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID));
+                    .queryParam("last", String.valueOf(LAST_USER_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -206,7 +206,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                     "BusinessApi/List/Managers/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
@@ -229,7 +229,7 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -252,7 +252,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
@@ -277,7 +277,7 @@ class BusinessListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("last", String.valueOf(LAST_USER_ID))
+                    .queryParam("last", String.valueOf(LAST_USER_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -291,7 +291,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(

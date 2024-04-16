@@ -1,5 +1,6 @@
 package umc.stockoneqback.share.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,7 +11,6 @@ import umc.stockoneqback.share.controller.dto.ShareRequest;
 import umc.stockoneqback.share.controller.dto.ShareResponse;
 import umc.stockoneqback.share.service.ShareService;
 
-import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 

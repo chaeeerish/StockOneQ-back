@@ -26,7 +26,6 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -64,7 +63,7 @@ public class AdminStaticApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("question", questionList.get(0))
+                    .queryParam("question", questionList.get(0))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -87,8 +86,8 @@ public class AdminStaticApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
-                                            parameterWithName("question").description("삭제할 질문")
+                                    requestBody(
+                                            parameterWithName("question").description("삭제할 질문").getAttributes()
                                     ),
                                     responseFields(
                                             fieldWithPath("status").type(JsonFieldType.NUMBER).description("HTTP 상태 코드"),
@@ -160,7 +159,7 @@ public class AdminStaticApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("question", questionList.get(0))
+                    .queryParam("question", questionList.get(0))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -176,8 +175,8 @@ public class AdminStaticApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
-                                            parameterWithName("question").description("삭제할 질문")
+                                    requestBody(
+                                            parameterWithName("question").description("삭제할 질문").getAttributes()
                                     )
                             )
                     );

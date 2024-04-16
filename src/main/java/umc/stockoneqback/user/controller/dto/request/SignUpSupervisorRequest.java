@@ -1,13 +1,13 @@
 package umc.stockoneqback.user.controller.dto.request;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.domain.Password;
 import umc.stockoneqback.user.domain.Role;
 import umc.stockoneqback.user.domain.User;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;

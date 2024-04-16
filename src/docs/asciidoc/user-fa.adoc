@@ -14,4 +14,4 @@ include::{snippets}/UserFAApi/GetFAList/Success/request-headers.adoc[]
 
 ==== HTTP Response
 include::{snippets}/UserFAApi/GetFAList/Success/http-response.adoc[]
-include::{snippets}/UserFAApi/GetFAList/Success/response-fields.adoc[]
+include::{snippets}/UserFAApi/GetFAList/Success/response-body.adoc[]

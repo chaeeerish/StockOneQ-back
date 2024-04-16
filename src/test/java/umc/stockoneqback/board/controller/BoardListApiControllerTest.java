@@ -28,7 +28,7 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.queryParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static umc.stockoneqback.fixture.BoardFixture.*;
@@ -56,10 +56,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD);
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -78,7 +78,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     "BoardApi/List/All/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -104,10 +104,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", INVALID_SORT)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", INVALID_SORT)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -130,7 +130,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -156,10 +156,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", INVALID_SEARCH)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", INVALID_SEARCH)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -182,7 +182,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -210,10 +210,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -227,7 +227,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용/작성자)"),
@@ -264,10 +264,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD);
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD);
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -286,7 +286,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     "BoardApi/List/My/View/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -312,10 +312,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", INVALID_SORT)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", INVALID_SORT)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -338,7 +338,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -364,10 +364,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", INVALID_SEARCH)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", INVALID_SEARCH)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -390,7 +390,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -418,10 +418,10 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .get(BASE_URL)
-                    .param("page", String.valueOf(PAGE))
-                    .param("sort", SORT_BY_TIME)
-                    .param("search", SEARCH_TYPE)
-                    .param("word", SEARCH_WORD)
+                    .queryParam("page", String.valueOf(PAGE))
+                    .queryParam("sort", SORT_BY_TIME)
+                    .queryParam("search", SEARCH_TYPE)
+                    .queryParam("word", SEARCH_WORD)
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -435,7 +435,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("page").description("page 번호(1페이지 = 0)"),
                                             parameterWithName("sort").description("정렬 기준(최신순/조회순)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -471,7 +471,7 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("boardId", String.valueOf(BOARD_ID));
+                    .queryParam("boardId", String.valueOf(BOARD_ID));
 
             // then
             final AuthErrorCode expectedError = AuthErrorCode.INVALID_PERMISSION;
@@ -490,7 +490,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     "BoardApi/List/My/Delete/Failure/Case1",
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("boardId").description("선택된 게시글들 ID")
                                     )
                             )
@@ -508,7 +508,7 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("boardId", String.valueOf(BOARD_ID))
+                    .queryParam("boardId", String.valueOf(BOARD_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -531,7 +531,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("boardId").description("선택된 게시글들 ID")
                                     )
                             )
@@ -549,7 +549,7 @@ class BoardListApiControllerTest extends ControllerTest {
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .delete(BASE_URL)
-                    .param("boardId", String.valueOf(BOARD_ID))
+                    .queryParam("boardId", String.valueOf(BOARD_ID))
                     .header(AUTHORIZATION, BEARER_TOKEN + " " + ACCESS_TOKEN);
 
             // then
@@ -563,7 +563,7 @@ class BoardListApiControllerTest extends ControllerTest {
                                     requestHeaders(
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
-                                    requestParameters(
+                                    queryParameters(
                                             parameterWithName("boardId").description("선택된 게시글들 ID")
                                     )
                             )

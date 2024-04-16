@@ -1,5 +1,7 @@
 package umc.stockoneqback.user.domain;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,8 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.util.regex.Pattern;
 
 @Getter
