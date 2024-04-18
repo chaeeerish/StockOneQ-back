@@ -155,14 +155,14 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(request ->
                 request
-                        .requestMatchers("/api/auth/login").permitAll()
-                        .requestMatchers("/api/auth/logout").permitAll()
-                        .requestMatchers("/api/auth/token/reissue").permitAll()
-                        .requestMatchers("/api/user/sign-up/**").permitAll()
                         .requestMatchers("/profile").permitAll()
                         .requestMatchers("/v3/**").permitAll()
                         .requestMatchers("/swagger-ui/**").permitAll()
-                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/token/reissue").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/logout").permitAll()
+                        .requestMatchers("/api/user/sign-up/**").permitAll()
+                        .requestMatchers("/api/user/find-id").permitAll()
                         .anyRequest().authenticated()
         );
 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import umc.stockoneqback.auth.domain.model.TokenType;
+import umc.stockoneqback.auth.domain.model.jwt.TokenType;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.utils.TokenProvider;
 import umc.stockoneqback.global.exception.BaseException;
@@ -20,17 +20,15 @@ public class ExtractTokenArgumentResolver implements HandlerMethodArgumentResolv
     private final TokenProvider tokenProvider;
 
     @Override
-    public boolean supportsParameter(final MethodParameter parameter) {
+    public boolean supportsParameter(MethodParameter parameter) {
         return parameter.hasParameterAnnotation(ExtractToken.class);
     }
 
     @Override
-    public Object resolveArgument(
-            final MethodParameter parameter,
-            final ModelAndViewContainer mavContainer,
-            final NativeWebRequest webRequest,
-            final WebDataBinderFactory binderFactory
-    ) {
+    public Object resolveArgument(final MethodParameter parameter,
+                                  final ModelAndViewContainer mavContainer,
+                                  final NativeWebRequest webRequest,
+                                  final WebDataBinderFactory binderFactory) {
         final HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
         final ExtractToken extractToken = parameter.getParameterAnnotation(ExtractToken.class);
 

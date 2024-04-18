@@ -1,6 +1,6 @@
 package umc.stockoneqback.global.annotation;
 
-import umc.stockoneqback.auth.domain.model.TokenType;
+import umc.stockoneqback.auth.domain.model.jwt.TokenType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
