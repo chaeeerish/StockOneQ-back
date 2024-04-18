@@ -9,7 +9,6 @@ import umc.stockoneqback.admin.dto.request.AddFARequest;
 import umc.stockoneqback.admin.service.AdminStaticService;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
 @RequiredArgsConstructor

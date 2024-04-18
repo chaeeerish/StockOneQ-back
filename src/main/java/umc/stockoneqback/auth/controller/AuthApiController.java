@@ -13,7 +13,6 @@ import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.auth.service.dto.response.AuthMember;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
 @RequiredArgsConstructor

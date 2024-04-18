@@ -10,7 +10,6 @@ import umc.stockoneqback.board.controller.dto.BoardRequest;
 import umc.stockoneqback.board.controller.dto.BoardResponse;
 import umc.stockoneqback.board.service.BoardService;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
 @RequiredArgsConstructor

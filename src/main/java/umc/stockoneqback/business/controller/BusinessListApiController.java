@@ -11,7 +11,6 @@ import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.business.service.BusinessListService;
 import umc.stockoneqback.business.service.dto.BusinessListResponse;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
 @RequiredArgsConstructor

@@ -8,7 +8,6 @@ import umc.stockoneqback.board.controller.dto.CustomBoardListResponse;
 import umc.stockoneqback.board.infra.query.dto.BoardList;
 import umc.stockoneqback.board.service.BoardListService;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 import java.util.List;
 

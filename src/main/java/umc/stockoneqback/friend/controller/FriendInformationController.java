@@ -11,7 +11,6 @@ import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.friend.service.FriendInformationService;
 import umc.stockoneqback.friend.service.dto.FriendAssembler;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
 @RequiredArgsConstructor
