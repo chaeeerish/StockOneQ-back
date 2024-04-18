@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.share.controller.dto.ShareRequest;
 import umc.stockoneqback.share.controller.dto.ShareResponse;
@@ -22,37 +24,37 @@ public class ShareApiController {
 
     @PreAuthorize("hasRole('SUPERVISOR')")
     @PostMapping("/{businessId}")
-    public ResponseEntity<Void> create(@ExtractPayload Long userId,
+    public ResponseEntity<Void> create(@Auth Authenticated authenticated,
                                        @PathVariable("businessId") Long businessId,
                                        @RequestParam(value = "category") String category,
                                        @RequestPart(value = "request") @Valid ShareRequest request,
                                        @RequestPart(value = "file", required = false) MultipartFile multipartFile) {
-        shareService.create(userId, businessId, category, request, multipartFile);
+        shareService.create(authenticated.id(), businessId, category, request, multipartFile);
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('SUPERVISOR')")
     @PostMapping("")
-    public ResponseEntity<Void> update(@ExtractPayload Long userId,
+    public ResponseEntity<Void> update(@Auth Authenticated authenticated,
                                        @RequestParam("id") Long shareId,
                                        @RequestPart(value = "request") @Valid ShareRequest request,
                                        @RequestPart(value = "file", required = false) MultipartFile multipartFile) {
-        shareService.update(userId, shareId, request, multipartFile);
+        shareService.update(authenticated.id(), shareId, request, multipartFile);
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @GetMapping("/{shareId}")
-    public ResponseEntity<ShareResponse> detail(@ExtractPayload Long userId,
+    public ResponseEntity<ShareResponse> detail(@Auth Authenticated authenticated,
                                                 @PathVariable Long shareId) {
-        return ResponseEntity.ok(shareService.detail(userId, shareId));
+        return ResponseEntity.ok(shareService.detail(authenticated.id(), shareId));
     }
 
     @PreAuthorize("hasRole('SUPERVISOR')")
     @DeleteMapping("")
-    public ResponseEntity<Void> delete(@ExtractPayload Long userId,
+    public ResponseEntity<Void> delete(@Auth Authenticated authenticated,
                                        @RequestParam List<Long> shareId) throws IOException {
-        shareService.delete(userId, shareId);
+        shareService.delete(authenticated.id(), shareId);
         return ResponseEntity.ok().build();
     }
 }

@@ -5,9 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.board.controller.dto.BoardRequest;
 import umc.stockoneqback.board.controller.dto.BoardResponse;
 import umc.stockoneqback.board.service.BoardService;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
@@ -18,30 +20,30 @@ public class BoardApiController {
 
     @PreAuthorize("hasRole('MANAGER')")
     @PostMapping("")
-    public ResponseEntity<Void> create(@ExtractPayload Long writerId,
+    public ResponseEntity<Void> create(@Auth Authenticated authenticated,
                                        @RequestBody @Valid BoardRequest request) {
-        Long boardId = boardService.create(writerId, request.title(), request.content());
+        Long boardId = boardService.create(authenticated.id(), request.title(), request.content());
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @PatchMapping("/{boardId}")
-    public ResponseEntity<Void> update(@ExtractPayload Long writerId, @PathVariable Long boardId,
+    public ResponseEntity<Void> update(@Auth Authenticated authenticated, @PathVariable Long boardId,
                                        @RequestBody @Valid BoardRequest request) {
-        boardService.update(writerId, boardId, request.title(), request.content());
+        boardService.update(authenticated.id(), boardId, request.title(), request.content());
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @GetMapping("/{boardId}")
-    public ResponseEntity<BoardResponse> loadBoard(@ExtractPayload Long userId, @PathVariable Long boardId) {
-        return ResponseEntity.ok(boardService.loadBoard(userId, boardId));
+    public ResponseEntity<BoardResponse> loadBoard(@Auth Authenticated authenticated, @PathVariable Long boardId) {
+        return ResponseEntity.ok(boardService.loadBoard(authenticated.id(), boardId));
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @PutMapping("/{boardId}/hit")
-    public ResponseEntity<Void> updateHit(@ExtractPayload Long userId, @PathVariable Long boardId) {
-        boardService.updateHit(userId, boardId);
+    public ResponseEntity<Void> updateHit(@Auth Authenticated authenticated, @PathVariable Long boardId) {
+        boardService.updateHit(authenticated.id(), boardId);
         return ResponseEntity.ok().build();
     }
 }

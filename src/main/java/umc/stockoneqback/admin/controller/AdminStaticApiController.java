@@ -7,6 +7,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.admin.dto.request.AddFARequest;
 import umc.stockoneqback.admin.service.AdminStaticService;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
@@ -17,7 +19,7 @@ public class AdminStaticApiController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/fa")
-    public ResponseEntity<Void> addFA(@ExtractPayload Long userId,
+    public ResponseEntity<Void> addFA(@Auth Authenticated authenticated,
                                       @Valid @RequestBody AddFARequest addFARequest) {
         AdminStaticService.addFA(addFARequest);
         return ResponseEntity.ok().build();
@@ -25,7 +27,7 @@ public class AdminStaticApiController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/fa")
-    public ResponseEntity<Void> deleteFA(@ExtractPayload Long userId,
+    public ResponseEntity<Void> deleteFA(@Auth Authenticated authenticated,
                                          @RequestParam(value = "question") String question) {
         AdminStaticService.deleteFA(question);
         return ResponseEntity.ok().build();

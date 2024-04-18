@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.user.controller.dto.request.FindLoginIdRequest;
 import umc.stockoneqback.user.domain.Email;
@@ -27,8 +29,8 @@ public class UserInformationApiController {
     }
 
     @GetMapping("/information")
-    public ResponseEntity<UserInformationResponse> getInformation(@ExtractPayload Long userId) {
-        UserInformationResponse response = userInformationService.getInformation(userId);
+    public ResponseEntity<UserInformationResponse> getInformation(@Auth Authenticated authenticated) {
+        UserInformationResponse response = userInformationService.getInformation(authenticated.id());
         return ResponseEntity.ok(response);
     }
 }

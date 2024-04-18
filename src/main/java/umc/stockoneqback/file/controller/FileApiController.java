@@ -4,9 +4,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.file.dto.UploadRequest;
 import umc.stockoneqback.file.exception.FileErrorCode;
 import umc.stockoneqback.file.service.FileService;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.global.exception.BaseException;
 
@@ -21,7 +23,7 @@ public class FileApiController {
     private final FileService fileService;
 
     @PostMapping(value = "/upload", consumes = MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> upload(@ExtractPayload Long userId, @ModelAttribute @Valid UploadRequest request) {
+    public ResponseEntity<String> upload(@Auth Authenticated authenticated, @ModelAttribute @Valid UploadRequest request) {
         String dir = request.dir();
         switch (dir) {
             case "board" -> {
@@ -49,7 +51,7 @@ public class FileApiController {
     }
 
     @GetMapping(value = "/download")
-    public ResponseEntity<byte[]> download(@ExtractPayload Long userId, String fileKey) throws IOException {
+    public ResponseEntity<byte[]> download(@Auth Authenticated authenticated, String fileKey) throws IOException {
         return fileService.download(fileKey);
     }
 }

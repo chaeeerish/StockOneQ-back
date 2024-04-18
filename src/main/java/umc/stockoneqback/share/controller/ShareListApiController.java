@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.business.infra.query.dto.FilteredBusinessUser;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
 import umc.stockoneqback.share.service.ShareListService;
@@ -22,18 +24,18 @@ public class ShareListApiController {
 
     @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @GetMapping("/users")
-    public ResponseEntity<FilteredBusinessUser> userSelectBox(@ExtractPayload Long userId) {
-        return ResponseEntity.ok(shareListService.userSelectBox(userId));
+    public ResponseEntity<FilteredBusinessUser> userSelectBox(@Auth Authenticated authenticated) {
+        return ResponseEntity.ok(shareListService.userSelectBox(authenticated.id()));
     }
 
     @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @GetMapping("")
-    public ResponseEntity<CustomShareListPage> shareList(@ExtractPayload Long userId,
+    public ResponseEntity<CustomShareListPage> shareList(@Auth Authenticated authenticated,
                                                          @RequestParam(value = "user") Long userBusinessId,
                                                          @RequestParam(value = "page", required = false, defaultValue = "0") int page,
                                                          @RequestParam(value = "category", required = false, defaultValue = "공지사항") String category,
                                                          @RequestParam(value = "search", required = false, defaultValue = "제목") String searchType,
                                                          @RequestParam(value = "word", required = false, defaultValue = "") String searchWord) throws IOException {
-        return ResponseEntity.ok(shareListService.getShareList(userId, userBusinessId, page, category, searchType, searchWord));
+        return ResponseEntity.ok(shareListService.getShareList(authenticated.id(), userBusinessId, page, category, searchType, searchWord));
     }
 }

@@ -5,6 +5,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.global.base.BaseResponse;
 import umc.stockoneqback.user.service.UserFAService;
@@ -20,7 +22,7 @@ public class UserFAApiController {
 
     @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @GetMapping("/fa")
-    public BaseResponse<List<GetFAResponse>> getFA(@ExtractPayload Long userId) {
+    public BaseResponse<List<GetFAResponse>> getFA(@Auth Authenticated authenticated) {
         return new BaseResponse<>(userFAService.getFA());
     }
 }

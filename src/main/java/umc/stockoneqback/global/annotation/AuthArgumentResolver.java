@@ -22,12 +22,8 @@ public class AuthArgumentResolver implements HandlerMethodArgumentResolver {
     }
 
     @Override
-    public Authenticated resolveArgument(
-            final MethodParameter parameter,
-            final ModelAndViewContainer mavContainer,
-            final NativeWebRequest webRequest,
-            final WebDataBinderFactory binderFactory
-    ) {
+    public Authenticated resolveArgument(final MethodParameter parameter, final ModelAndViewContainer mavContainer,
+                                         final NativeWebRequest webRequest, final WebDataBinderFactory binderFactory) {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (isNotAuthUser(authentication)) {

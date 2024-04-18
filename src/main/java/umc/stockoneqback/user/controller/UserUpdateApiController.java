@@ -4,6 +4,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.user.controller.dto.request.UpdatePasswordRequest;
 import umc.stockoneqback.user.controller.dto.request.UserInfoRequest;
@@ -18,8 +20,8 @@ public class UserUpdateApiController {
     private final UserUpdateService userUpdateService;
 
     @PutMapping("/update")
-    public ResponseEntity<Void> updateInformation(@ExtractPayload Long userId, @RequestBody @Valid UserInfoRequest request) {
-        userUpdateService.updateInformation(userId, request.name(), request.birth(), request.email(), request.loginId(), request.password(), request.phoneNumber());
+    public ResponseEntity<Void> updateInformation(@Auth Authenticated authenticated, @RequestBody @Valid UserInfoRequest request) {
+        userUpdateService.updateInformation(authenticated.id(), request.name(), request.birth(), request.email(), request.loginId(), request.password(), request.phoneNumber());
         return ResponseEntity.ok().build();
     }
 

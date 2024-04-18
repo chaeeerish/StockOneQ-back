@@ -21,7 +21,8 @@ public class TokenReissueApiController {
     private final TokenResponseWriter tokenResponseWriter;
 
     @PostMapping
-    public ResponseEntity<Void> reissueTokens(@ExtractToken(tokenType = TokenType.REFRESH) final String refreshToken, final HttpServletResponse response) {
+    public ResponseEntity<Void> reissueTokens(@ExtractToken(tokenType = TokenType.REFRESH) final String refreshToken,
+                                              final HttpServletResponse response) {
         final AuthToken authToken = tokenReissueService.invoke(new ReissueTokenRequest(refreshToken));
         tokenResponseWriter.applyToken(response, authToken);
 
