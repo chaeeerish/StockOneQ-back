@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
-import umc.stockoneqback.auth.domain.model.AuthToken;
+import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 
 import static org.springframework.boot.web.server.Cookie.SameSite.STRICT;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;

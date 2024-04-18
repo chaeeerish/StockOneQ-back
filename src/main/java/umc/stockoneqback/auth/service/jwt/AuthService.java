@@ -3,7 +3,7 @@ package umc.stockoneqback.auth.service.jwt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.auth.domain.model.AuthToken;
+import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.service.dto.response.AuthMember;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.global.exception.BaseException;

@@ -1,4 +1,4 @@
-package umc.stockoneqback.auth.domain.model;
+package umc.stockoneqback.auth.domain.model.jwt;
 
 import java.util.List;
 

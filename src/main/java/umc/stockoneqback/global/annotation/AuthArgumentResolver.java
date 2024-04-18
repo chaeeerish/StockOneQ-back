@@ -9,7 +9,7 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import umc.stockoneqback.auth.domain.model.Authenticated;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.global.security.principle.UserPrincipal;

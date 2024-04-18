@@ -2,7 +2,7 @@ package umc.stockoneqback.auth.service.jwt;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import umc.stockoneqback.auth.domain.model.AuthToken;
+import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.utils.TokenProvider;
 
 @Component

@@ -3,7 +3,7 @@ package umc.stockoneqback.auth.service.fcm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.auth.domain.model.FcmToken;
+import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.domain.repository.FcmTokenRedisRepository;
 
 import java.util.List;

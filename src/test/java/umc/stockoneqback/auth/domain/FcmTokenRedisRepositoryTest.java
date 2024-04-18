@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.redis.DataRedisTest;
 import org.springframework.context.annotation.Import;
-import umc.stockoneqback.auth.domain.model.FcmToken;
+import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.domain.repository.FcmTokenRedisRepository;
 import umc.stockoneqback.common.EmbeddedRedisConfig;
 

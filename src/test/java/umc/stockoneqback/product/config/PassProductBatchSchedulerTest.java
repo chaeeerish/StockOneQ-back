@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
-import umc.stockoneqback.auth.domain.model.FcmToken;
+import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.domain.repository.FcmTokenRedisRepository;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.common.DatabaseCleaner;
