@@ -1,4 +1,4 @@
-package umc.stockoneqback.auth.domain.model;
+package umc.stockoneqback.auth.domain.model.fcm;
 
 import jakarta.persistence.Id;
 import lombok.AccessLevel;

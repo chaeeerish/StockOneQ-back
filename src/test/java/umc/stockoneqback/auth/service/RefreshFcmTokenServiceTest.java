@@ -4,8 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.auth.domain.model.FcmToken;
 import umc.stockoneqback.auth.domain.model.RefreshToken;
+import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.common.ServiceTest;
 
