@@ -8,11 +8,11 @@ import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.business.domain.BusinessRepository;
 import umc.stockoneqback.business.infra.query.dto.BusinessList;
 import umc.stockoneqback.common.RepositoryTest;
+import umc.stockoneqback.field.domain.company.Company;
+import umc.stockoneqback.field.domain.company.CompanyRepository;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.StoreRepository;
 import umc.stockoneqback.global.base.RelationStatus;
-import umc.stockoneqback.role.domain.company.Company;
-import umc.stockoneqback.role.domain.company.CompanyRepository;
-import umc.stockoneqback.role.domain.store.Store;
-import umc.stockoneqback.role.domain.store.StoreRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 

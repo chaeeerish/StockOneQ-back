@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.product.domain.ProductSortCondition;
@@ -14,7 +15,6 @@ import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;
 import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
 import umc.stockoneqback.product.infra.query.dto.QProductFindPage;
-import umc.stockoneqback.role.domain.store.Store;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;

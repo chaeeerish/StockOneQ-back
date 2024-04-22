@@ -55,3 +55,12 @@ jwt:
 discord:
   webhookId: ${DISCORD_WEBHOOK_ID}
   webhookToken: ${DISCORD_WEBHOOK_TOKEN}
+
+springdoc:
+  show-login-endpoint: true
+
+server:
+  port: 8081
+
+cors:
+  allowed-origin-patterns: localhost:8081

@@ -1,17 +1,16 @@
 package umc.stockoneqback.auth.controller;
 
-import jakarta.validation.Valid;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import umc.stockoneqback.auth.controller.dto.request.SaveFcmRequest;
-import umc.stockoneqback.auth.service.TokenReissueService;
-import umc.stockoneqback.auth.service.dto.response.TokenResponse;
-import umc.stockoneqback.global.annotation.ExtractPayload;
+import umc.stockoneqback.auth.controller.dto.request.ReissueTokenRequest;
+import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
+import umc.stockoneqback.auth.domain.model.jwt.TokenType;
+import umc.stockoneqback.auth.service.jwt.TokenReissueService;
+import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.global.annotation.ExtractToken;
 
 @RestController
@@ -19,13 +18,14 @@ import umc.stockoneqback.global.annotation.ExtractToken;
 @RequestMapping("/api/token/reissue")
 public class TokenReissueApiController {
     private final TokenReissueService tokenReissueService;
+    private final TokenResponseWriter tokenResponseWriter;
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @PostMapping
-    public ResponseEntity<TokenResponse> reissueTokens(@ExtractPayload Long userId,
-                                                       @ExtractToken String refreshToken,
-                                                       @RequestBody @Valid SaveFcmRequest saveFcmRequest) {
-        TokenResponse tokenResponse = tokenReissueService.reissueTokens(userId, refreshToken, saveFcmRequest.fcmToken());
-        return ResponseEntity.ok(tokenResponse);
+    public ResponseEntity<Void> reissueTokens(@ExtractToken(tokenType = TokenType.REFRESH) final String refreshToken,
+                                              final HttpServletResponse response) {
+        final AuthToken authToken = tokenReissueService.invoke(new ReissueTokenRequest(refreshToken));
+        tokenResponseWriter.applyToken(response, authToken);
+
+        return ResponseEntity.noContent().build();
     }
 }

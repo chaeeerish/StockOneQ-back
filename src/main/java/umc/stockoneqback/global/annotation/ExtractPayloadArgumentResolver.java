@@ -7,14 +7,17 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
+import umc.stockoneqback.auth.domain.model.jwt.TokenType;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.auth.utils.AuthorizationExtractor;
-import umc.stockoneqback.auth.utils.JwtTokenProvider;
+import umc.stockoneqback.auth.utils.TokenProvider;
 import umc.stockoneqback.global.exception.BaseException;
+
+import static umc.stockoneqback.auth.utils.RequestTokenExtractor.extractAccessToken;
+import static umc.stockoneqback.auth.utils.RequestTokenExtractor.extractRefreshToken;
 
 @RequiredArgsConstructor
 public class ExtractPayloadArgumentResolver implements HandlerMethodArgumentResolver {
-    private final JwtTokenProvider jwtTokenProvider;
+    private final TokenProvider tokenProvider;
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
@@ -22,15 +25,22 @@ public class ExtractPayloadArgumentResolver implements HandlerMethodArgumentReso
     }
 
     @Override
-    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
-        HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
-        String token = AuthorizationExtractor.extractToken(request)
-                .orElseThrow(() -> BaseException.type(AuthErrorCode.INVALID_PERMISSION));
-        validateTokenIntegrity(token);
-        return jwtTokenProvider.getId(token);
+    public Object resolveArgument(final MethodParameter parameter, final ModelAndViewContainer mavContainer,
+                                  final NativeWebRequest webRequest, final WebDataBinderFactory binderFactory) {
+        final HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
+
+        final String token = getToken(request, TokenType.ACCESS);
+        tokenProvider.validateToken(token);
+
+        return tokenProvider.getId(token);
     }
 
-    private void validateTokenIntegrity(String token) {
-        jwtTokenProvider.isTokenValid(token);
+    private String getToken(final HttpServletRequest request, final TokenType type) {
+        if (type == TokenType.ACCESS) {
+            return extractAccessToken(request)
+                    .orElseThrow(() -> BaseException.type(AuthErrorCode.INVALID_PERMISSION));
+        }
+        return extractRefreshToken(request)
+                .orElseThrow(() -> BaseException.type(AuthErrorCode.INVALID_PERMISSION));
     }
 }

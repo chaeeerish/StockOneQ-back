@@ -16,7 +16,7 @@ import java.util.Date;
 
 @Slf4j
 @Component
-public class JwtTokenProvider {
+public class JwtTokenProvider implements TokenProvider {
     private final SecretKey secretKey;
     private final long accessTokenValidityInMilliseconds;
     private final long refreshTokenValidityInMilliseconds;
@@ -29,11 +29,12 @@ public class JwtTokenProvider {
         this.refreshTokenValidityInMilliseconds = refreshTokenValidityInMilliseconds;
     }
 
-
+    @Override
     public String createAccessToken(Long userId) {
         return createToken(userId, accessTokenValidityInMilliseconds);
     }
 
+    @Override
     public String createRefreshToken(Long userId) {
         return createToken(userId, refreshTokenValidityInMilliseconds);
     }
@@ -53,22 +54,28 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-
+    @Override
     public Long getId(String token) {
         return getClaims(token)
                 .getBody()
                 .get("id", Long.class);
     }
 
-    public boolean isTokenValid(String token) {
+    @Override
+    public void validateToken(final String token) {
         try {
-            Jws<Claims> claims = getClaims(token);
-            Date expiredDate = claims.getBody().getExpiration();
-            Date now = new Date();
-            return expiredDate.after(now);
-        } catch (ExpiredJwtException e) {
-            throw BaseException.type(AuthErrorCode.AUTH_EXPIRED_TOKEN);
-        } catch (SecurityException | MalformedJwtException | UnsupportedJwtException | IllegalArgumentException e) {
+            final Jws<Claims> claims = getClaims(token);
+            final Date expiredDate = claims.getBody().getExpiration();
+            final Date now = new Date();
+
+            if (expiredDate.before(now)) {
+                throw BaseException.type(AuthErrorCode.AUTH_EXPIRED_TOKEN);
+            }
+        } catch (final ExpiredJwtException |
+                       SecurityException |
+                       MalformedJwtException |
+                       UnsupportedJwtException |
+                       IllegalArgumentException e) {
             throw BaseException.type(AuthErrorCode.AUTH_INVALID_TOKEN);
         }
     }

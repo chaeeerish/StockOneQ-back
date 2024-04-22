@@ -110,12 +110,12 @@ import static umc.stockoneqback.friend.domain.QFriend.friend;
 import static umc.stockoneqback.friend.domain.QFriend.friend;
 ^
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/friend/infra/query/FriendFindQueryRepositoryImpl.java:13: error: cannot find symbol
-import static umc.stockoneqback.role.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.store.QStore.store;
                                                  ^
   symbol:   class QStore
-  location: package umc.stockoneqback.role.domain.store
+  location: package umc.stockoneqback.field.domain.store
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/friend/infra/query/FriendFindQueryRepositoryImpl.java:13: error: static import only from classes and interfaces
-import static umc.stockoneqback.role.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.store.QStore.store;
 ^
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/friend/infra/query/FriendFindQueryRepositoryImpl.java:14: error: cannot find symbol
 import static umc.stockoneqback.user.domain.QUser.user;
@@ -136,12 +136,12 @@ import umc.stockoneqback.friend.infra.query.dto.response.QFriendInformation;
   symbol:   class QFriendInformation
   location: package umc.stockoneqback.friend.infra.query.dto.response
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/friend/infra/query/FriendInformationQueryRepositoryImpl.java:13: error: cannot find symbol
-import static umc.stockoneqback.role.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.store.QStore.store;
                                                  ^
   symbol:   class QStore
-  location: package umc.stockoneqback.role.domain.store
+  location: package umc.stockoneqback.field.domain.store
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/friend/infra/query/FriendInformationQueryRepositoryImpl.java:13: error: static import only from classes and interfaces
-import static umc.stockoneqback.role.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.store.QStore.store;
 ^
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/friend/infra/query/FriendInformationQueryRepositoryImpl.java:14: error: cannot find symbol
 import static umc.stockoneqback.user.domain.QUser.user;
@@ -201,10 +201,10 @@ import umc.stockoneqback.business.infra.query.dto.QFindBusinessUser;
   symbol:   class QFindBusinessUser
   location: package umc.stockoneqback.business.infra.query.dto
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/business/infra/query/BusinessFindQueryRepositoryImpl.java:10: error: cannot find symbol
-import umc.stockoneqback.role.domain.store.QPartTimer;
+import umc.stockoneqback.field.domain.store.QPartTimer;
                                           ^
   symbol:   class QPartTimer
-  location: package umc.stockoneqback.role.domain.store
+  location: package umc.stockoneqback.field.domain.store
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/business/infra/query/BusinessFindQueryRepositoryImpl.java:14: error: cannot find symbol
 import static umc.stockoneqback.business.domain.QBusiness.business;
                                                ^
@@ -214,12 +214,12 @@ import static umc.stockoneqback.business.domain.QBusiness.business;
 import static umc.stockoneqback.business.domain.QBusiness.business;
 ^
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/business/infra/query/BusinessFindQueryRepositoryImpl.java:15: error: cannot find symbol
-import static umc.stockoneqback.role.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.store.QStore.store;
                                                  ^
   symbol:   class QStore
-  location: package umc.stockoneqback.role.domain.store
+  location: package umc.stockoneqback.field.domain.store
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/business/infra/query/BusinessFindQueryRepositoryImpl.java:15: error: static import only from classes and interfaces
-import static umc.stockoneqback.role.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.store.QStore.store;
 ^
 /Users/chaeeerish/Documents/GitHub/-StockOneQ-back/src/main/java/umc/stockoneqback/business/infra/query/BusinessFindQueryRepositoryImpl.java:21: error: cannot find symbol
     private static final QPartTimer partTimer = new QPartTimer("partTimer");

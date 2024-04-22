@@ -209,7 +209,7 @@ class UserInformationApiControllerTest extends ControllerTest {
         void successManager() throws Exception {
             // given
             UserInformationResponse response = new UserInformationResponse(1L, MIKE.getEmail(), MIKE.getLoginId(), MIKE.name(), MIKE.getBirth(),
-                    MIKE.getPhoneNumber(), MIKE.getRole().getValue(), A_PASTA.name(), A_PASTA.getCode(), A_PASTA.getAddress(), null);
+                    MIKE.getPhoneNumber(), MIKE.getRoleType().getValue(), A_PASTA.name(), A_PASTA.getCode(), A_PASTA.getAddress(), null);
             doReturn(response)
                     .when(userInformationService)
                     .getInformation(any());
@@ -252,7 +252,7 @@ class UserInformationApiControllerTest extends ControllerTest {
         void successPartTimer() throws Exception {
             // given
             UserInformationResponse response = new UserInformationResponse(1L, SAEWOO.getEmail(), SAEWOO.getLoginId(), SAEWOO.name(), SAEWOO.getBirth(),
-                    SAEWOO.getPhoneNumber(), SAEWOO.getRole().getValue(), A_PASTA.name(), null, A_PASTA.getAddress(), null);
+                    SAEWOO.getPhoneNumber(), SAEWOO.getRoleType().getValue(), A_PASTA.name(), null, A_PASTA.getAddress(), null);
             doReturn(response)
                     .when(userInformationService)
                     .getInformation(any());
@@ -295,7 +295,7 @@ class UserInformationApiControllerTest extends ControllerTest {
         void successSupervisor() throws Exception {
             // given
             UserInformationResponse response = new UserInformationResponse(1L, JACK.getEmail(), JACK.getLoginId(), JACK.name(), JACK.getBirth(),
-                    JACK.getPhoneNumber(), JACK.getRole().getValue(), null, null, null, "투썸플레이스 본사");
+                    JACK.getPhoneNumber(), JACK.getRoleType().getValue(), null, null, null, "투썸플레이스 본사");
             doReturn(response)
                     .when(userInformationService)
                     .getInformation(any());

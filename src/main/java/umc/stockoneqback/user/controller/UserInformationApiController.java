@@ -3,12 +3,12 @@ package umc.stockoneqback.user.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import umc.stockoneqback.global.annotation.ExtractPayload;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.user.controller.dto.request.FindLoginIdRequest;
 import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.service.UserInformationService;
@@ -27,10 +27,9 @@ public class UserInformationApiController {
         return ResponseEntity.ok(response);
     }
 
-    @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @GetMapping("/information")
-    public ResponseEntity<UserInformationResponse> getInformation(@ExtractPayload Long userId) {
-        UserInformationResponse response = userInformationService.getInformation(userId);
+    public ResponseEntity<UserInformationResponse> getInformation(@Auth Authenticated authenticated) {
+        UserInformationResponse response = userInformationService.getInformation(authenticated.id());
         return ResponseEntity.ok(response);
     }
 }

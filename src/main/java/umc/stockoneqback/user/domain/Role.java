@@ -1,31 +1,36 @@
 package umc.stockoneqback.user.domain;
 
+import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import umc.stockoneqback.global.utils.EnumConverter;
-import umc.stockoneqback.global.utils.EnumStandard;
+import lombok.NoArgsConstructor;
 
 @Getter
-@RequiredArgsConstructor
-public enum Role implements EnumStandard {
-    MANAGER("ROLE_MANAGER", "사장님"),
-    PART_TIMER("ROLE_PART_TIMER", "아르바이트생"),
-    SUPERVISOR("ROLE_SUPERVISOR", "슈퍼바이저"),
-    ADMINISTRATOR("ROLE_ADMIN", "관리자"),
-    ;
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+@Table(name = "roles")
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private final String authority;
-    private final String description;
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
 
-    @Override
-    public String getValue() {
-        return authority;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    private User user;
+
+    private Role(final User user, final RoleType roleType) {
+        this.user = user;
+        this.roleType = roleType;
     }
 
-    @jakarta.persistence.Converter
-    public static class RoleConverter extends EnumConverter<Role> {
-        public RoleConverter() {
-            super(Role.class);
-        }
+    public static Role createRole(final User user, final RoleType roleType) {
+        return new Role(user, roleType);
+    }
+
+    public String getAuthority() {
+        return roleType.getAuthority();
     }
 }

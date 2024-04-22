@@ -199,10 +199,8 @@ public class ApiGlobalExceptionHandler {
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             String token = authorizationHeader.substring(7);
-
-            if (jwtTokenProvider.isTokenValid(token)) {
-                return jwtTokenProvider.getId(token);
-            }
+            jwtTokenProvider.validateToken(token);
+            return jwtTokenProvider.getId(token);
         }
 
         return -1L;

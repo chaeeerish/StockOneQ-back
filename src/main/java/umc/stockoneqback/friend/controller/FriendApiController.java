@@ -4,8 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.friend.service.FriendService;
-import umc.stockoneqback.global.annotation.ExtractPayload;
+import umc.stockoneqback.global.annotation.Auth;
 
 @RestController
 @RequiredArgsConstructor
@@ -13,38 +14,38 @@ import umc.stockoneqback.global.annotation.ExtractPayload;
 public class FriendApiController {
     private final FriendService friendService;
 
-    @PreAuthorize("hasRole('MANAGER')")
+    @PreAuthorize("hasRole('PART_TIMER')")
     @PostMapping("/request/{receiverId}")
-    public ResponseEntity<Void> requestFriend(@ExtractPayload Long senderId, @PathVariable Long receiverId) {
-        Long friendId = friendService.requestFriend(senderId, receiverId);
+    public ResponseEntity<Void> requestFriend(@Auth Authenticated authenticated, @PathVariable Long receiverId) {
+        Long friendId = friendService.requestFriend(authenticated.id(), receiverId);
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @DeleteMapping("/request/{receiverId}")
-    public ResponseEntity<Void> cancelFriend(@ExtractPayload Long senderId, @PathVariable Long receiverId) {
-        friendService.cancelFriend(senderId, receiverId);
+    public ResponseEntity<Void> cancelFriend(@Auth Authenticated authenticated, @PathVariable Long receiverId) {
+        friendService.cancelFriend(authenticated.id(), receiverId);
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @PatchMapping("/accept/{senderId}")
-    public ResponseEntity<Void> acceptFriend(@ExtractPayload Long receiverId, @PathVariable Long senderId) {
-        Long friendId = friendService.acceptFriend(senderId, receiverId);
+    public ResponseEntity<Void> acceptFriend(@Auth Authenticated authenticated, @PathVariable Long senderId) {
+        Long friendId = friendService.acceptFriend(senderId, authenticated.id());
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @DeleteMapping("/reject/{senderId}")
-    public ResponseEntity<Void> rejectFriend(@ExtractPayload Long receiverId, @PathVariable Long senderId) {
-        friendService.rejectFriend(senderId, receiverId);
+    public ResponseEntity<Void> rejectFriend(@Auth Authenticated authenticated, @PathVariable Long senderId) {
+        friendService.rejectFriend(senderId, authenticated.id());
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @DeleteMapping("/{friendUserId}")
-    public ResponseEntity<Void> deleteFriend(@ExtractPayload Long userId, @PathVariable Long friendUserId) {
-        friendService.deleteFriend(userId, friendUserId);
+    public ResponseEntity<Void> deleteFriend(@Auth Authenticated authenticated, @PathVariable Long friendUserId) {
+        friendService.deleteFriend(authenticated.id(), friendUserId);
         return ResponseEntity.ok().build();
     }
 }

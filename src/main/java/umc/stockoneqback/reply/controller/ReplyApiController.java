@@ -6,7 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import umc.stockoneqback.global.annotation.ExtractPayload;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.reply.controller.dto.ReplyRequest;
 import umc.stockoneqback.reply.service.ReplyService;
 
@@ -18,26 +19,26 @@ public class ReplyApiController {
 
     @PreAuthorize("hasRole('MANAGER')")
     @PostMapping("/{commentId}")
-    public ResponseEntity<Void> create(@ExtractPayload Long writerId, @PathVariable Long commentId,
+    public ResponseEntity<Void> create(@Auth Authenticated authenticated, @PathVariable Long commentId,
                                        @RequestPart(value = "request")  @Valid ReplyRequest request,
                                        @RequestPart(value = "image", required = false) MultipartFile multipartFile) {
-        replyService.create(writerId, commentId, multipartFile, request.content());
+        replyService.create(authenticated.id(), commentId, multipartFile, request.content());
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @PatchMapping("/{replyId}")
-    public ResponseEntity<Void> update(@ExtractPayload Long writerId, @PathVariable Long replyId,
+    public ResponseEntity<Void> update(@Auth Authenticated authenticated, @PathVariable Long replyId,
                                        @RequestPart(value = "request")  @Valid ReplyRequest request,
                                        @RequestPart(value = "image", required = false) MultipartFile multipartFile) {
-        replyService.update(writerId, replyId, multipartFile, request.content());
+        replyService.update(authenticated.id(), replyId, multipartFile, request.content());
         return ResponseEntity.ok().build();
     }
 
     @PreAuthorize("hasRole('MANAGER')")
     @DeleteMapping("/{replyId}")
-    public ResponseEntity<Void> delete(@ExtractPayload Long writerId, @PathVariable Long replyId) {
-        replyService.delete(writerId, replyId);
+    public ResponseEntity<Void> delete(@Auth Authenticated authenticated, @PathVariable Long replyId) {
+        replyService.delete(authenticated.id(), replyId);
         return ResponseEntity.ok().build();
     }
 }

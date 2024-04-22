@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.fixture.ProductFixture;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.product.domain.Product;
@@ -14,7 +15,6 @@ import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;
 import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
 import umc.stockoneqback.product.service.dto.response.SearchProductResponse;
-import umc.stockoneqback.role.domain.store.Store;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 

@@ -14,7 +14,7 @@ import umc.stockoneqback.share.exception.ShareErrorCode;
 import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
 import umc.stockoneqback.share.infra.query.dto.ShareList;
 import umc.stockoneqback.share.repository.ShareRepository;
-import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
@@ -30,9 +30,9 @@ public class ShareListService {
     @Transactional
     public FilteredBusinessUser userSelectBox(Long userId) {
         User user = userFindService.findById(userId);
-        Role role = classifyUser(user);
+        RoleType roleType = classifyUser(user);
 
-        return switch (role) {
+        return switch (roleType) {
             case MANAGER -> businessRepository.findBusinessByManager(userId);
             case PART_TIMER -> businessRepository.findBusinessByPartTimer(userId);
             case SUPERVISOR -> businessRepository.findBusinessBySupervisor(userId);
@@ -44,9 +44,9 @@ public class ShareListService {
     public CustomShareListPage getShareList(Long userId, Long selectedBusinessId, int page, String category,
                                             String searchType, String searchWord) {
         User user = userFindService.findById(userId);
-        Role role = classifyUser(user);
+        RoleType roleType = classifyUser(user);
 
-        switch (role) {
+        switch (roleType) {
             case MANAGER -> {
                 businessRepository.findByIdAndManager(selectedBusinessId, user)
                         .orElseThrow(() -> BaseException.type(BusinessErrorCode.BUSINESS_NOT_FOUND));
@@ -88,10 +88,10 @@ public class ShareListService {
         }
     }
 
-    private Role classifyUser(User user) {
-        if (user.getRole() == null) {
+    private RoleType classifyUser(User user) {
+        if (user.getRoles() == null) {
             throw BaseException.type(UserErrorCode.ROLE_NOT_FOUND);
         }
-        return user.getRole();
+        return user.getRoles().get(0).getRoleType();
     }
 }

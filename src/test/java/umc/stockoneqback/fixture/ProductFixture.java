@@ -2,9 +2,9 @@ package umc.stockoneqback.fixture;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.product.domain.Product;
 import umc.stockoneqback.product.domain.StoreCondition;
-import umc.stockoneqback.role.domain.store.Store;
 
 import java.time.LocalDate;
 

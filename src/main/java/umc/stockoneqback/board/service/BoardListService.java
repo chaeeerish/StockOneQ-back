@@ -16,7 +16,7 @@ import umc.stockoneqback.comment.domain.CommentRepository;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.reply.domain.ReplyRepository;
-import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
@@ -130,7 +130,7 @@ public class BoardListService {
     }
 
     private void validateUser(User user) {
-        if (user.getRole() != Role.MANAGER || user.getStatus() == Status.EXPIRED) {
+        if (user.getRoles().get(0).getRoleType() != RoleType.MANAGER || user.getStatus() == Status.EXPIRED) {
             throw BaseException.type(UserErrorCode.USER_NOT_ALLOWED);
         }
     }

@@ -3,8 +3,8 @@ package umc.stockoneqback.product.domain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.product.infra.query.ProductFindQueryRepository;
-import umc.stockoneqback.role.domain.store.Store;
 import umc.stockoneqback.user.domain.User;
 
 import java.time.LocalDate;
