@@ -3,11 +3,11 @@ package umc.stockoneqback.business.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.business.domain.Business;
-import umc.stockoneqback.business.domain.BusinessRepository;
+import umc.stockoneqback.business.domain.model.Business;
+import umc.stockoneqback.business.domain.repository.BusinessRepository;
 import umc.stockoneqback.business.exception.BusinessErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 import java.util.List;

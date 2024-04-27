@@ -8,7 +8,7 @@ import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.board.infra.query.dto.BoardList;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.util.ArrayList;

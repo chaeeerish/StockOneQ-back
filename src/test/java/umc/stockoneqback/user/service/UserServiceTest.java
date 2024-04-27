@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.company.Company;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;

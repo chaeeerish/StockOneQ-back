@@ -5,7 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.stockoneqback.board.domain.Board;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

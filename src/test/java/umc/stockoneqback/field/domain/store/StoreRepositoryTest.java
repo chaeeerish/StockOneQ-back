@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.RepositoryTest;
+import umc.stockoneqback.field.domain.store.model.Store;
+import umc.stockoneqback.field.domain.store.repository.StoreRepository;
 import umc.stockoneqback.global.base.Status;
 
 import static org.assertj.core.api.Assertions.assertThat;

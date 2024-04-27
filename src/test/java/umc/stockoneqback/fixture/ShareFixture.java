@@ -2,9 +2,9 @@ package umc.stockoneqback.fixture;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import umc.stockoneqback.business.domain.Business;
-import umc.stockoneqback.share.domain.Category;
-import umc.stockoneqback.share.domain.Share;
+import umc.stockoneqback.business.domain.model.Business;
+import umc.stockoneqback.share.domain.model.Category;
+import umc.stockoneqback.share.domain.model.Share;
 
 @Getter
 @RequiredArgsConstructor

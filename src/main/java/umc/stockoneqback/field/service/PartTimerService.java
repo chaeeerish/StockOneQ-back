@@ -3,11 +3,11 @@ package umc.stockoneqback.field.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.field.domain.store.PartTimer;
-import umc.stockoneqback.field.domain.store.PartTimerRepository;
+import umc.stockoneqback.field.domain.store.model.PartTimer;
+import umc.stockoneqback.field.domain.store.repository.PartTimerRepository;
 import umc.stockoneqback.field.exception.PartTimerErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.util.Optional;
 

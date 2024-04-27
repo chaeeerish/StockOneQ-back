@@ -10,7 +10,7 @@ import umc.stockoneqback.board.domain.like.BoardLike;
 import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

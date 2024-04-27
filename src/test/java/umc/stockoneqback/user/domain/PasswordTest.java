@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.user.domain.model.Password;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import static org.assertj.core.api.Assertions.assertThat;

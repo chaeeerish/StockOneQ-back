@@ -7,7 +7,8 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public record AddFARequest(
-        @NotNull @Valid
+        @NotNull
+        @Valid
         List<AddFAKeyValue> addFAKeyValueList
 ) {
     public record AddFAKeyValue(

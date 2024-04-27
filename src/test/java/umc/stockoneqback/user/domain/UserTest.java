@@ -7,6 +7,10 @@ import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.global.exception.GlobalErrorCode;
 import umc.stockoneqback.global.utils.EnumConverter;
+import umc.stockoneqback.user.domain.model.Email;
+import umc.stockoneqback.user.domain.model.Password;
+import umc.stockoneqback.user.domain.model.RoleType;
+import umc.stockoneqback.user.domain.model.User;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

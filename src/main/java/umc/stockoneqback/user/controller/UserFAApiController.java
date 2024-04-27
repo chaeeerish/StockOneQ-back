@@ -9,7 +9,7 @@ import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.base.BaseResponse;
 import umc.stockoneqback.user.service.UserFAService;
-import umc.stockoneqback.user.service.dto.response.GetFAResponse;
+import umc.stockoneqback.user.dto.response.GetFAResponse;
 
 import java.util.List;
 

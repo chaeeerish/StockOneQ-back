@@ -8,12 +8,12 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
-import umc.stockoneqback.auth.service.jwt.TokenIssuer;
+import umc.stockoneqback.auth.service.jwt.JwtTokenIssuer;
 import umc.stockoneqback.global.security.principle.UserPrincipal;
 
 @RequiredArgsConstructor
 public class JwtLogoutSuccessHandler implements LogoutSuccessHandler {
-    private final TokenIssuer tokenIssuer;
+    private final JwtTokenIssuer jwtTokenIssuer;
 
     @Override
     public void onLogoutSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) {
@@ -24,7 +24,7 @@ public class JwtLogoutSuccessHandler implements LogoutSuccessHandler {
 
     private void removeRefreshToken(final Authentication authentication) {
         final UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-        tokenIssuer.deleteRefreshToken(userPrincipal.id());
+        jwtTokenIssuer.deleteRefreshToken(userPrincipal.id());
     }
 
     private void clearSecurityContextHolder() {

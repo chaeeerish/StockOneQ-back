@@ -3,12 +3,12 @@ package umc.stockoneqback.reply.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.comment.domain.Comment;
+import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.comment.service.CommentFindService;
 import umc.stockoneqback.file.service.FileService;
-import umc.stockoneqback.reply.controller.dto.ReplyListResponse;
-import umc.stockoneqback.reply.domain.Reply;
-import umc.stockoneqback.reply.domain.ReplyRepository;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
+import umc.stockoneqback.reply.domain.model.Reply;
+import umc.stockoneqback.reply.domain.repository.ReplyRepository;
 import umc.stockoneqback.user.service.UserFindService;
 
 import java.io.IOException;

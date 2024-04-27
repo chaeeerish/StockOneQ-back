@@ -3,12 +3,12 @@ package umc.stockoneqback.friend.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.friend.domain.Friend;
-import umc.stockoneqback.friend.domain.FriendRepository;
+import umc.stockoneqback.friend.domain.model.Friend;
+import umc.stockoneqback.friend.domain.repository.FriendRepository;
 import umc.stockoneqback.friend.exception.FriendErrorCode;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 @Service

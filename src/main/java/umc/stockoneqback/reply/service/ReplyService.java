@@ -4,14 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-import umc.stockoneqback.comment.domain.Comment;
+import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.comment.service.CommentFindService;
 import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.reply.domain.Reply;
-import umc.stockoneqback.reply.domain.ReplyRepository;
+import umc.stockoneqback.reply.domain.model.Reply;
+import umc.stockoneqback.reply.domain.repository.ReplyRepository;
 import umc.stockoneqback.reply.exception.ReplyErrorCode;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 @Service

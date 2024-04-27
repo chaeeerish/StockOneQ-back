@@ -6,12 +6,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.board.service.BoardFindService;
-import umc.stockoneqback.comment.domain.Comment;
-import umc.stockoneqback.comment.domain.CommentRepository;
+import umc.stockoneqback.comment.domain.model.Comment;
+import umc.stockoneqback.comment.domain.repository.CommentRepository;
 import umc.stockoneqback.comment.exception.CommentErrorCode;
 import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 @Service

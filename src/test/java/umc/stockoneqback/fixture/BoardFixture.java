@@ -3,7 +3,7 @@ package umc.stockoneqback.fixture;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import umc.stockoneqback.board.domain.Board;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.time.LocalDateTime;
 

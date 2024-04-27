@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.user.controller.dto.request.FindLoginIdRequest;
-import umc.stockoneqback.user.domain.Email;
+import umc.stockoneqback.user.dto.request.FindLoginIdRequest;
+import umc.stockoneqback.user.domain.model.Email;
 import umc.stockoneqback.user.service.UserInformationService;
-import umc.stockoneqback.user.service.dto.response.LoginIdResponse;
-import umc.stockoneqback.user.service.dto.response.UserInformationResponse;
+import umc.stockoneqback.user.dto.response.LoginIdResponse;
+import umc.stockoneqback.user.dto.response.UserInformationResponse;
 
 @RestController
 @RequiredArgsConstructor

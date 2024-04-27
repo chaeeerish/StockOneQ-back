@@ -7,10 +7,10 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.comment.controller.dto.CommentListResponse;
-import umc.stockoneqback.comment.controller.dto.CustomCommentListResponse;
+import umc.stockoneqback.comment.dto.response.CommentListResponse;
+import umc.stockoneqback.comment.dto.response.CustomCommentListResponse;
 import umc.stockoneqback.common.ControllerTest;
-import umc.stockoneqback.reply.controller.dto.ReplyListResponse;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

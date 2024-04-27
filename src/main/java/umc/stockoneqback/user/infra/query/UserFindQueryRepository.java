@@ -1,7 +1,7 @@
 package umc.stockoneqback.user.infra.query;
 
-import umc.stockoneqback.user.domain.search.UserSearchType;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
+import umc.stockoneqback.user.domain.model.search.UserSearchType;
+import umc.stockoneqback.user.dto.FindManager;
 
 import java.util.List;
 

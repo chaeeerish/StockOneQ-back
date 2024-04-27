@@ -11,7 +11,7 @@ import umc.stockoneqback.board.domain.views.Views;
 import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.board.service.views.ViewsService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 @Service
