@@ -2,12 +2,10 @@ package umc.stockoneqback.board.controller.like;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.board.service.like.BoardLikeService;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.global.annotation.ExtractPayload;
 
 @RestController
 @RequiredArgsConstructor
