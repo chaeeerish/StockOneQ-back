@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.fixture.BoardFixture;
 import umc.stockoneqback.fixture.UserFixture;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -4,13 +4,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.business.domain.model.Business;
-import umc.stockoneqback.business.dto.BusinessList;
+import umc.stockoneqback.business.domain.Business;
+import umc.stockoneqback.business.infra.query.dto.BusinessList;
 import umc.stockoneqback.business.service.dto.BusinessListResponse;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.company.Company;
-import umc.stockoneqback.field.domain.store.model.Store;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;

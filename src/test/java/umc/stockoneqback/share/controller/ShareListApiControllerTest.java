@@ -7,12 +7,12 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.business.dto.FilteredBusinessUser;
-import umc.stockoneqback.business.dto.FindBusinessUser;
+import umc.stockoneqback.business.infra.query.dto.FilteredBusinessUser;
+import umc.stockoneqback.business.infra.query.dto.FindBusinessUser;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.share.exception.ShareErrorCode;
-import umc.stockoneqback.share.dto.response.CustomShareListPage;
+import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
 import umc.stockoneqback.share.infra.query.dto.ShareList;
 
 import java.time.LocalDateTime;

@@ -10,7 +10,7 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.RequestPostProcessor;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.comment.dto.request.CommentRequest;
+import umc.stockoneqback.comment.controller.dto.CommentRequest;
 import umc.stockoneqback.comment.exception.CommentErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;

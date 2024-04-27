@@ -3,8 +3,8 @@ package umc.stockoneqback.comment.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.comment.domain.model.Comment;
-import umc.stockoneqback.comment.domain.repository.CommentRepository;
+import umc.stockoneqback.comment.domain.Comment;
+import umc.stockoneqback.comment.domain.CommentRepository;
 import umc.stockoneqback.comment.exception.CommentErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
 

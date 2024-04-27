@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import umc.stockoneqback.global.security.principle.UserPrincipal;
-import umc.stockoneqback.user.domain.model.User;
-import umc.stockoneqback.user.domain.repository.UserRepository;
+import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.UserRepository;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 @RequiredArgsConstructor

@@ -4,8 +4,8 @@ package umc.stockoneqback.global.security.principle;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import umc.stockoneqback.user.domain.model.Role;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.Role;
+import umc.stockoneqback.user.domain.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

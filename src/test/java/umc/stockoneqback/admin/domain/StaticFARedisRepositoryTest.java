@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.redis.DataRedisTest;
 import org.springframework.context.annotation.Import;
-import umc.stockoneqback.admin.domain.model.StaticFA;
 import umc.stockoneqback.common.EmbeddedRedisConfig;
 
 import java.util.Arrays;
@@ -20,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 @DisplayName("Admin [Repository Layer] -> StaticFARedisRepository 테스트")
 public class StaticFARedisRepositoryTest {
     @Autowired
-    private umc.stockoneqback.admin.domain.repository.StaticFARedisRepository StaticFARedisRepository;
+    private StaticFARedisRepository StaticFARedisRepository;
     private final List<String> questionList = Arrays.asList(
                     "Q1. 슈퍼바이저가 다른 프랜차이즈로 이직할 경우 회원정보는 어떻게 변경하나요?",
                     "Q2. 알바생이랑 슈퍼바이저는 어떤 기능을 사용할 수 있나요?"

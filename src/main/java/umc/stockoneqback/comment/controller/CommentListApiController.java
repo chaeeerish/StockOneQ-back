@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.comment.dto.response.CustomCommentListResponse;
+import umc.stockoneqback.comment.controller.dto.CustomCommentListResponse;
 import umc.stockoneqback.comment.service.CommentListService;
 import umc.stockoneqback.global.annotation.Auth;
 

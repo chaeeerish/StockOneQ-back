@@ -3,7 +3,6 @@ package umc.stockoneqback.user.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.model.Email;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.util.Arrays;

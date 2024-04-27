@@ -2,8 +2,8 @@ package umc.stockoneqback.fixture;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import umc.stockoneqback.field.domain.store.model.Store;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.user.domain.User;
 
 @Getter
 @RequiredArgsConstructor

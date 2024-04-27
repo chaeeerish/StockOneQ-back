@@ -3,8 +3,8 @@ package umc.stockoneqback.business.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.business.domain.repository.BusinessRepository;
-import umc.stockoneqback.business.dto.BusinessList;
+import umc.stockoneqback.business.domain.BusinessRepository;
+import umc.stockoneqback.business.infra.query.dto.BusinessList;
 import umc.stockoneqback.business.service.dto.BusinessListResponse;
 import umc.stockoneqback.global.base.RelationStatus;
 

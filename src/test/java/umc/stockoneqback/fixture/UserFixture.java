@@ -2,10 +2,10 @@ package umc.stockoneqback.fixture;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import umc.stockoneqback.user.domain.model.Email;
-import umc.stockoneqback.user.domain.model.Password;
-import umc.stockoneqback.user.domain.model.RoleType;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.Email;
+import umc.stockoneqback.user.domain.Password;
+import umc.stockoneqback.user.domain.RoleType;
+import umc.stockoneqback.user.domain.User;
 
 import java.time.LocalDate;
 

@@ -7,8 +7,8 @@ import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.service.dto.response.AuthMember;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.model.Password;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.Password;
+import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
 
@@ -19,7 +19,7 @@ import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;
 @RequiredArgsConstructor
 public class AuthService {
     private final UserFindService userFindService;
-    private final JwtTokenIssuer jwtTokenIssuer;
+    private final TokenIssuer tokenIssuer;
     private final FcmTokenService fcmTokenService;
 
     @Transactional
@@ -27,7 +27,7 @@ public class AuthService {
         User user = userFindService.findByLoginId(loginId);
         validatePassword(password, user.getPassword());
 
-        AuthToken authToken = jwtTokenIssuer.provideAuthorityToken(user.getId());
+        AuthToken authToken = tokenIssuer.provideAuthorityToken(user.getId());
         return AuthMember.of(user, authToken);
     }
 
@@ -39,7 +39,7 @@ public class AuthService {
 
     @Transactional
     public void logout(Long userId) {
-        jwtTokenIssuer.deleteRefreshToken(userId);
+        tokenIssuer.deleteRefreshToken(userId);
         fcmTokenService.deleteFcmToken(userId);
     }
 

@@ -172,7 +172,7 @@ class RefreshTokenReissueApiControllerTest extends ControllerTest {
             given(jwtTokenProvider.getId(REFRESH_TOKEN)).willReturn(1L);
 
             TokenResponse response = new TokenResponse(ACCESS_TOKEN, REFRESH_TOKEN);
-            given(jwtTokenReissueService.reissueTokens(1L, REFRESH_TOKEN, FCM_TOKEN)).willReturn(response);
+            given(tokenReissueService.reissueTokens(1L, REFRESH_TOKEN, FCM_TOKEN)).willReturn(response);
 
             // when
             final SaveFcmRequest request = createSaveFcmRequest();

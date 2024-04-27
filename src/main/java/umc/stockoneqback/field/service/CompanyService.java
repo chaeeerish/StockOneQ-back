@@ -7,7 +7,7 @@ import umc.stockoneqback.field.domain.company.Company;
 import umc.stockoneqback.field.domain.company.CompanyRepository;
 import umc.stockoneqback.field.exception.CompanyErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.User;
 
 @Service
 @Transactional(readOnly = true)

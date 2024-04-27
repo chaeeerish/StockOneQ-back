@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.friend.dto.response.FriendAssembler;
 import umc.stockoneqback.friend.service.FriendInformationService;
+import umc.stockoneqback.friend.service.dto.FriendAssembler;
 import umc.stockoneqback.global.annotation.Auth;
 
 @RestController

@@ -3,9 +3,9 @@ package umc.stockoneqback.user.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.admin.domain.model.StaticFA;
-import umc.stockoneqback.admin.domain.repository.StaticFARedisRepository;
-import umc.stockoneqback.user.dto.response.GetFAResponse;
+import umc.stockoneqback.admin.domain.StaticFA;
+import umc.stockoneqback.admin.domain.StaticFARedisRepository;
+import umc.stockoneqback.user.service.dto.response.GetFAResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;

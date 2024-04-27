@@ -6,9 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.RepositoryTest;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.user.domain.model.Email;
-import umc.stockoneqback.user.domain.model.User;
-import umc.stockoneqback.user.domain.repository.UserRepository;
 
 import java.time.LocalDate;
 import java.util.Optional;

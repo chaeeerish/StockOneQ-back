@@ -12,13 +12,13 @@
 //import umc.stockoneqback.common.EmbeddedRedisConfig;
 //import umc.stockoneqback.common.TestBatchLegacyConfig;
 //import umc.stockoneqback.fixture.ProductFixture;
-//import umc.stockoneqback.product.domain.repository.ProductRepository;
+//import umc.stockoneqback.product.domain.ProductRepository;
 //import umc.stockoneqback.role.domain.company.Company;
 //import umc.stockoneqback.role.domain.company.CompanyRepository;
 //import umc.stockoneqback.role.domain.store.Store;
 //import umc.stockoneqback.role.domain.store.StoreRepository;
-//import umc.stockoneqback.user.domain.model.User;
-//import umc.stockoneqback.user.domain.repository.UserRepository;
+//import umc.stockoneqback.user.domain.User;
+//import umc.stockoneqback.user.domain.UserRepository;
 //
 //import java.util.HashMap;
 //import java.util.Map;

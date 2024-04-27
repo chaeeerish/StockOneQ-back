@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.store.model.PartTimer;
-import umc.stockoneqback.field.domain.store.model.Store;
+import umc.stockoneqback.field.domain.store.PartTimer;
+import umc.stockoneqback.field.domain.store.Store;
 import umc.stockoneqback.field.exception.StoreErrorCode;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.service.UserService;
 
 import static org.assertj.core.api.Assertions.assertThat;

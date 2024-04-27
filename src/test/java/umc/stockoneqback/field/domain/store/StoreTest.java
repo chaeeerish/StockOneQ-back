@@ -2,10 +2,8 @@ package umc.stockoneqback.field.domain.store;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import umc.stockoneqback.field.domain.store.model.PartTimer;
-import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;

@@ -3,11 +3,11 @@ package umc.stockoneqback.comment.service;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.board.domain.Board;
-import umc.stockoneqback.comment.domain.model.Comment;
-import umc.stockoneqback.comment.dto.response.CustomCommentListResponse;
+import umc.stockoneqback.comment.controller.dto.CustomCommentListResponse;
+import umc.stockoneqback.comment.domain.Comment;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.reply.domain.model.Reply;
-import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.reply.domain.Reply;
+import umc.stockoneqback.user.domain.User;
 
 import java.io.IOException;
 

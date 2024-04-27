@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Import;
 import umc.stockoneqback.common.DatabaseCleaner;
 import umc.stockoneqback.common.EmbeddedRedisConfig;
 import umc.stockoneqback.common.RedisCleaner;
-import umc.stockoneqback.user.domain.model.User;
-import umc.stockoneqback.user.domain.repository.UserRepository;
+import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.UserRepository;
 import umc.stockoneqback.user.service.UserService;
 
 import java.time.LocalDate;

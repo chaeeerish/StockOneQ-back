@@ -14,7 +14,7 @@ import umc.stockoneqback.global.annotation.Auth;
 public class FriendApiController {
     private final FriendService friendService;
 
-    @PreAuthorize("hasRole('MANAGER')")
+    @PreAuthorize("hasRole('PART_TIMER')")
     @PostMapping("/request/{receiverId}")
     public ResponseEntity<Void> requestFriend(@Auth Authenticated authenticated, @PathVariable Long receiverId) {
         Long friendId = friendService.requestFriend(authenticated.id(), receiverId);

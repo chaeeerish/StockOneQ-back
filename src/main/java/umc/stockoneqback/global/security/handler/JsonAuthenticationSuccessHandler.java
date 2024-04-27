@@ -10,7 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.service.dto.response.LoginResponse;
-import umc.stockoneqback.auth.service.jwt.JwtTokenIssuer;
+import umc.stockoneqback.auth.service.jwt.TokenIssuer;
 import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.global.security.principle.UserPrincipal;
 
@@ -18,7 +18,7 @@ import java.io.IOException;
 
 @RequiredArgsConstructor
 public class JsonAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
-    private final JwtTokenIssuer jwtTokenIssuer;
+    private final TokenIssuer tokenIssuer;
     private final TokenResponseWriter tokenResponseWriter;
     private final ObjectMapper objectMapper;
 
@@ -29,7 +29,7 @@ public class JsonAuthenticationSuccessHandler implements AuthenticationSuccessHa
             final Authentication authentication
     ) throws IOException {
         final UserPrincipal user = getPrincipal(authentication);
-        final AuthToken authToken = jwtTokenIssuer.provideAuthorityToken(user.id());
+        final AuthToken authToken = tokenIssuer.provideAuthorityToken(user.id());
 
         tokenResponseWriter.applyToken(response, authToken);
         sendResponse(response, user);

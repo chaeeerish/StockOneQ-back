@@ -7,7 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.comment.dto.request.CommentRequest;
+import umc.stockoneqback.comment.controller.dto.CommentRequest;
 import umc.stockoneqback.comment.service.CommentService;
 import umc.stockoneqback.global.annotation.Auth;
 

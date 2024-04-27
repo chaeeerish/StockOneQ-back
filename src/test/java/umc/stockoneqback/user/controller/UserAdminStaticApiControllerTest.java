@@ -7,7 +7,7 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.common.ControllerTest;
-import umc.stockoneqback.user.dto.response.GetFAResponse;
+import umc.stockoneqback.user.service.dto.response.GetFAResponse;
 
 import java.util.ArrayList;
 import java.util.Arrays;
