@@ -12,9 +12,9 @@ import umc.stockoneqback.fixture.UserFixture;
 import umc.stockoneqback.friend.domain.model.Friend;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.product.domain.StoreCondition;
-import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
-import umc.stockoneqback.product.service.dto.response.SearchProductOthersResponse;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.product.dto.response.GetTotalProductResponse;
+import umc.stockoneqback.product.dto.response.SearchProductOthersResponse;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.io.IOException;
 import java.util.List;

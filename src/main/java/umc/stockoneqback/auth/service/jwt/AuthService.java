@@ -7,8 +7,8 @@ import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.service.dto.response.AuthMember;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.Password;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.Password;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
 

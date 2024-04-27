@@ -8,8 +8,8 @@ import umc.stockoneqback.business.domain.model.Business;
 import umc.stockoneqback.business.domain.repository.BusinessRepository;
 import umc.stockoneqback.common.RepositoryTest;
 import umc.stockoneqback.global.base.RelationStatus;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 
 import java.util.List;
 

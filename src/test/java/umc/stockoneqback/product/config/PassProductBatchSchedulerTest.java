@@ -14,10 +14,10 @@ import umc.stockoneqback.common.RedisCleaner;
 import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.field.domain.store.repository.StoreRepository;
 import umc.stockoneqback.fixture.ProductFixture;
-import umc.stockoneqback.product.domain.Product;
-import umc.stockoneqback.product.domain.ProductRepository;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.product.domain.model.Product;
+import umc.stockoneqback.product.domain.repository.ProductRepository;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 import umc.stockoneqback.user.service.UserFindService;
 
 import java.time.LocalDate;

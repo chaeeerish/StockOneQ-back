@@ -10,8 +10,8 @@ import umc.stockoneqback.board.domain.BoardRepository;
 import umc.stockoneqback.board.domain.BoardSearchType;
 import umc.stockoneqback.board.infra.query.dto.BoardList;
 import umc.stockoneqback.common.RepositoryTest;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;

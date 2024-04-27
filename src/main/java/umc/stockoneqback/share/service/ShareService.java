@@ -9,17 +9,17 @@ import umc.stockoneqback.business.domain.repository.BusinessRepository;
 import umc.stockoneqback.business.exception.BusinessErrorCode;
 import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.share.controller.dto.ShareRequest;
-import umc.stockoneqback.share.controller.dto.ShareResponse;
-import umc.stockoneqback.share.domain.Category;
-import umc.stockoneqback.share.domain.Share;
+import umc.stockoneqback.share.dto.request.ShareRequest;
+import umc.stockoneqback.share.dto.response.ShareResponse;
+import umc.stockoneqback.share.domain.model.Category;
+import umc.stockoneqback.share.domain.model.Share;
 import umc.stockoneqback.share.exception.ShareErrorCode;
-import umc.stockoneqback.share.repository.ShareRepository;
+import umc.stockoneqback.share.domain.repository.ShareRepository;
 
 import java.util.List;
 
-import static umc.stockoneqback.share.controller.dto.ShareResponse.toResponse;
-import static umc.stockoneqback.share.domain.Category.from;
+import static umc.stockoneqback.share.dto.response.ShareResponse.toResponse;
+import static umc.stockoneqback.share.domain.model.Category.from;
 
 @Service
 @Transactional(readOnly = true)

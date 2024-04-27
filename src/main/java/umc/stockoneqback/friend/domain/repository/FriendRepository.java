@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import umc.stockoneqback.friend.domain.model.Friend;
 import umc.stockoneqback.friend.infra.query.FriendFindQueryRepository;
 import umc.stockoneqback.friend.infra.query.FriendInformationQueryRepository;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.util.Optional;
 

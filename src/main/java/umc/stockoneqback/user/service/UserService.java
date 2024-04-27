@@ -20,9 +20,9 @@ import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.reply.service.ReplyService;
 import umc.stockoneqback.share.service.ShareService;
-import umc.stockoneqback.user.domain.Email;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.user.domain.model.Email;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;

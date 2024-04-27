@@ -14,13 +14,13 @@ import umc.stockoneqback.field.domain.store.model.PartTimer;
 import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.fixture.ShareFixture;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.share.domain.Share;
+import umc.stockoneqback.share.domain.model.Share;
 import umc.stockoneqback.share.exception.ShareErrorCode;
-import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
+import umc.stockoneqback.share.dto.response.CustomShareListPage;
 import umc.stockoneqback.share.infra.query.dto.ShareList;
-import umc.stockoneqback.user.domain.Email;
-import umc.stockoneqback.user.domain.Password;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.Email;
+import umc.stockoneqback.user.domain.model.Password;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;

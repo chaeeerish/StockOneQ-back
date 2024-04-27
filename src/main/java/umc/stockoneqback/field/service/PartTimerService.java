@@ -7,7 +7,7 @@ import umc.stockoneqback.field.domain.store.model.PartTimer;
 import umc.stockoneqback.field.domain.store.repository.PartTimerRepository;
 import umc.stockoneqback.field.exception.PartTimerErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.util.Optional;
 

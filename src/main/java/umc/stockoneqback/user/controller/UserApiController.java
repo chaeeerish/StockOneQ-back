@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.field.service.StoreService;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.user.controller.dto.request.SignUpManagerRequest;
-import umc.stockoneqback.user.controller.dto.request.SignUpPartTimerRequest;
-import umc.stockoneqback.user.controller.dto.request.SignUpSupervisorRequest;
+import umc.stockoneqback.user.dto.request.SignUpManagerRequest;
+import umc.stockoneqback.user.dto.request.SignUpPartTimerRequest;
+import umc.stockoneqback.user.dto.request.SignUpSupervisorRequest;
 import umc.stockoneqback.user.service.UserService;
 
 @RestController

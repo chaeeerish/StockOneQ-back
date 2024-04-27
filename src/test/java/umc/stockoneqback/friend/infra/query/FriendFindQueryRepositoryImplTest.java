@@ -10,9 +10,9 @@ import umc.stockoneqback.field.domain.store.repository.StoreRepository;
 import umc.stockoneqback.friend.domain.model.Friend;
 import umc.stockoneqback.friend.domain.repository.FriendRepository;
 import umc.stockoneqback.global.base.RelationStatus;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
+import umc.stockoneqback.user.dto.FindManager;
 
 import java.util.List;
 

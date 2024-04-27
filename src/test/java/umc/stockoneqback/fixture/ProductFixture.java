@@ -3,7 +3,7 @@ package umc.stockoneqback.fixture;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import umc.stockoneqback.field.domain.store.model.Store;
-import umc.stockoneqback.product.domain.Product;
+import umc.stockoneqback.product.domain.model.Product;
 import umc.stockoneqback.product.domain.StoreCondition;
 
 import java.time.LocalDate;

@@ -13,9 +13,9 @@ import umc.stockoneqback.comment.domain.repository.CommentRepository;
 import umc.stockoneqback.comment.dto.response.CommentListResponse;
 import umc.stockoneqback.comment.dto.response.CustomCommentListResponse;
 import umc.stockoneqback.file.service.FileService;
-import umc.stockoneqback.reply.controller.dto.ReplyListResponse;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 import umc.stockoneqback.reply.service.ReplyListService;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 import java.io.IOException;

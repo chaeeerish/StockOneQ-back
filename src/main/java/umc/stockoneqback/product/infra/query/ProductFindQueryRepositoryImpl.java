@@ -13,7 +13,7 @@ import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.product.domain.ProductSortCondition;
 import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;
-import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
+import umc.stockoneqback.product.dto.ProductFindPage;
 import umc.stockoneqback.product.infra.query.dto.QProductFindPage;
 import umc.stockoneqback.user.exception.UserErrorCode;
 

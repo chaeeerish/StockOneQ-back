@@ -1,7 +1,7 @@
 package umc.stockoneqback.comment.dto.response;
 
 import lombok.Builder;
-import umc.stockoneqback.reply.controller.dto.ReplyListResponse;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 
 import java.time.LocalDateTime;
 import java.util.List;

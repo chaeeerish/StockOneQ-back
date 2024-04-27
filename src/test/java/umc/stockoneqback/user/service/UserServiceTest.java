@@ -11,7 +11,7 @@ import umc.stockoneqback.field.domain.company.Company;
 import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;

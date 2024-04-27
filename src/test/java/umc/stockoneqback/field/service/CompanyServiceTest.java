@@ -8,7 +8,7 @@ import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.company.Company;
 import umc.stockoneqback.field.exception.CompanyErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserService;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -11,7 +11,7 @@ import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.company.Company;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 import java.util.List;

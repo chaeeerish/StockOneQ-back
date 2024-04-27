@@ -11,8 +11,8 @@ import umc.stockoneqback.friend.domain.model.Friend;
 import umc.stockoneqback.friend.domain.repository.FriendRepository;
 import umc.stockoneqback.friend.dto.response.FriendInformation;
 import umc.stockoneqback.global.base.RelationStatus;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 
 import java.util.List;
 

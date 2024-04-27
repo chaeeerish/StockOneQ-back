@@ -39,7 +39,7 @@ import umc.stockoneqback.global.security.handler.*;
 import umc.stockoneqback.global.security.properties.CorsProperties;
 import umc.stockoneqback.global.security.service.JsonAuthenticationProvider;
 import umc.stockoneqback.global.security.service.RdbUserDetailsService;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 
 import java.util.List;
 

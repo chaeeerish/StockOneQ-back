@@ -9,11 +9,11 @@ import umc.stockoneqback.business.domain.model.Business;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.share.controller.dto.ShareRequest;
-import umc.stockoneqback.share.domain.Category;
-import umc.stockoneqback.share.domain.Share;
+import umc.stockoneqback.share.dto.request.ShareRequest;
+import umc.stockoneqback.share.domain.model.Category;
+import umc.stockoneqback.share.domain.model.Share;
 import umc.stockoneqback.share.exception.ShareErrorCode;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

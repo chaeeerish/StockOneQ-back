@@ -13,8 +13,8 @@ import umc.stockoneqback.field.domain.store.model.PartTimer;
 import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.field.domain.store.repository.PartTimerRepository;
 import umc.stockoneqback.field.domain.store.repository.StoreRepository;
-import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.user.domain.model.User;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;

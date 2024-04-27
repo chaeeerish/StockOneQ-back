@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import umc.stockoneqback.business.domain.model.Business;
 import umc.stockoneqback.business.infra.query.BusinessFindQueryRepository;
 import umc.stockoneqback.business.infra.query.BusinessListQueryRepository;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import java.util.List;
 import java.util.Optional;

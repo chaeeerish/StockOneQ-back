@@ -1,7 +1,7 @@
 package umc.stockoneqback.auth.service.dto.response;
 
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 public record AuthMember(
         Long id,

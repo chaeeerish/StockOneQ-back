@@ -10,8 +10,8 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.share.controller.dto.ShareRequest;
-import umc.stockoneqback.share.controller.dto.ShareResponse;
+import umc.stockoneqback.share.dto.request.ShareRequest;
+import umc.stockoneqback.share.dto.response.ShareResponse;
 import umc.stockoneqback.share.exception.ShareErrorCode;
 
 import java.nio.charset.StandardCharsets;

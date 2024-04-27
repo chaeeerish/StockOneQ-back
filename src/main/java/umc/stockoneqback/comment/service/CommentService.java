@@ -11,7 +11,7 @@ import umc.stockoneqback.comment.domain.repository.CommentRepository;
 import umc.stockoneqback.comment.exception.CommentErrorCode;
 import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 @Service

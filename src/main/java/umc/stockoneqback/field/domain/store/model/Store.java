@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 
 import static umc.stockoneqback.global.base.Status.NORMAL;
 import static umc.stockoneqback.global.utils.RandomCodeGenerator.generateRandomCode;

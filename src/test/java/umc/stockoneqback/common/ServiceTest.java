@@ -17,10 +17,10 @@ import umc.stockoneqback.field.domain.company.CompanyRepository;
 import umc.stockoneqback.field.domain.store.repository.PartTimerRepository;
 import umc.stockoneqback.field.domain.store.repository.StoreRepository;
 import umc.stockoneqback.friend.domain.repository.FriendRepository;
-import umc.stockoneqback.product.domain.ProductRepository;
-import umc.stockoneqback.reply.domain.ReplyRepository;
-import umc.stockoneqback.share.repository.ShareRepository;
-import umc.stockoneqback.user.domain.UserRepository;
+import umc.stockoneqback.product.domain.repository.ProductRepository;
+import umc.stockoneqback.reply.domain.repository.ReplyRepository;
+import umc.stockoneqback.share.domain.repository.ShareRepository;
+import umc.stockoneqback.user.domain.repository.UserRepository;
 
 @SpringBootTest
 @Transactional

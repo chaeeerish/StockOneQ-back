@@ -10,8 +10,8 @@ import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
-import umc.stockoneqback.user.service.dto.response.FindManagerResponse;
+import umc.stockoneqback.user.dto.FindManager;
+import umc.stockoneqback.user.dto.response.FindManagerResponse;
 
 import java.util.List;
 

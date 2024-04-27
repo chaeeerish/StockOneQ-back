@@ -4,7 +4,7 @@ import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.product.domain.ProductSortCondition;
 import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;
-import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
+import umc.stockoneqback.product.dto.ProductFindPage;
 
 import java.util.List;
 

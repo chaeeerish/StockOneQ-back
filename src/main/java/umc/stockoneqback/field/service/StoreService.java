@@ -8,7 +8,7 @@ import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.field.domain.store.repository.StoreRepository;
 import umc.stockoneqback.field.exception.StoreErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.domain.model.User;
 import umc.stockoneqback.user.service.UserFindService;
 
 @Service
