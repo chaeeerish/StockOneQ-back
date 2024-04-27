@@ -4,8 +4,8 @@ import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.business.infra.query.dto.FilteredBusinessUser;
-import umc.stockoneqback.business.infra.query.dto.FindBusinessUser;
+import umc.stockoneqback.business.dto.FilteredBusinessUser;
+import umc.stockoneqback.business.dto.FindBusinessUser;
 import umc.stockoneqback.business.infra.query.dto.QFindBusinessUser;
 import umc.stockoneqback.field.domain.store.QPartTimer;
 

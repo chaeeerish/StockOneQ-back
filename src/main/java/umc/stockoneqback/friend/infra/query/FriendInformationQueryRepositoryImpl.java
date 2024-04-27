@@ -4,7 +4,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.friend.domain.QFriend;
-import umc.stockoneqback.friend.infra.query.dto.response.FriendInformation;
+import umc.stockoneqback.friend.dto.response.FriendInformation;
 import umc.stockoneqback.friend.infra.query.dto.response.QFriendInformation;
 import umc.stockoneqback.global.base.RelationStatus;
 

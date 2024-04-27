@@ -3,7 +3,7 @@ package umc.stockoneqback.reply.domain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import umc.stockoneqback.comment.domain.Comment;
+import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.user.domain.User;
 
 import java.util.List;

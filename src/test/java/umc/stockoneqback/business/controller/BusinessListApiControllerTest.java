@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.business.infra.query.dto.BusinessList;
+import umc.stockoneqback.business.dto.BusinessList;
 import umc.stockoneqback.business.service.dto.BusinessListResponse;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;

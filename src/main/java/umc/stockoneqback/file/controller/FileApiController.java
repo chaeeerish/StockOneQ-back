@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.file.dto.UploadRequest;
+import umc.stockoneqback.file.dto.request.UploadRequest;
 import umc.stockoneqback.file.exception.FileErrorCode;
 import umc.stockoneqback.file.service.FileService;
 import umc.stockoneqback.global.annotation.Auth;

@@ -3,6 +3,9 @@ package umc.stockoneqback.field.domain.store;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import umc.stockoneqback.field.domain.store.model.PartTimer;
+import umc.stockoneqback.field.domain.store.model.PartTimers;
+import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.fixture.StoreFixture;
 import umc.stockoneqback.user.domain.User;
 

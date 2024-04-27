@@ -3,7 +3,7 @@ package umc.stockoneqback.product.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.field.service.PartTimerService;
 import umc.stockoneqback.field.service.StoreService;
 import umc.stockoneqback.global.exception.BaseException;

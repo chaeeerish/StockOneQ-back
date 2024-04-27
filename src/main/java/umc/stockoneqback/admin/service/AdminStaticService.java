@@ -3,8 +3,8 @@ package umc.stockoneqback.admin.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.admin.domain.StaticFA;
-import umc.stockoneqback.admin.domain.StaticFARedisRepository;
+import umc.stockoneqback.admin.domain.model.StaticFA;
+import umc.stockoneqback.admin.domain.repository.StaticFARedisRepository;
 import umc.stockoneqback.admin.dto.request.AddFARequest;
 
 @Service

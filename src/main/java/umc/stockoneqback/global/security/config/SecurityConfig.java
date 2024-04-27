@@ -28,7 +28,7 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import umc.stockoneqback.auth.service.jwt.TokenIssuer;
+import umc.stockoneqback.auth.service.jwt.JwtTokenIssuer;
 import umc.stockoneqback.auth.utils.TokenProvider;
 import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.global.security.filter.JsonAuthenticationFilter;
@@ -53,7 +53,7 @@ public class SecurityConfig {
     private final ObjectMapper objectMapper;
     private final UserRepository userRepository;
     private final TokenProvider tokenProvider;
-    private final TokenIssuer tokenIssuer;
+    private final JwtTokenIssuer jwtTokenIssuer;
     private final TokenResponseWriter tokenResponseWriter;
 
     @Bean
@@ -93,7 +93,7 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationSuccessHandler jsonAuthenticationSuccessHandler() {
-        return new JsonAuthenticationSuccessHandler(tokenIssuer, tokenResponseWriter, objectMapper);
+        return new JsonAuthenticationSuccessHandler(jwtTokenIssuer, tokenResponseWriter, objectMapper);
     }
 
     @Bean
@@ -137,7 +137,7 @@ public class SecurityConfig {
 
     @Bean
     public LogoutSuccessHandler jwtLogoutSuccessHandler() {
-        return new JwtLogoutSuccessHandler(tokenIssuer);
+        return new JwtLogoutSuccessHandler(jwtTokenIssuer);
     }
 
     @Bean

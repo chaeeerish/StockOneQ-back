@@ -19,7 +19,7 @@ import umc.stockoneqback.admin.service.AdminStaticService;
 import umc.stockoneqback.auth.controller.AuthApiController;
 import umc.stockoneqback.auth.controller.TokenReissueApiController;
 import umc.stockoneqback.auth.service.jwt.AuthService;
-import umc.stockoneqback.auth.service.jwt.TokenReissueService;
+import umc.stockoneqback.auth.service.jwt.JwtTokenReissueService;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.board.controller.BoardApiController;
 import umc.stockoneqback.board.controller.BoardListApiController;
@@ -166,7 +166,7 @@ public abstract class ControllerTest {
     protected FriendInformationService friendInformationService;
 
     @MockBean
-    protected TokenReissueService tokenReissueService;
+    protected JwtTokenReissueService jwtTokenReissueService;
 
     @MockBean
     protected BoardListService boardListService;

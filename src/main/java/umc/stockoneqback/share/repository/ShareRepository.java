@@ -1,7 +1,7 @@
 package umc.stockoneqback.share.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import umc.stockoneqback.business.domain.Business;
+import umc.stockoneqback.business.domain.model.Business;
 import umc.stockoneqback.share.domain.Share;
 import umc.stockoneqback.share.infra.query.ShareListQueryRepository;
 

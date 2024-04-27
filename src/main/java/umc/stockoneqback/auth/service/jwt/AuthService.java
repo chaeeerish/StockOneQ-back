@@ -19,7 +19,7 @@ import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;
 @RequiredArgsConstructor
 public class AuthService {
     private final UserFindService userFindService;
-    private final TokenIssuer tokenIssuer;
+    private final JwtTokenIssuer jwtTokenIssuer;
     private final FcmTokenService fcmTokenService;
 
     @Transactional
@@ -27,7 +27,7 @@ public class AuthService {
         User user = userFindService.findByLoginId(loginId);
         validatePassword(password, user.getPassword());
 
-        AuthToken authToken = tokenIssuer.provideAuthorityToken(user.getId());
+        AuthToken authToken = jwtTokenIssuer.provideAuthorityToken(user.getId());
         return AuthMember.of(user, authToken);
     }
 
@@ -39,7 +39,7 @@ public class AuthService {
 
     @Transactional
     public void logout(Long userId) {
-        tokenIssuer.deleteRefreshToken(userId);
+        jwtTokenIssuer.deleteRefreshToken(userId);
         fcmTokenService.deleteFcmToken(userId);
     }
 

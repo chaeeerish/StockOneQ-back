@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.field.domain.company.Company;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.global.base.Status;
 

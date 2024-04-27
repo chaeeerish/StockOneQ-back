@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import umc.stockoneqback.board.domain.Board;
+import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.reply.domain.Reply;
 import umc.stockoneqback.user.domain.User;
 

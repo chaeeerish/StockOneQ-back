@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.store.model.Store;
 import umc.stockoneqback.field.service.PartTimerService;
 import umc.stockoneqback.field.service.StoreService;
 import umc.stockoneqback.file.service.FileService;
