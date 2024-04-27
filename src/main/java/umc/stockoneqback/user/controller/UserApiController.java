@@ -5,7 +5,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.field.service.StoreService;
+import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.annotation.ExtractPayload;
 import umc.stockoneqback.user.controller.dto.request.SignUpManagerRequest;
 import umc.stockoneqback.user.controller.dto.request.SignUpPartTimerRequest;
@@ -43,8 +45,8 @@ public class UserApiController {
 
     @PreAuthorize("hasAnyRole('MANAGER', 'PART_TIMER', 'SUPERVISOR')")
     @DeleteMapping("/withdraw")
-    public ResponseEntity<Void> withdrawUser(@ExtractPayload Long userId) {
-        userService.withdrawUser(userId);
+    public ResponseEntity<Void> withdrawUser(@Auth Authenticated authenticated) {
+        userService.withdrawUser(authenticated.id());
 
         return ResponseEntity.ok().build();
     }
