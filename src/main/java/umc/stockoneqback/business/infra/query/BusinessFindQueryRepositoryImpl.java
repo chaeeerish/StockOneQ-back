@@ -6,13 +6,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.business.dto.response.FilteredBusinessUser;
 import umc.stockoneqback.business.dto.response.FindBusinessUser;
-import umc.stockoneqback.business.infra.query.dto.QFindBusinessUser;
-import umc.stockoneqback.field.domain.store.QPartTimer;
+import umc.stockoneqback.business.dto.response.QFindBusinessUser;
+import umc.stockoneqback.field.domain.model.QPartTimer;
 
 import java.util.List;
 
 import static umc.stockoneqback.business.domain.QBusiness.business;
-import static umc.stockoneqback.field.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.model.QStore.store;
 
 @Transactional(readOnly = true)
 @RequiredArgsConstructor

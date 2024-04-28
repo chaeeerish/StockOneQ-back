@@ -5,7 +5,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.business.dto.response.BusinessList;
-import umc.stockoneqback.business.infra.query.dto.QBusinessList;
+import umc.stockoneqback.business.dto.response.QBusinessList;
 import umc.stockoneqback.global.base.RelationStatus;
 
 import java.util.List;

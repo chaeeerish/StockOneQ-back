@@ -14,14 +14,14 @@ import umc.stockoneqback.product.domain.model.ProductSortCondition;
 import umc.stockoneqback.product.domain.model.SearchCondition;
 import umc.stockoneqback.product.domain.model.StoreCondition;
 import umc.stockoneqback.product.dto.response.ProductFindPage;
-import umc.stockoneqback.product.infra.query.dto.QProductFindPage;
+import umc.stockoneqback.product.dto.response.QProductFindPage;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static umc.stockoneqback.product.domain.QProduct.product;
+import static umc.stockoneqback.product.domain.model.QProduct.product;
 
 @Transactional(readOnly = true)
 @RequiredArgsConstructor

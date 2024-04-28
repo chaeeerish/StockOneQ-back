@@ -3,14 +3,14 @@ package umc.stockoneqback.friend.infra.query;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.friend.domain.QFriend;
+import umc.stockoneqback.friend.domain.model.QFriend;
 import umc.stockoneqback.friend.dto.response.FriendInformation;
-import umc.stockoneqback.friend.infra.query.dto.response.QFriendInformation;
+import umc.stockoneqback.friend.dto.response.QFriendInformation;
 import umc.stockoneqback.global.base.RelationStatus;
 
 import java.util.List;
 
-import static umc.stockoneqback.field.domain.store.QStore.store;
+import static umc.stockoneqback.field.domain.model.QStore.store;
 import static umc.stockoneqback.user.domain.QUser.user;
 
 @Transactional(readOnly = true)

@@ -11,8 +11,6 @@ import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.dto.response.UpdatePasswordResponse;
-import umc.stockoneqback.user.exception.UserErrorCode;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
