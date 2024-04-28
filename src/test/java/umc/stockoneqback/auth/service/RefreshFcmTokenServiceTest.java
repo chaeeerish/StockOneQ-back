@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.auth.domain.model.RefreshToken;
 import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.common.ServiceTest;
@@ -22,85 +21,6 @@ class RefreshFcmTokenServiceTest extends ServiceTest {
     private FcmTokenService fcmTokenService;
 
     private final Long USER_ID = 1L;
-    private final String REFRESH_TOKEN = "example_refresh_token";
-
-    @Nested
-    @DisplayName("Refresh Token 발급 혹은 재발급")
-    class synchronizeRefreshToken {
-        @Test
-        @DisplayName("RefreshToken을 보유하지 않은 사용자에게 새로운 RefreshToken을 발급한다")
-        void newUser() {
-            // when
-            fcmTokenService.synchronizeRefreshToken(USER_ID, REFRESH_TOKEN);
-
-            // then
-            RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(USER_ID).orElseThrow();
-            assertThat(findRefreshToken.getRefreshToken()).isEqualTo(REFRESH_TOKEN);
-        }
-
-        @Test
-        @DisplayName("RefreshToken을 보유하고 있는 사용자에게 RefreshToken을 업데이트한다")
-        void oldUser() {
-            // given
-            refreshTokenRedisRepository.save(RefreshToken.createRefreshToken(USER_ID, REFRESH_TOKEN));
-
-            // when
-            String newRefreshToken = REFRESH_TOKEN + "_new";
-            fcmTokenService.synchronizeRefreshToken(USER_ID, newRefreshToken);
-
-            // then
-            RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(USER_ID).orElseThrow();
-            assertThat(findRefreshToken.getRefreshToken()).isEqualTo(newRefreshToken);
-        }
-    }
-
-    @Test
-    @DisplayName("RTR정책에 의해서 RefreshToken을 재발급한다")
-    void reissueRefreshTokenByRtrPolicy() {
-        // given
-        refreshTokenRedisRepository.save(RefreshToken.createRefreshToken(USER_ID, REFRESH_TOKEN));
-
-        // when
-        final String newRefreshToken = REFRESH_TOKEN + "_new";
-        fcmTokenService.reissueRefreshTokenByRtrPolicy(USER_ID, newRefreshToken);
-
-        // then
-        RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(USER_ID).orElseThrow();
-        assertThat(findRefreshToken.getRefreshToken()).isEqualTo(newRefreshToken);
-    }
-
-    @Test
-    @DisplayName("사용자가 보유하고 있는 RefreshToken을 삭제한다")
-    void deleteRefreshTokenByMemberId() {
-        // given
-        refreshTokenRedisRepository.save(RefreshToken.createRefreshToken(USER_ID, REFRESH_TOKEN));
-
-        // when
-        fcmTokenService.deleteRefreshTokenByMemberId(USER_ID);
-
-        // then
-        assertThat(refreshTokenRedisRepository.findById(USER_ID)).isEmpty();
-    }
-
-    @Test
-    @DisplayName("해당 RefreshToken을 사용자가 보유하고 있는지 확인한다")
-    void isRefreshTokenExists() {
-        // given
-        refreshTokenRedisRepository.save(RefreshToken.createRefreshToken(USER_ID, REFRESH_TOKEN));
-
-        // when
-        final String fakeRefreshToken = REFRESH_TOKEN + "_fake";
-        boolean actual1 = fcmTokenService.isRefreshTokenExists(USER_ID, REFRESH_TOKEN);
-        boolean actual2 = fcmTokenService.isRefreshTokenExists(USER_ID, fakeRefreshToken);
-
-        // then
-        assertAll(
-                () -> {
-                    assertThat(actual1).isTrue();
-                    assertThat(actual2).isFalse();
-                }
-        );
-    }
 
     @Test
     @DisplayName("현재 저장된 사용자의 FCM Token 정보를 갱신한다")

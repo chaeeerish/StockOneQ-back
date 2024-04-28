@@ -21,6 +21,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.querydsl.core.types.dsl.Expressions.booleanTemplate;
 import static umc.stockoneqback.product.domain.model.QProduct.product;
 
 @Transactional(readOnly = true)
