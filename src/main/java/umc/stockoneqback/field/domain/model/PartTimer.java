@@ -17,11 +17,11 @@ public class PartTimer extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "store_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "store_id", referencedColumnName = "userId", nullable = false)
     private Store store;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "part_timer_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "part_timer_id", referencedColumnName = "userId", nullable = false)
     private User partTimer;
 
     private PartTimer(Store store, User partTimer) {

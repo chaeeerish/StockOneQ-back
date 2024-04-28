@@ -191,8 +191,7 @@ class UserFindApiControllerTest extends ControllerTest {
         @DisplayName("친구 찾기(매니저 검색)에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getFindFriendManagerResponse())
                     .when(userFindService)
                     .findFriendManagers(USER_ID, LAST_USER_ID, SEARCH_TYPE, SEARCH_WORD);
@@ -222,7 +221,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("searchedUser[].id").type(JsonFieldType.NUMBER).description("유저 ID"),
+                                            fieldWithPath("searchedUser[].userId").type(JsonFieldType.NUMBER).description("유저 ID"),
                                             fieldWithPath("searchedUser[].name").type(JsonFieldType.STRING).description("유저 이름"),
                                             fieldWithPath("searchedUser[].storeName").type(JsonFieldType.STRING).description("유저 가게 이름"),
                                             fieldWithPath("searchedUser[].phoneNumber").type(JsonFieldType.STRING).description("유저 연락처"),
@@ -389,8 +388,6 @@ class UserFindApiControllerTest extends ControllerTest {
         @DisplayName("점주 찾기(매니저 검색)에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(getFindBusinessManagerResponse())
                     .when(userFindService)
                     .findBusinessManagers(USER_ID, LAST_USER_ID, SEARCH_TYPE, SEARCH_WORD);
@@ -420,7 +417,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("searchedUser[].id").type(JsonFieldType.NUMBER).description("유저 ID"),
+                                            fieldWithPath("searchedUser[].userId").type(JsonFieldType.NUMBER).description("유저 ID"),
                                             fieldWithPath("searchedUser[].name").type(JsonFieldType.STRING).description("유저 이름"),
                                             fieldWithPath("searchedUser[].storeName").type(JsonFieldType.STRING).description("유저 가게 이름"),
                                             fieldWithPath("searchedUser[].phoneNumber").type(JsonFieldType.STRING).description("유저 연락처"),

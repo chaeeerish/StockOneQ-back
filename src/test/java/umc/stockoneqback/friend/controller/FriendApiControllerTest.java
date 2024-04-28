@@ -807,8 +807,7 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("아직 요청된 친구 관계라면 친구 관계를 삭제할 수 없다")
         void throwExceptionByStatusIsAccept() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doThrow(BaseException.type(FriendErrorCode.STATUS_IS_REQUEST))
                     .when(friendService)
                     .deleteFriend(USER_ID, FRIEND_USER_ID);
@@ -854,8 +853,7 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("요청된 친구 관계가 존재하지 않는다면 친구 관계를 삭제할 수 없다")
         void throwExceptionByFriendNotFound() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doThrow(BaseException.type(FriendErrorCode.FRIEND_NOT_FOUND))
                     .when(friendService)
                     .deleteFriend(USER_ID, FRIEND_USER_ID);
@@ -901,8 +899,7 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("친구 관계 삭제에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doNothing()
                     .when(friendService)
                     .deleteFriend(USER_ID, FRIEND_USER_ID);

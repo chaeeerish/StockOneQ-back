@@ -27,11 +27,11 @@ public class Reply extends BaseTimeEntity {
     private Status status;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "writer_id", referencedColumnName = "id")
+    @JoinColumn(name = "writer_id", referencedColumnName = "userId")
     private User writer;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "comment_id", referencedColumnName = "id")
+    @JoinColumn(name = "comment_id", referencedColumnName = "userId")
     private Comment comment;
 
     @Builder

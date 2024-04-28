@@ -14,9 +14,9 @@ public class TokenReissueService {
     private final TokenProvider tokenProvider;
     private final TokenIssuer tokenIssuer;
 
-    public AuthToken invoke(final ReissueTokenRequest request) {
-        final Long userId = tokenProvider.getId(request.refreshToken());
-        validateUserToken(userId, request.refreshToken());
+    public AuthToken invoke(final String refreshToken) {
+        final Long userId = tokenProvider.getId(refreshToken);
+        validateUserToken(userId, refreshToken);
         return tokenIssuer.reissueAuthorityToken(userId);
     }
 

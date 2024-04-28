@@ -404,7 +404,7 @@ public class ProductApiControllerTest extends ControllerTest {
                                             fieldWithPath("status").type(JsonFieldType.STRING).description("HTTP 상태 코드"),
                                             fieldWithPath("errorCode").type(JsonFieldType.STRING).description("커스텀 예외 코드"),
                                             fieldWithPath("message").type(JsonFieldType.STRING).description("예외 메시지"),
-                                            fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("제품 ID"),
+                                            fieldWithPath("result.userId").type(JsonFieldType.NUMBER).description("제품 ID"),
                                             fieldWithPath("result.name").type(JsonFieldType.STRING).description("제품명"),
                                             fieldWithPath("result.price").type(JsonFieldType.NUMBER).description("가격"),
                                             fieldWithPath("result.vendor").type(JsonFieldType.STRING).description("판매업체"),

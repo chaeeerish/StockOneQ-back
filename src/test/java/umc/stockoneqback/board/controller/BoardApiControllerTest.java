@@ -411,8 +411,6 @@ public class BoardApiControllerTest extends ControllerTest {
             @DisplayName("게시글조회수 증가에 성공한다")
             void success() throws Exception {
                 // given
-                given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-                given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
                 doNothing()
                         .when(boardService)
                         .updateHit(anyLong(), anyLong());

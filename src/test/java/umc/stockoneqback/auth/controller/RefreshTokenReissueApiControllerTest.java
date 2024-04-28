@@ -1,16 +1,19 @@
 package umc.stockoneqback.auth.controller;
 
+import com.google.api.client.auth.oauth2.RefreshTokenRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.dto.request.SaveFcmRequest;
 import umc.stockoneqback.auth.dto.response.TokenResponse;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
@@ -168,11 +171,10 @@ class RefreshTokenReissueApiControllerTest extends ControllerTest {
         @DisplayName("RefreshToken으로 AccessToken과 RefreshToken을 재발급받는다.")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(REFRESH_TOKEN)).willReturn(true);
             given(jwtTokenProvider.getId(REFRESH_TOKEN)).willReturn(1L);
 
-            TokenResponse response = new TokenResponse(ACCESS_TOKEN, REFRESH_TOKEN);
-            given(tokenReissueService.reissueTokens(1L, REFRESH_TOKEN, FCM_TOKEN)).willReturn(response);
+            AuthToken authToken = new AuthToken(ACCESS_TOKEN, REFRESH_TOKEN);
+            given(tokenReissueService.invoke(anyString())).willReturn(authToken);
 
             // when
             final SaveFcmRequest request = createSaveFcmRequest();

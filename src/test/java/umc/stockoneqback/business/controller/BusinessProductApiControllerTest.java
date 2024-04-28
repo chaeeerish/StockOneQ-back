@@ -397,7 +397,7 @@ public class BusinessProductApiControllerTest extends ControllerTest {
                                             fieldWithPath("status").type(JsonFieldType.STRING).description("HTTP 상태 코드"),
                                             fieldWithPath("errorCode").type(JsonFieldType.STRING).description("커스텀 예외 코드"),
                                             fieldWithPath("message").type(JsonFieldType.STRING).description("예외 메시지"),
-                                            fieldWithPath("result[].id").type(JsonFieldType.NUMBER).description("제품 ID"),
+                                            fieldWithPath("result[].userId").type(JsonFieldType.NUMBER).description("제품 ID"),
                                             fieldWithPath("result[].name").type(JsonFieldType.STRING).description("제품명"),
                                             fieldWithPath("result[].stockQuantity").type(JsonFieldType.NUMBER).description("재고 수량"),
                                             fieldWithPath("result[].image").type(JsonFieldType.ARRAY).description("제품 이미지").optional()
@@ -552,7 +552,7 @@ public class BusinessProductApiControllerTest extends ControllerTest {
                                             fieldWithPath("status").type(JsonFieldType.STRING).description("HTTP 상태 코드"),
                                             fieldWithPath("errorCode").type(JsonFieldType.STRING).description("커스텀 예외 코드"),
                                             fieldWithPath("message").type(JsonFieldType.STRING).description("예외 메시지"),
-                                            fieldWithPath("result[].id").type(JsonFieldType.NUMBER).description("제품 ID"),
+                                            fieldWithPath("result[].userId").type(JsonFieldType.NUMBER).description("제품 ID"),
                                             fieldWithPath("result[].name").type(JsonFieldType.STRING).description("제품명"),
                                             fieldWithPath("result[].stockQuantity").type(JsonFieldType.NUMBER).description("재고 수량"),
                                             fieldWithPath("result[].image").type(JsonFieldType.ARRAY).description("제품 이미지").optional()

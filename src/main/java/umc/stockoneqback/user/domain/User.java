@@ -47,11 +47,11 @@ public class User extends BaseTimeEntity {
     private final List<Role> roles = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manager_store_id", referencedColumnName = "id")
+    @JoinColumn(name = "manager_store_id", referencedColumnName = "userId")
     private Store managerStore;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    @JoinColumn(name = "company_id", referencedColumnName = "userId")
     private Company company;
 
     @Convert(converter = Status.StatusConverter.class)

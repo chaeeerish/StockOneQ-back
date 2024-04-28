@@ -38,9 +38,9 @@ import static umc.stockoneqback.fixture.UserFixture.*;
 @DisplayName("User [Controller Layer] -> UserInformationApiController 테스트")
 class UserInformationApiControllerTest extends ControllerTest {
     @Nested
-    @DisplayName("아이디 찾기 API [GET /api/user/find-id]")
+    @DisplayName("아이디 찾기 API [GET /api/user/find-userId]")
     class findLoginId {
-        private static final String BASE_URL = "/api/user/find-id";
+        private static final String BASE_URL = "/api/user/find-userId";
 
         @Test
         @DisplayName("요청된 정보와 일치하는 사용자를 찾을 수 없으면 아이디 찾기에 실패한다")

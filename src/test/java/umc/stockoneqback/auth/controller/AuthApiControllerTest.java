@@ -7,7 +7,7 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.dto.request.LoginRequest;
 import umc.stockoneqback.auth.dto.request.SaveFcmRequest;
-import umc.stockoneqback.auth.dto.response.LoginResponse;
+import umc.stockoneqback.auth.dto.response.AuthMember;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
@@ -36,10 +36,9 @@ class AuthApiControllerTest extends ControllerTest {
         private static final String BASE_URL = "/api/auth/login";
 
         @Test
-        @DisplayName("비밀번호가 일치하지 않으면 로그인에 실패한다")
-        void throwExceptionByWrongPassword() throws Exception {
-            // given
-            doThrow(BaseException.type(AuthErrorCode.WRONG_PASSWORD))
+        @DisplayName("아이디나 비밀번호가 일치하지 않으면 로그인에 실패한다")
+        void throwExceptionByInvalidAuthData() throws Exception {
+            doThrow(BaseException.type(AuthErrorCode.INVALID_AUTH_DATA))
                     .when(authService)
                     .login(any(), any());
 
@@ -51,7 +50,7 @@ class AuthApiControllerTest extends ControllerTest {
                     .content(objectMapper.writeValueAsString(request));
 
             // then
-            final AuthErrorCode expectedError = AuthErrorCode.WRONG_PASSWORD;
+            final AuthErrorCode expectedError = AuthErrorCode.INVALID_AUTH_DATA;
             mockMvc.perform(requestBuilder)
                     .andExpectAll(
                             status().isUnauthorized(),
@@ -83,9 +82,8 @@ class AuthApiControllerTest extends ControllerTest {
         @Test
         @DisplayName("로그인에 성공한다")
         void success() throws Exception {
-            // given
-            LoginResponse loginResponse = createLoginResponse();
-            given(authService.login(any(), any())).willReturn(loginResponse);
+            AuthMember authMember = createAuthMember();
+            given(authService.login(any(), any())).willReturn(authMember);
 
             // when
             final LoginRequest request = createLoginRequest();
@@ -162,10 +160,6 @@ class AuthApiControllerTest extends ControllerTest {
         @Test
         @DisplayName("로그아웃에 성공한다")
         void success() throws Exception {
-            // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
-
             // when
             MockHttpServletRequestBuilder requestBuilder = RestDocumentationRequestBuilders
                     .post(BASE_URL)
@@ -197,7 +191,6 @@ class AuthApiControllerTest extends ControllerTest {
         @Test
         @DisplayName("초기 fcmToken 저장에 성공한다")
         void success() throws Exception {
-            // given
             doNothing()
                     .when(authService)
                     .saveFcm(anyLong(), anyString());
@@ -235,8 +228,8 @@ class AuthApiControllerTest extends ControllerTest {
         return new LoginRequest(SAEWOO.getEmail(), SAEWOO.getPassword());
     }
 
-    private LoginResponse createLoginResponse() {
-        return new LoginResponse(
+    private AuthMember createAuthMember() {
+        return new AuthMember(
                 1L,
                 SAEWOO.getLoginId(),
                 SAEWOO.getName(),

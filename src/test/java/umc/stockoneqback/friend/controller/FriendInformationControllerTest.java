@@ -14,8 +14,10 @@ import umc.stockoneqback.global.base.RelationStatus;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.willReturn;
 import static org.mockito.Mockito.doReturn;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
@@ -81,8 +83,6 @@ class FriendInformationControllerTest extends ControllerTest {
         @DisplayName("친구 리스트 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(getAcceptFriendAssembler())
                     .when(friendInformationService)
                     .getFriends(USER_ID, LAST_USER_ID);
@@ -108,7 +108,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("friends[].id").description("친구 ID"),
+                                            fieldWithPath("friends[].userId").description("친구 ID"),
                                             fieldWithPath("friends[].name").description("친구 이름"),
                                             fieldWithPath("friends[].storeName").description("친구 가게 이름"),
                                             fieldWithPath("friends[].phoneNumber").description("친구 연락처"),
@@ -168,8 +168,6 @@ class FriendInformationControllerTest extends ControllerTest {
         @DisplayName("수락 대기중인 친구 리스트 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(getRequestFriendAssembler())
                     .when(friendInformationService)
                     .getWaitingFriends(USER_ID, LAST_USER_ID);
@@ -195,7 +193,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("friends[].id").description("친구 ID"),
+                                            fieldWithPath("friends[].userId").description("친구 ID"),
                                             fieldWithPath("friends[].name").description("친구 이름"),
                                             fieldWithPath("friends[].storeName").description("친구 가게 이름"),
                                             fieldWithPath("friends[].phoneNumber").description("친구 연락처"),
@@ -255,8 +253,7 @@ class FriendInformationControllerTest extends ControllerTest {
         @DisplayName("요청이 들어온 친구 리스트 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getRequestFriendAssembler())
                     .when(friendInformationService)
                     .getRequestedFriends(USER_ID, LAST_USER_ID);
@@ -282,7 +279,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("friends[].id").description("친구 ID"),
+                                            fieldWithPath("friends[].userId").description("친구 ID"),
                                             fieldWithPath("friends[].name").description("친구 이름"),
                                             fieldWithPath("friends[].storeName").description("친구 가게 이름"),
                                             fieldWithPath("friends[].phoneNumber").description("친구 연락처"),

@@ -134,8 +134,7 @@ class BusinessListApiControllerTest extends ControllerTest {
         @DisplayName("연결된 슈퍼바이저 목록 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getBusinessListResponse())
                     .when(businessListService)
                     .getSupervisors(USER_ID, LAST_USER_ID, SEARCH);
@@ -163,7 +162,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                             parameterWithName("search").description("검색어")
                                     ),
                                     responseFields(
-                                            fieldWithPath("userList[].id").description("유저 id"),
+                                            fieldWithPath("userList[].userId").description("유저 userId"),
                                             fieldWithPath("userList[].name").description("유저 이름"),
                                             fieldWithPath("userList[].storeCoName").description("가게 or 회사 이름"),
                                             fieldWithPath("userList[].phoneNumber").description("유저 연락처"),
@@ -268,8 +267,7 @@ class BusinessListApiControllerTest extends ControllerTest {
         @DisplayName("연결된 점주 목록 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getBusinessListResponse())
                     .when(businessListService)
                     .getManagers(USER_ID, LAST_USER_ID);
@@ -295,7 +293,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("userList[].id").description("유저 id"),
+                                            fieldWithPath("userList[].userId").description("유저 userId"),
                                             fieldWithPath("userList[].name").description("유저 이름"),
                                             fieldWithPath("userList[].storeCoName").description("가게 or 회사 이름"),
                                             fieldWithPath("userList[].phoneNumber").description("유저 연락처"),
