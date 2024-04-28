@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.business.service.BusinessListService;
-import umc.stockoneqback.business.service.dto.BusinessListResponse;
+import umc.stockoneqback.business.dto.response.BusinessListResponse;
 import umc.stockoneqback.global.annotation.Auth;
 
 @RestController

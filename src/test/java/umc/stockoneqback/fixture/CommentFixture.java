@@ -3,7 +3,7 @@ package umc.stockoneqback.fixture;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import umc.stockoneqback.board.domain.Board;
-import umc.stockoneqback.comment.domain.Comment;
+import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.user.domain.User;
 
 @Getter

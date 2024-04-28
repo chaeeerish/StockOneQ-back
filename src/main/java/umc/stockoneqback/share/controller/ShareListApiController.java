@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.business.infra.query.dto.FilteredBusinessUser;
+import umc.stockoneqback.business.dto.response.FilteredBusinessUser;
 import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
 import umc.stockoneqback.share.service.ShareListService;

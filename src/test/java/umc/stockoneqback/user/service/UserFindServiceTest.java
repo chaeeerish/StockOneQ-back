@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.friend.domain.Friend;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.user.domain.User;

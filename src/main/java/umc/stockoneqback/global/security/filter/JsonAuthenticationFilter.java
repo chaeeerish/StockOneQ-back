@@ -9,7 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.util.StringUtils;
-import umc.stockoneqback.auth.controller.dto.request.LoginRequest;
+import umc.stockoneqback.auth.dto.request.LoginRequest;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
 

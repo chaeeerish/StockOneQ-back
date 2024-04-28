@@ -3,7 +3,7 @@ package umc.stockoneqback.board.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.board.controller.dto.BoardResponse;
+import umc.stockoneqback.board.dto.response.BoardResponse;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.board.domain.BoardRepository;
 import umc.stockoneqback.board.domain.like.BoardLikeRepository;

@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
-import umc.stockoneqback.auth.service.dto.response.LoginResponse;
+import umc.stockoneqback.auth.dto.response.LoginResponse;
 import umc.stockoneqback.auth.service.jwt.TokenIssuer;
 import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.global.security.principle.UserPrincipal;

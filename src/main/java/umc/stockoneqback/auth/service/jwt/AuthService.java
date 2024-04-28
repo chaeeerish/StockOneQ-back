@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
-import umc.stockoneqback.auth.service.dto.response.AuthMember;
+import umc.stockoneqback.auth.dto.response.AuthMember;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.Password;

@@ -1,6 +1,6 @@
 package umc.stockoneqback.product.infra.query;
 
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.product.domain.ProductSortCondition;
 import umc.stockoneqback.product.domain.SearchCondition;
 import umc.stockoneqback.product.domain.StoreCondition;

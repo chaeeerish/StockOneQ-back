@@ -3,6 +3,8 @@ package umc.stockoneqback.field.domain.store;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import umc.stockoneqback.field.domain.model.PartTimer;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;

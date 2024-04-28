@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.friend.domain.Friend;
 import umc.stockoneqback.friend.infra.query.dto.response.FriendInformation;
 import umc.stockoneqback.friend.service.dto.FriendAssembler;

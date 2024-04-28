@@ -7,9 +7,9 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.board.controller.dto.CustomBoardListResponse;
+import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.exception.BoardErrorCode;
-import umc.stockoneqback.board.infra.query.dto.BoardList;
+import umc.stockoneqback.board.dto.response.BoardList;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 

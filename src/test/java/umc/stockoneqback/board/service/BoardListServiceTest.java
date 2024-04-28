@@ -2,10 +2,10 @@ package umc.stockoneqback.board.service;
 
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import umc.stockoneqback.board.controller.dto.CustomBoardListResponse;
+import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.board.exception.BoardErrorCode;
-import umc.stockoneqback.board.infra.query.dto.BoardList;
+import umc.stockoneqback.board.dto.response.BoardList;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.User;
