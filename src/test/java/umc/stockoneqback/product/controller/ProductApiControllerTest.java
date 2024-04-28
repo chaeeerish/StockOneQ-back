@@ -12,12 +12,12 @@ import org.springframework.test.web.servlet.request.RequestPostProcessor;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.field.exception.StoreErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.product.controller.dto.request.ProductRequest;
+import umc.stockoneqback.product.dto.request.ProductRequest;
 import umc.stockoneqback.product.exception.ProductErrorCode;
-import umc.stockoneqback.product.service.dto.response.GetRequiredInfoResponse;
-import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
-import umc.stockoneqback.product.service.dto.response.LoadProductResponse;
-import umc.stockoneqback.product.service.dto.response.SearchProductResponse;
+import umc.stockoneqback.product.dto.response.GetRequiredInfoResponse;
+import umc.stockoneqback.product.dto.response.GetTotalProductResponse;
+import umc.stockoneqback.product.dto.response.LoadProductResponse;
+import umc.stockoneqback.product.dto.response.SearchProductResponse;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

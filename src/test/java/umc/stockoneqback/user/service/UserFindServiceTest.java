@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.model.Store;
-import umc.stockoneqback.friend.domain.Friend;
+import umc.stockoneqback.friend.domain.model.Friend;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
-import umc.stockoneqback.user.service.dto.response.FindManagerResponse;
+import umc.stockoneqback.user.dto.FindManager;
+import umc.stockoneqback.user.dto.response.FindManagerResponse;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;

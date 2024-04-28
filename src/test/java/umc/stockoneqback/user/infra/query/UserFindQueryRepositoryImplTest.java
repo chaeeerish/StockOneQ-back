@@ -10,7 +10,7 @@ import umc.stockoneqback.field.domain.repository.StoreRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 import umc.stockoneqback.user.domain.search.UserSearchType;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
+import umc.stockoneqback.user.dto.FindManager;
 
 import java.util.List;
 

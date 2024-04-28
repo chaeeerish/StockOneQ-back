@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.global.base.BaseTimeEntity;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.reply.domain.Reply;
+import umc.stockoneqback.reply.domain.model.Reply;
 import umc.stockoneqback.user.domain.User;
 
 import java.util.ArrayList;

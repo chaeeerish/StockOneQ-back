@@ -3,6 +3,7 @@ package umc.stockoneqback.product.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.product.domain.model.StoreCondition;
 import umc.stockoneqback.product.exception.ProductErrorCode;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

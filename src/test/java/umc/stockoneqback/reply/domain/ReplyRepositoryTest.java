@@ -9,6 +9,8 @@ import umc.stockoneqback.board.domain.BoardRepository;
 import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.comment.domain.repository.CommentRepository;
 import umc.stockoneqback.common.RepositoryTest;
+import umc.stockoneqback.reply.domain.model.Reply;
+import umc.stockoneqback.reply.domain.repository.ReplyRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 

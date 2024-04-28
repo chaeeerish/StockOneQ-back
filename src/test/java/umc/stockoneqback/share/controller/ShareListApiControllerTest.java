@@ -12,8 +12,8 @@ import umc.stockoneqback.business.dto.response.FindBusinessUser;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.share.exception.ShareErrorCode;
-import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
-import umc.stockoneqback.share.infra.query.dto.ShareList;
+import umc.stockoneqback.share.dto.response.CustomShareListPage;
+import umc.stockoneqback.share.dto.response.ShareList;
 
 import java.time.LocalDateTime;
 import java.util.List;

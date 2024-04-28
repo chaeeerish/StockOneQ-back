@@ -11,8 +11,8 @@ import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.service.dto.response.LoginIdResponse;
-import umc.stockoneqback.user.service.dto.response.UserInformationResponse;
+import umc.stockoneqback.user.dto.response.LoginIdResponse;
+import umc.stockoneqback.user.dto.response.UserInformationResponse;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

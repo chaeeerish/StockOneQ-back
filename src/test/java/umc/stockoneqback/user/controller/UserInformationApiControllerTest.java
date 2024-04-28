@@ -9,10 +9,10 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.controller.dto.request.FindLoginIdRequest;
+import umc.stockoneqback.user.dto.request.FindLoginIdRequest;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.service.dto.response.LoginIdResponse;
-import umc.stockoneqback.user.service.dto.response.UserInformationResponse;
+import umc.stockoneqback.user.dto.response.LoginIdResponse;
+import umc.stockoneqback.user.dto.response.UserInformationResponse;
 
 import java.time.LocalDate;
 

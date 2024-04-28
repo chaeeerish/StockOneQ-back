@@ -10,7 +10,7 @@ import umc.stockoneqback.user.domain.Password;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.service.dto.response.UpdatePasswordResponse;
+import umc.stockoneqback.user.dto.response.UpdatePasswordResponse;
 
 import java.time.LocalDate;
 

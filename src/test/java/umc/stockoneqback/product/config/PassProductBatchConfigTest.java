@@ -12,7 +12,7 @@
 //import umc.stockoneqback.common.EmbeddedRedisConfig;
 //import umc.stockoneqback.common.TestBatchLegacyConfig;
 //import umc.stockoneqback.fixture.ProductFixture;
-//import umc.stockoneqback.product.domain.ProductRepository;
+//import umc.stockoneqback.product.domain.repository.ProductRepository;
 //import umc.stockoneqback.role.domain.company.Company;
 //import umc.stockoneqback.role.domain.company.CompanyRepository;
 //import umc.stockoneqback.role.domain.store.Store;

@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.RepositoryTest;
 import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.field.domain.repository.StoreRepository;
-import umc.stockoneqback.friend.domain.Friend;
-import umc.stockoneqback.friend.domain.FriendRepository;
+import umc.stockoneqback.friend.domain.model.Friend;
+import umc.stockoneqback.friend.domain.repository.FriendRepository;
 import umc.stockoneqback.global.base.RelationStatus;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
+import umc.stockoneqback.user.dto.FindManager;
 
 import java.util.List;
 

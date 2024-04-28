@@ -13,7 +13,7 @@ import umc.stockoneqback.comment.dto.response.CustomCommentListResponse;
 import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.comment.domain.repository.CommentRepository;
 import umc.stockoneqback.file.service.FileService;
-import umc.stockoneqback.reply.controller.dto.ReplyListResponse;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 import umc.stockoneqback.reply.service.ReplyListService;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.service.UserFindService;

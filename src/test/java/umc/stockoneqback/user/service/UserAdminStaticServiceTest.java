@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 import umc.stockoneqback.admin.domain.StaticFA;
 import umc.stockoneqback.common.EmbeddedRedisConfig;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.user.service.dto.response.GetFAResponse;
+import umc.stockoneqback.user.dto.response.GetFAResponse;
 
 import java.util.Arrays;
 import java.util.List;

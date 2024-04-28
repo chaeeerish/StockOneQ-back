@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.comment.domain.model.Comment;
+import umc.stockoneqback.reply.domain.model.Reply;
 import umc.stockoneqback.user.domain.User;
 
 import static org.assertj.core.api.Assertions.assertThat;

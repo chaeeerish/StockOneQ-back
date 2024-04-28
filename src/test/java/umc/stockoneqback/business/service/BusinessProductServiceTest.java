@@ -10,9 +10,9 @@ import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.field.domain.model.Company;
 import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.fixture.ProductFixture;
-import umc.stockoneqback.product.domain.StoreCondition;
-import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
-import umc.stockoneqback.product.service.dto.response.SearchProductOthersResponse;
+import umc.stockoneqback.product.domain.model.StoreCondition;
+import umc.stockoneqback.product.dto.response.GetTotalProductResponse;
+import umc.stockoneqback.product.dto.response.SearchProductOthersResponse;
 import umc.stockoneqback.user.domain.User;
 
 import java.io.IOException;

@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.user.domain.search.UserSearchType;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
+import umc.stockoneqback.user.dto.FindManager;
 import umc.stockoneqback.user.infra.query.dto.QFindManager;
 
 import java.util.List;

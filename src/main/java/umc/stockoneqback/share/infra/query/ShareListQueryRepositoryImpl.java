@@ -9,11 +9,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.support.PageableExecutionUtils;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.global.base.Status;
-import umc.stockoneqback.share.domain.Category;
-import umc.stockoneqback.share.domain.ShareSearchType;
-import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
+import umc.stockoneqback.share.domain.model.Category;
+import umc.stockoneqback.share.domain.model.ShareSearchType;
+import umc.stockoneqback.share.dto.response.CustomShareListPage;
 import umc.stockoneqback.share.infra.query.dto.QShareList;
-import umc.stockoneqback.share.infra.query.dto.ShareList;
+import umc.stockoneqback.share.dto.response.ShareList;
 
 import java.util.List;
 

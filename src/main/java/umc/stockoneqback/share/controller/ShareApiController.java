@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.global.annotation.Auth;
-import umc.stockoneqback.share.controller.dto.ShareRequest;
-import umc.stockoneqback.share.controller.dto.ShareResponse;
+import umc.stockoneqback.share.dto.request.ShareRequest;
+import umc.stockoneqback.share.dto.response.ShareResponse;
 import umc.stockoneqback.share.service.ShareService;
 
 import java.io.IOException;
