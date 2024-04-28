@@ -7,8 +7,8 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.dto.request.LoginRequest;
 import umc.stockoneqback.auth.dto.request.SaveFcmRequest;
-import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.dto.response.LoginResponse;
+import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 

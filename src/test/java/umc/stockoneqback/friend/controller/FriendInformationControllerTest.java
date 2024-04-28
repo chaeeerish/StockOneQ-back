@@ -7,8 +7,8 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
-import umc.stockoneqback.friend.dto.response.FriendInformation;
 import umc.stockoneqback.friend.dto.response.FriendAssembler;
+import umc.stockoneqback.friend.dto.response.FriendInformation;
 import umc.stockoneqback.global.base.RelationStatus;
 
 import java.time.LocalDateTime;

@@ -14,9 +14,9 @@ import umc.stockoneqback.user.domain.Email;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 import umc.stockoneqback.user.domain.search.UserSearchType;
-import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.dto.FindManager;
 import umc.stockoneqback.user.dto.response.FindManagerResponse;
+import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
 package umc.stockoneqback.board.infra.query;
 
-import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.domain.BoardSearchType;
 import umc.stockoneqback.board.dto.response.BoardList;
+import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 
 public interface BoardListQueryRepository {
     CustomBoardListResponse<BoardList> getBoardListOrderByTime(BoardSearchType boardSearchType, String searchWord, int page);

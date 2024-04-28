@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 import umc.stockoneqback.reply.domain.model.Reply;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 import umc.stockoneqback.user.domain.User;
 
 import java.io.IOException;

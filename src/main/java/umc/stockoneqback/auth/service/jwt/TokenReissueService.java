@@ -2,8 +2,8 @@ package umc.stockoneqback.auth.service.jwt;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import umc.stockoneqback.auth.dto.request.ReissueTokenRequest;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
+import umc.stockoneqback.auth.dto.request.ReissueTokenRequest;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.utils.TokenProvider;
 import umc.stockoneqback.global.exception.BaseException;

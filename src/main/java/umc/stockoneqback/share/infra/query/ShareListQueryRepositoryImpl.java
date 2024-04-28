@@ -12,8 +12,8 @@ import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.share.domain.model.Category;
 import umc.stockoneqback.share.domain.model.ShareSearchType;
 import umc.stockoneqback.share.dto.response.CustomShareListPage;
-import umc.stockoneqback.share.infra.query.dto.QShareList;
 import umc.stockoneqback.share.dto.response.ShareList;
+import umc.stockoneqback.share.infra.query.dto.QShareList;
 
 import java.util.List;
 

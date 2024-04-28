@@ -11,8 +11,8 @@ import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.dto.request.UpdatePasswordRequest;
 import umc.stockoneqback.user.dto.request.UserInfoRequest;
 import umc.stockoneqback.user.dto.request.ValidateUpdatePasswordRequest;
-import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.dto.response.UpdatePasswordResponse;
+import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;
 

@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import umc.stockoneqback.auth.dto.request.SaveFcmRequest;
-import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.dto.response.TokenResponse;
+import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 

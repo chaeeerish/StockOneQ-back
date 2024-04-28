@@ -8,9 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.support.PageableExecutionUtils;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.domain.BoardSearchType;
 import umc.stockoneqback.board.dto.response.BoardList;
+import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.infra.query.dto.response.QBoardList;
 import umc.stockoneqback.global.base.Status;
 
