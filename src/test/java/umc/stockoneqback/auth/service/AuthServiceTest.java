@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
 import umc.stockoneqback.auth.domain.model.jwt.Token;
 import umc.stockoneqback.auth.dto.response.AuthMember;
-import umc.stockoneqback.auth.dto.response.LoginResponse;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;

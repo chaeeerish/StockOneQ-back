@@ -1,7 +1,6 @@
 package umc.stockoneqback.auth.service;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.auth.domain.model.fcm.FcmToken;

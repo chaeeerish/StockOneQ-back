@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.domain.model.jwt.TokenType;
-import umc.stockoneqback.auth.dto.request.ReissueTokenRequest;
 import umc.stockoneqback.auth.service.jwt.TokenReissueService;
 import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.global.annotation.ExtractToken;
