@@ -78,8 +78,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("본인에게 친구 신청을 할 수 없다")
         void throwExceptionBySelfFriendRequestNotAllowed() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             doThrow(BaseException.type(FriendErrorCode.SELF_FRIEND_REQUEST_NOT_ALLOWED))
                     .when(friendService)
                     .requestFriend(SENDER_ID, RECEIVER_ID);
@@ -125,8 +123,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("사장님이 아니라면 친구 요청을 하거나 받을 수 없다")
         void throwExceptionByUserIsNotManager() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             doThrow(BaseException.type(UserErrorCode.USER_IS_NOT_MANAGER))
                     .when(friendService)
                     .requestFriend(SENDER_ID, RECEIVER_ID);
@@ -172,8 +168,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("이미 친구 관계이거나 요청된 관계라면 추가로 요청할 수 없다")
         void throwExceptionByAlreadyExistFriend() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             doThrow(BaseException.type(FriendErrorCode.ALREADY_EXIST_FRIEND))
                     .when(friendService)
                     .requestFriend(SENDER_ID, RECEIVER_ID);
@@ -219,8 +213,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("친구 요청에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             given(friendService.requestFriend(SENDER_ID, RECEIVER_ID)).willReturn(1L);
 
             // when
@@ -294,8 +286,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("요청된 관계가 존재하지 않는다면 친구 신청 취소에 실패한다")
         void throwExceptionByAlreadyExistFriend() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             doThrow(BaseException.type(FriendErrorCode.FRIEND_NOT_FOUND))
                     .when(friendService)
                     .cancelFriend(SENDER_ID, RECEIVER_ID);
@@ -341,8 +331,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("이미 승인된 친구 관계라면 친구 신청 취소에 실패한다")
         void throwExceptionByStatusIsAccept() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             doThrow(BaseException.type(FriendErrorCode.STATUS_IS_ACCEPT))
                     .when(friendService)
                     .cancelFriend(SENDER_ID, RECEIVER_ID);
@@ -388,8 +376,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("친구 신청 취소에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SENDER_ID);
             doNothing()
                     .when(friendService)
                     .cancelFriend(anyLong(), anyLong());
@@ -465,8 +451,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("요청된 관계가 존재하지 않는다면 친구 수락에 실패한다")
         void throwExceptionByFriendNotFound() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(RECEIVER_ID);
             doThrow(BaseException.type(FriendErrorCode.FRIEND_NOT_FOUND))
                     .when(friendService)
                     .acceptFriend(SENDER_ID, RECEIVER_ID);
@@ -512,8 +496,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("이미 승인된 친구 관계라면 친구 수락에 실패한다")
         void throwExceptionByStatusIsAccept() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(RECEIVER_ID);
             doThrow(BaseException.type(FriendErrorCode.STATUS_IS_ACCEPT))
                     .when(friendService)
                     .acceptFriend(SENDER_ID, RECEIVER_ID);
@@ -559,8 +541,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("친구 수락에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(RECEIVER_ID);
             doReturn(1L)
                     .when(friendService)
                     .acceptFriend(SENDER_ID, RECEIVER_ID);
@@ -636,8 +616,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("요청된 관계가 존재하지 않는다면 친구 신청 거절에 실패한다")
         void throwExceptionByAlreadyExistFriend() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(RECEIVER_ID);
             doThrow(BaseException.type(FriendErrorCode.FRIEND_NOT_FOUND))
                     .when(friendService)
                     .rejectFriend(SENDER_ID, RECEIVER_ID);
@@ -683,8 +661,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("이미 승인된 친구 관계라면 친구 신청 거절에 실패한다")
         void throwExceptionByStatusIsAccept() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(RECEIVER_ID);
             doThrow(BaseException.type(FriendErrorCode.STATUS_IS_ACCEPT))
                     .when(friendService)
                     .rejectFriend(SENDER_ID, RECEIVER_ID);
@@ -730,8 +706,6 @@ class FriendApiControllerTest extends ControllerTest {
         @DisplayName("친구 신청 거절에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(RECEIVER_ID);
             doNothing()
                     .when(friendService)
                     .rejectFriend(anyLong(), anyLong());

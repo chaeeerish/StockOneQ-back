@@ -221,7 +221,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("searchedUser[].userId").type(JsonFieldType.NUMBER).description("유저 ID"),
+                                            fieldWithPath("searchedUser[].id").type(JsonFieldType.NUMBER).description("유저 ID"),
                                             fieldWithPath("searchedUser[].name").type(JsonFieldType.STRING).description("유저 이름"),
                                             fieldWithPath("searchedUser[].storeName").type(JsonFieldType.STRING).description("유저 가게 이름"),
                                             fieldWithPath("searchedUser[].phoneNumber").type(JsonFieldType.STRING).description("유저 연락처"),
@@ -417,7 +417,7 @@ class UserFindApiControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("searchedUser[].userId").type(JsonFieldType.NUMBER).description("유저 ID"),
+                                            fieldWithPath("searchedUser[].id").type(JsonFieldType.NUMBER).description("유저 ID"),
                                             fieldWithPath("searchedUser[].name").type(JsonFieldType.STRING).description("유저 이름"),
                                             fieldWithPath("searchedUser[].storeName").type(JsonFieldType.STRING).description("유저 가게 이름"),
                                             fieldWithPath("searchedUser[].phoneNumber").type(JsonFieldType.STRING).description("유저 연락처"),

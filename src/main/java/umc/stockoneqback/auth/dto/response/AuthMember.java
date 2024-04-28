@@ -4,7 +4,7 @@ import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.user.domain.User;
 
 public record AuthMember(
-        Long userId,
+        Long id,
         String loginId,
         String name,
         String accessToken,

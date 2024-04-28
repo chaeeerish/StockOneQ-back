@@ -107,7 +107,7 @@ class AuthApiControllerTest extends ControllerTest {
                                             fieldWithPath("password").description("비밀번호")
                                     ),
                                     responseFields(
-                                            fieldWithPath("userId").description("로그인한 사용자 ID (PK)"),
+                                            fieldWithPath("id").description("로그인한 사용자 ID (PK)"),
                                             fieldWithPath("loginId").description("로그인 아이디"),
                                             fieldWithPath("name").description("로그인 사용자 이름"),
                                             fieldWithPath("accessToken").description("발급된 Access Token"),

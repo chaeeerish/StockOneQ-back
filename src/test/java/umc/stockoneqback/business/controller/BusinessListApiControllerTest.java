@@ -162,7 +162,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                             parameterWithName("search").description("검색어")
                                     ),
                                     responseFields(
-                                            fieldWithPath("userList[].userId").description("유저 userId"),
+                                            fieldWithPath("userList[].id").description("유저 id"),
                                             fieldWithPath("userList[].name").description("유저 이름"),
                                             fieldWithPath("userList[].storeCoName").description("가게 or 회사 이름"),
                                             fieldWithPath("userList[].phoneNumber").description("유저 연락처"),
@@ -293,7 +293,7 @@ class BusinessListApiControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 유저 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("userList[].userId").description("유저 userId"),
+                                            fieldWithPath("userList[].id").description("유저 id"),
                                             fieldWithPath("userList[].name").description("유저 이름"),
                                             fieldWithPath("userList[].storeCoName").description("가게 or 회사 이름"),
                                             fieldWithPath("userList[].phoneNumber").description("유저 연락처"),

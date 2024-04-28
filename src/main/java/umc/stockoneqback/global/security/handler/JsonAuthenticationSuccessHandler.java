@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
-import umc.stockoneqback.auth.dto.response.LoginResponse;
+import umc.stockoneqback.auth.dto.response.AuthMember;
 import umc.stockoneqback.auth.service.jwt.TokenIssuer;
 import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.global.security.principle.UserPrincipal;
@@ -43,6 +43,6 @@ public class JsonAuthenticationSuccessHandler implements AuthenticationSuccessHa
         response.setStatus(HttpStatus.OK.value());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setCharacterEncoding("UTF-8");
-        objectMapper.writeValue(response.getWriter(), new LoginResponse(user.id(), user.loginId(), user.name()));
+        objectMapper.writeValue(response.getWriter(), new AuthMember(user.id(), user.loginId(), user.name(), null, null));
     }
 }

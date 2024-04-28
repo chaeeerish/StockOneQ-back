@@ -104,7 +104,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("friends[].userId").description("친구 ID"),
+                                            fieldWithPath("friends[].id").description("친구 ID"),
                                             fieldWithPath("friends[].name").description("친구 이름"),
                                             fieldWithPath("friends[].storeName").description("친구 가게 이름"),
                                             fieldWithPath("friends[].phoneNumber").description("친구 연락처"),
@@ -189,7 +189,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("friends[].userId").description("친구 ID"),
+                                            fieldWithPath("friends[].id").description("친구 ID"),
                                             fieldWithPath("friends[].name").description("친구 이름"),
                                             fieldWithPath("friends[].storeName").description("친구 가게 이름"),
                                             fieldWithPath("friends[].phoneNumber").description("친구 연락처"),
@@ -275,7 +275,7 @@ class FriendInformationControllerTest extends ControllerTest {
                                             parameterWithName("last").description("마지막으로 조회된 친구 ID")
                                     ),
                                     responseFields(
-                                            fieldWithPath("friends[].userId").description("친구 ID"),
+                                            fieldWithPath("friends[].id").description("친구 ID"),
                                             fieldWithPath("friends[].name").description("친구 이름"),
                                             fieldWithPath("friends[].storeName").description("친구 가게 이름"),
                                             fieldWithPath("friends[].phoneNumber").description("친구 연락처"),

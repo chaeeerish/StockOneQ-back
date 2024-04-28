@@ -115,8 +115,8 @@ class ShareListApiControllerTest extends ControllerTest {
                                     ),
                                     responseFields(
                                             fieldWithPath("total").type(JsonFieldType.NUMBER).description("반환되는 전체 유저의 수"),
-                                            fieldWithPath("businessUserList[].userBusinessId").type(JsonFieldType.NUMBER).description("(해당 유저와의) 비즈니스 userId"),
-                                            fieldWithPath("businessUserList[].userId").type(JsonFieldType.NUMBER).description("유저 userId"),
+                                            fieldWithPath("businessUserList[].userBusinessId").type(JsonFieldType.NUMBER).description("(해당 유저와의) 비즈니스 id"),
+                                            fieldWithPath("businessUserList[].id").type(JsonFieldType.NUMBER).description("유저 id"),
                                             fieldWithPath("businessUserList[].name").type(JsonFieldType.STRING).description("유저 이름")
                                     )
                             )
@@ -161,7 +161,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
                                     queryParameters(
-                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 userId"),
+                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)").optional(),
@@ -215,7 +215,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     queryParameters(
-                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 userId"),
+                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)").optional(),
@@ -269,7 +269,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     queryParameters(
-                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 userId"),
+                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)").optional(),
@@ -315,7 +315,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     queryParameters(
-                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 userId"),
+                                            parameterWithName("user").description("(선택된 유저와의) 비즈니스 id"),
                                             parameterWithName("page").description("페이지 번호"),
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)"),
                                             parameterWithName("search").description("검색 조건(제목/내용)"),
@@ -328,7 +328,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                             fieldWithPath("pageInfo.totalElements").type(JsonFieldType.NUMBER).description("전체 글 수"),
                                             fieldWithPath("pageInfo.hasNext").type(JsonFieldType.BOOLEAN).description("다음 페이지 존재 여부(마지막 페이지만 false)"),
                                             fieldWithPath("pageInfo.numberOfElements").type(JsonFieldType.NUMBER).description("현재 페이지 글 수"),
-                                            fieldWithPath("shareList[].userId").type(JsonFieldType.NUMBER).description("글 ID"),
+                                            fieldWithPath("shareList[].id").type(JsonFieldType.NUMBER).description("글 ID"),
                                             fieldWithPath("shareList[].title").type(JsonFieldType.STRING).description("글 제목"),
                                             fieldWithPath("shareList[].createdDate").type(JsonFieldType.STRING).description("글 최초 등록 시간"),
                                             fieldWithPath("shareList[].writer").type(JsonFieldType.STRING).description("글 작성자"),

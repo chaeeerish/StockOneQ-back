@@ -81,7 +81,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
                                     pathParameters(
-                                            parameterWithName("businessId").description("선택된 비즈니스 관계 userId")
+                                            parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
                                     queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
@@ -149,7 +149,7 @@ class ShareApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     pathParameters(
-                                            parameterWithName("businessId").description("선택된 비즈니스 관계 userId")
+                                            parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
                                     queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
@@ -208,7 +208,7 @@ class ShareApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     pathParameters(
-                                            parameterWithName("businessId").description("선택된 비즈니스 관계 userId")
+                                            parameterWithName("businessId").description("선택된 비즈니스 관계 id")
                                     ),
                                     queryParameters(
                                             parameterWithName("category").description("카테고리(공지사항/레시피/행사내용/기타)")
@@ -268,7 +268,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
                                     queryParameters(
-                                            parameterWithName("id").description("해당 게시글 userId")
+                                            parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
                                             partWithName("file").attributes(getInputImageFormat()).description("파일"),
@@ -333,7 +333,7 @@ class ShareApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     queryParameters(
-                                            parameterWithName("id").description("해당 게시글 userId")
+                                            parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
                                             partWithName("file").attributes(getInputImageFormat()).description("파일"),
@@ -389,7 +389,7 @@ class ShareApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     queryParameters(
-                                            parameterWithName("id").description("해당 게시글 userId")
+                                            parameterWithName("id").description("해당 게시글 id")
                                     ),
                                     requestParts(
                                             partWithName("file").attributes(getInputImageFormat()).description("파일"),
@@ -435,7 +435,7 @@ class ShareApiControllerTest extends ControllerTest {
                                     preprocessRequest(prettyPrint()),
                                     preprocessResponse(prettyPrint()),
                                     pathParameters(
-                                            parameterWithName("shareId").description("해당 게시글 userId")
+                                            parameterWithName("shareId").description("해당 게시글 id")
                                     ),
                                     responseFields(
                                             fieldWithPath("status").description("HTTP 상태 코드"),
@@ -480,7 +480,7 @@ class ShareApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     pathParameters(
-                                            parameterWithName("shareId").description("해당 게시글 userId")
+                                            parameterWithName("shareId").description("해당 게시글 id")
                                     ),
                                     responseFields(
                                             fieldWithPath("status").description("HTTP 상태 코드"),
@@ -516,10 +516,10 @@ class ShareApiControllerTest extends ControllerTest {
                                             headerWithName(AUTHORIZATION).description("Access Token")
                                     ),
                                     pathParameters(
-                                            parameterWithName("shareId").description("해당 게시글 userId")
+                                            parameterWithName("shareId").description("해당 게시글 id")
                                     ),
                                     responseFields(
-                                            fieldWithPath("id").type(JsonFieldType.NUMBER).description("해당 게시글 userId"),
+                                            fieldWithPath("id").type(JsonFieldType.NUMBER).description("해당 게시글 id"),
                                             fieldWithPath("title").type(JsonFieldType.STRING).description("글 제목"),
                                             fieldWithPath("file").type(JsonFieldType.STRING).description("첨부 파일(file path)").optional(),
                                             fieldWithPath("content").type(JsonFieldType.STRING).description("글 내용"),

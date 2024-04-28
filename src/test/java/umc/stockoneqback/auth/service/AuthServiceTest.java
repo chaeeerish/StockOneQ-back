@@ -58,7 +58,7 @@ class AuthServiceTest extends ServiceTest {
             // then
             Assertions.assertAll(
                     () -> assertThat(authMember).isNotNull(),
-                    () -> assertThat(authMember.userId()).isEqualTo(userId),
+                    () -> assertThat(authMember.id()).isEqualTo(userId),
                     () -> assertThat(authMember.loginId()).isEqualTo(SAEWOO.getLoginId()),
                     () -> assertThat(authMember.name()).isEqualTo(SAEWOO.getName()),
                     () -> assertThat(jwtTokenProvider.getId(authMember.accessToken())).isEqualTo(userId),

@@ -33,11 +33,11 @@ public class Comment extends BaseTimeEntity {
     private Status status;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "writer_id", referencedColumnName = "userId")
+    @JoinColumn(name = "writer_id", referencedColumnName = "id")
     private User writer;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "board_id", referencedColumnName = "userId")
+    @JoinColumn(name = "board_id", referencedColumnName = "id")
     private Board board;
 
     // 댓글 삭제시 달려있는 대댓글 모두 삭제
