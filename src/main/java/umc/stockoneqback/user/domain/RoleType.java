@@ -11,7 +11,7 @@ public enum RoleType implements EnumStandard {
     MANAGER("ROLE_MANAGER", "사장님"),
     PART_TIMER("ROLE_PART_TIMER", "아르바이트생"),
     SUPERVISOR("ROLE_SUPERVISOR", "슈퍼바이저"),
-    ADMINISTRATOR("ROLE_ADMIN", "관리자"),
+    ADMIN("ROLE_ADMIN", "관리자"),
     ;
 
     private final String authority;

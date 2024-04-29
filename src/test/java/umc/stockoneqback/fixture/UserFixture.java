@@ -29,7 +29,7 @@ public enum UserFixture {
     TONY("tony@example.com", "tony123", "Secure567!", "토니", LocalDate.of(1999, 5, 29), "01044445555", RoleType.PART_TIMER),
     SOPHIA("sophia@example.com", "sophia123", "NewPass-2023", "소피아", LocalDate.of(1986, 4, 17), "01033334444", RoleType.MANAGER),
     UNKNOWN("unknown@hanmail.com", "unknown123", "Pwd78910*", "언노운", LocalDate.of(2000, 10, 31), "01024681398", RoleType.MANAGER),
-    ADMIN("admin@hanmail.com", "admin123", "Admin123!", "관리자", LocalDate.of(2000, 1, 1), "01001234567", RoleType.ADMINISTRATOR)
+    ADMIN("admin@hanmail.com", "admin123", "Admin123!", "관리자", LocalDate.of(2000, 1, 1), "01001234567", RoleType.ADMIN)
     ;
 
     private final String email;
