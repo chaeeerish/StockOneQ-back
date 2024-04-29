@@ -16,7 +16,6 @@ import java.io.InputStreamReader;
 
 @TestConfiguration
 public class EmbeddedRedisConfig {
-
     @Value("${spring.redis.port}")
     private int port;
 

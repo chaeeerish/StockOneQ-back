@@ -117,7 +117,7 @@ public class ProductService {
         LocalDate currentDate = LocalDate.now();
         for (FcmToken fcmToken: fcmTokenList) {
             User user = userFindService.findById(fcmToken.getId());
-            if (user.getRoles().get(0).getRoleType() == RoleType.SUPERVISOR || user.getRoles().get(0).getRoleType() == RoleType.ADMINISTRATOR)
+            if (user.getRoles().get(0).getRoleType() == RoleType.SUPERVISOR || user.getRoles().get(0).getRoleType() == RoleType.ADMIN)
                 continue;
             if (user.getRoles().get(0).getRoleType() == RoleType.MANAGER) {
                 List<Product> productList = productRepository.findPassByManager(user, currentDate);
