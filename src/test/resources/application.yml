@@ -18,18 +18,18 @@ spring:
         format_sql: true
         default_batch_fetch_size: 50
 
-  redis:
-    lettuce:
-      pool:
-        min-idle: 0
-        max-idle: 8
-        max-active: 8
-    port: 16379
-    host: localhost
-
   config:
     import:
       - application-firebase.yml
+      - secret.yml
+
+  cache:
+    type: redis
+
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
 
 logging:
   level:
@@ -56,3 +56,12 @@ jwt:
 discord:
   webhookId: ${DISCORD_WEBHOOK_ID}
   webhookToken: ${DISCORD_WEBHOOK_TOKEN}
+
+springdoc:
+  show-login-endpoint: true
+
+server:
+  port: 8081
+
+cors:
+  allowed-origin-patterns: localhost:8081

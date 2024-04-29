@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.dto.response.AuthMember;
+import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.service.fcm.FcmTokenService;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.Password;
 import umc.stockoneqback.user.domain.User;
-import umc.stockoneqback.user.exception.UserErrorCode;
 import umc.stockoneqback.user.service.UserFindService;
 
 import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;
@@ -33,7 +33,7 @@ public class AuthService {
 
     private void validatePassword(String comparePassword, Password saved) {
         if(!saved.isSamePassword(comparePassword, ENCODER)) {
-            throw BaseException.type(UserErrorCode.WRONG_PASSWORD);
+            throw BaseException.type(AuthErrorCode.INVALID_AUTH_DATA);
         }
     }
 

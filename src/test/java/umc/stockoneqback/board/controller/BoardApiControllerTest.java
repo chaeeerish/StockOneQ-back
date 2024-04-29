@@ -11,8 +11,10 @@ import umc.stockoneqback.board.dto.request.BoardRequest;
 import umc.stockoneqback.board.dto.response.BoardResponse;
 import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.common.ControllerTest;
+import umc.stockoneqback.common.security.mock.WithCustomMockUser;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.global.exception.GlobalErrorCode;
+import umc.stockoneqback.user.domain.RoleType;
 
 import java.time.LocalDate;
 
@@ -83,6 +85,7 @@ public class BoardApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("게시글 등록에 성공한다")
         void success() throws Exception {
@@ -168,6 +171,7 @@ public class BoardApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("다른 사람의 게시글은 수정할 수 없다")
         void throwExceptionByUserIsNotBoardWriter() throws Exception {
@@ -220,6 +224,7 @@ public class BoardApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("게시글 수정에 성공한다")
         void success() throws Exception {
@@ -265,6 +270,7 @@ public class BoardApiControllerTest extends ControllerTest {
         private static final String BASE_URL = "/api/boards/{boardId}";
         private static final Long BOARD_ID = 2L;
 
+        @WithCustomMockUser(roleType = RoleType.PART_TIMER)
         @Test
         @DisplayName("유효하지 않은 권한으로 게시글 상세 조회 시 실패한다")
         void throwExceptionInvalidUserJWT() throws Exception {
@@ -310,6 +316,7 @@ public class BoardApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("게시글 상세조회에 성공한다")
         void success() throws Exception {
@@ -360,6 +367,7 @@ public class BoardApiControllerTest extends ControllerTest {
             private static final Long USER_ID = 1L;
             private static final Long BOARD_ID = 2L;
 
+            @WithCustomMockUser(roleType = RoleType.PART_TIMER)
             @Test
             @DisplayName("유효하지 않은 권한으로 게시글 조회수 증가 시 실패한다")
             void throwExceptionInvalid_User_JWT() throws Exception {
@@ -406,6 +414,7 @@ public class BoardApiControllerTest extends ControllerTest {
                         );
             }
 
+            @WithCustomMockUser(roleType = RoleType.MANAGER)
             @Test
             @DisplayName("게시글조회수 증가에 성공한다")
             void success() throws Exception {

@@ -10,7 +10,9 @@ import umc.stockoneqback.auth.dto.request.SaveFcmRequest;
 import umc.stockoneqback.auth.dto.response.AuthMember;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
+import umc.stockoneqback.common.security.mock.WithCustomMockUser;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.user.domain.RoleType;
 
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
@@ -118,6 +120,7 @@ class AuthApiControllerTest extends ControllerTest {
         }
     }
 
+
     @Nested
     @DisplayName("로그아웃 API [POST /api/auth/logout]")
     class logout {
@@ -157,6 +160,7 @@ class AuthApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("로그아웃에 성공한다")
         void success() throws Exception {
@@ -183,6 +187,7 @@ class AuthApiControllerTest extends ControllerTest {
         }
     }
 
+    @WithCustomMockUser(roleType = RoleType.MANAGER)
     @Nested
     @DisplayName("초기 fcmToken 저장 API [POST /api/auth/fcm]")
     class saveFcm {

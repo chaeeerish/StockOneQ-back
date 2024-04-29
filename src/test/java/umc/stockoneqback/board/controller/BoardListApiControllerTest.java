@@ -11,7 +11,9 @@ import umc.stockoneqback.board.dto.response.BoardList;
 import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.common.ControllerTest;
+import umc.stockoneqback.common.security.mock.WithCustomMockUser;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.user.domain.RoleType;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -92,6 +94,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("유효하지 않은 정렬 방식이라면 게시글 목록 조회에 실패한다")
         void throwExceptionByNotFoundSortCondition() throws Exception {
@@ -144,6 +147,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("유효하지 않은 검색 조건이라면 게시글 목록 검색에 실패한다")
         void throwExceptionByNotFoundSearchType() throws Exception {
@@ -196,6 +200,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("정렬 기준과 검색에 따른 게시글 목록 조회에 성공한다")
         void success() throws Exception{
@@ -299,6 +304,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("유효하지 않은 정렬 방식이라면 내가 쓴 글 목록 조회에 실패한다")
         void throwExceptionByNotFoundSortCondition() throws Exception {
@@ -351,6 +357,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("유효하지 않은 검색 조건이라면 내가 쓴 글 검색에 실패한다")
         void throwExceptionByNotFoundSearchType() throws Exception {
@@ -403,6 +410,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("정렬 기준과 검색에 따른 내가 쓴 글 조회에 성공한다")
         void success() throws Exception{
@@ -494,6 +502,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("다른 사람의 게시글은 삭제할 수 없다")
         void throwExceptionByUserIsNotBoardWriter() throws Exception {
@@ -535,6 +544,7 @@ class BoardListApiControllerTest extends ControllerTest {
                     );
         }
 
+        @WithCustomMockUser(roleType = RoleType.MANAGER)
         @Test
         @DisplayName("내가 쓴 글 게시글 삭제에 성공한다")
         void success() throws Exception {

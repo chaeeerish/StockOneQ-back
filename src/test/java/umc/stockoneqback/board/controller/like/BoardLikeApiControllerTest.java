@@ -8,7 +8,9 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.common.ControllerTest;
+import umc.stockoneqback.common.security.mock.WithCustomMockUser;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.user.domain.RoleType;
 
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
@@ -26,6 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static umc.stockoneqback.fixture.TokenFixture.ACCESS_TOKEN;
 import static umc.stockoneqback.fixture.TokenFixture.BEARER_TOKEN;
 
+@WithCustomMockUser(roleType = RoleType.MANAGER)
 @DisplayName("Board [Controller Layer] -> BoardLikeApiController 테스트")
 public class BoardLikeApiControllerTest extends ControllerTest {
     @Nested
