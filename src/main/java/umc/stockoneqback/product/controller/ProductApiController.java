@@ -8,10 +8,10 @@ import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.base.BaseResponse;
 import umc.stockoneqback.global.exception.GlobalErrorCode;
-import umc.stockoneqback.product.controller.dto.request.ProductRequest;
+import umc.stockoneqback.product.dto.request.ProductRequest;
+import umc.stockoneqback.product.dto.response.GetRequiredInfoResponse;
+import umc.stockoneqback.product.dto.response.LoadProductResponse;
 import umc.stockoneqback.product.service.ProductService;
-import umc.stockoneqback.product.service.dto.response.GetRequiredInfoResponse;
-import umc.stockoneqback.product.service.dto.response.LoadProductResponse;
 
 import java.io.IOException;
 

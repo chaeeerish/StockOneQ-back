@@ -78,8 +78,6 @@ class BusinessApiControllerTest extends ControllerTest {
         @DisplayName("이미 존재하는 관계라면 등록에 실패한다")
         void throwExceptionByAlreadyExistBusiness() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SUPERVISOR_ID);
             doThrow(BaseException.type(BusinessErrorCode.ALREADY_EXIST_BUSINESS))
                     .when(businessService)
                     .register(any(), any());
@@ -125,8 +123,6 @@ class BusinessApiControllerTest extends ControllerTest {
         @DisplayName("슈퍼바이저 - 점주 관계 등록에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SUPERVISOR_ID);
             doNothing()
                     .when(businessService)
                     .register(any(), any());
@@ -166,8 +162,6 @@ class BusinessApiControllerTest extends ControllerTest {
         @DisplayName("Authorization Header에 AccessToken이 없으면 슈퍼바이저 - 점주 관계 취소에 실패한다")
         void withoutAccessToken() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SUPERVISOR_ID);
             doThrow(BaseException.type(BusinessErrorCode.BUSINESS_NOT_FOUND))
                     .when(businessService)
                     .cancel(any(), any());
@@ -209,8 +203,6 @@ class BusinessApiControllerTest extends ControllerTest {
         @DisplayName("존재하지 않는 관계라면 취소에 실패한다")
         void throwExceptionByAlreadyExistBusiness() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SUPERVISOR_ID);
             doThrow(BaseException.type(BusinessErrorCode.BUSINESS_NOT_FOUND))
                     .when(businessService)
                     .cancel(any(), any());
@@ -256,8 +248,6 @@ class BusinessApiControllerTest extends ControllerTest {
         @DisplayName("슈퍼바이저 - 점주 관계 등록에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(SUPERVISOR_ID);
             doNothing()
                     .when(businessService)
                     .register(any(), any());

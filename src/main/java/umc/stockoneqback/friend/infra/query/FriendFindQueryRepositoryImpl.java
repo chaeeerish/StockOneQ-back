@@ -4,13 +4,13 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.global.base.RelationStatus;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
-import umc.stockoneqback.user.infra.query.dto.QFindManager;
+import umc.stockoneqback.user.dto.FindManager;
+import umc.stockoneqback.user.dto.QFindManager;
 
 import java.util.List;
 
-import static umc.stockoneqback.field.domain.store.QStore.store;
-import static umc.stockoneqback.friend.domain.QFriend.friend;
+import static umc.stockoneqback.field.domain.model.QStore.store;
+import static umc.stockoneqback.friend.domain.model.QFriend.friend;
 import static umc.stockoneqback.user.domain.QUser.user;
 
 @Transactional(readOnly = true)

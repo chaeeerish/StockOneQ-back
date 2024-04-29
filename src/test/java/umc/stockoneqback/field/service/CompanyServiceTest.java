@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.company.Company;
+import umc.stockoneqback.field.domain.model.Company;
 import umc.stockoneqback.field.exception.CompanyErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.User;

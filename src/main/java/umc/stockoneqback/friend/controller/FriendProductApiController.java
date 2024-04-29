@@ -10,8 +10,8 @@ import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
 import umc.stockoneqback.friend.service.FriendProductService;
 import umc.stockoneqback.global.annotation.Auth;
 import umc.stockoneqback.global.base.BaseResponse;
-import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
-import umc.stockoneqback.product.service.dto.response.SearchProductOthersResponse;
+import umc.stockoneqback.product.dto.response.GetTotalProductResponse;
+import umc.stockoneqback.product.dto.response.SearchProductOthersResponse;
 
 import java.io.IOException;
 import java.util.List;

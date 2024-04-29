@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.board.controller.dto.BoardRequest;
-import umc.stockoneqback.board.controller.dto.BoardResponse;
+import umc.stockoneqback.board.dto.request.BoardRequest;
+import umc.stockoneqback.board.dto.response.BoardResponse;
 import umc.stockoneqback.board.service.BoardService;
 import umc.stockoneqback.global.annotation.Auth;
 

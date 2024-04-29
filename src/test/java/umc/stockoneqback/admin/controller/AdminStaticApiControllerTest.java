@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.context.support.WithSecurityContext;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.admin.dto.request.AddFARequest;
 import umc.stockoneqback.common.ControllerTest;
@@ -16,6 +18,7 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doThrow;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
@@ -32,6 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static umc.stockoneqback.fixture.TokenFixture.ACCESS_TOKEN;
 import static umc.stockoneqback.fixture.TokenFixture.BEARER_TOKEN;
 
+@WithMockUser(roles = {"ADMIN"})
 @DisplayName("Admin [Controller Layer] -> AdminStaticApiController 테스트")
 public class AdminStaticApiControllerTest extends ControllerTest {
     private final List<String> questionList = Arrays.asList(
@@ -148,10 +152,16 @@ public class AdminStaticApiControllerTest extends ControllerTest {
     class deleteFA {
         private static final String BASE_URL = "/api/admin/fa";
 
-        @Test
+        @WithMockUser(roles = {"ADMIN"})
+        @WithSecurityContext(factory = WithCustomMockUserSecurityContextFactory.class)
         @DisplayName("F&A 삭제에 성공한다")
         void success() throws Exception {
             // given
+            doNothing()
+                    .when(jwtTokenProvider)
+                    .validateToken(anyString());
+            given(jwtTokenProvider.getId(anyString())).willReturn(1L);
+
             doNothing()
                     .when(AdminStaticService)
                     .deleteFA(anyString());

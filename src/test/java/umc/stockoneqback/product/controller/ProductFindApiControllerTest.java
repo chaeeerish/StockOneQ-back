@@ -10,9 +10,9 @@ import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.field.exception.StoreErrorCode;
 import umc.stockoneqback.fixture.ProductFixture;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.product.dto.response.GetTotalProductResponse;
+import umc.stockoneqback.product.dto.response.SearchProductResponse;
 import umc.stockoneqback.product.exception.ProductErrorCode;
-import umc.stockoneqback.product.service.dto.response.GetTotalProductResponse;
-import umc.stockoneqback.product.service.dto.response.SearchProductResponse;
 
 import java.util.ArrayList;
 import java.util.List;

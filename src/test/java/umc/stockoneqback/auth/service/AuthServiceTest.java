@@ -3,12 +3,13 @@ package umc.stockoneqback.auth.service;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.auth.domain.model.fcm.FcmToken;
+import umc.stockoneqback.auth.domain.model.jwt.Token;
+import umc.stockoneqback.auth.dto.response.AuthMember;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.auth.service.dto.response.LoginResponse;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.global.exception.BaseException;
 
 import java.util.Optional;
@@ -45,26 +46,26 @@ class AuthServiceTest extends ServiceTest {
             // when - then
             assertThatThrownBy(() -> authService.login(SAEWOO.getLoginId(),  "wrong" + SAEWOO.getPassword()))
                     .isInstanceOf(BaseException.class)
-                    .hasMessage(AuthErrorCode.WRONG_PASSWORD.getMessage());
+                    .hasMessage(AuthErrorCode.INVALID_AUTH_DATA.getMessage());
         }
 
         @Test
         @DisplayName("로그인에 성공한다")
         void success() {
             // when
-            LoginResponse loginResponse = authService.login(SAEWOO.getLoginId(), SAEWOO.getPassword());
+            AuthMember authMember = authService.login(SAEWOO.getLoginId(), SAEWOO.getPassword());
 
             // then
             Assertions.assertAll(
-                    () -> assertThat(loginResponse).isNotNull(),
-                    () -> assertThat(loginResponse.userId()).isEqualTo(userId),
-                    () -> assertThat(loginResponse.loginId()).isEqualTo(SAEWOO.getLoginId()),
-                    () -> assertThat(loginResponse.name()).isEqualTo(SAEWOO.getName()),
-                    () -> assertThat(jwtTokenProvider.getId(loginResponse.accessToken())).isEqualTo(userId),
-                    () -> assertThat(jwtTokenProvider.getId(loginResponse.refreshToken())).isEqualTo(userId),
+                    () -> assertThat(authMember).isNotNull(),
+                    () -> assertThat(authMember.id()).isEqualTo(userId),
+                    () -> assertThat(authMember.loginId()).isEqualTo(SAEWOO.getLoginId()),
+                    () -> assertThat(authMember.name()).isEqualTo(SAEWOO.getName()),
+                    () -> assertThat(jwtTokenProvider.getId(authMember.accessToken())).isEqualTo(userId),
+                    () -> assertThat(jwtTokenProvider.getId(authMember.refreshToken())).isEqualTo(userId),
                     () -> {
-                        RefreshToken findRefreshToken = refreshTokenRedisRepository.findById(userId).orElseThrow();
-                        assertThat(findRefreshToken.getRefreshToken()).isEqualTo(loginResponse.refreshToken());
+                        Token findRefreshToken = tokenRepository.findById(userId).orElseThrow();
+                        assertThat(findRefreshToken.getRefreshToken()).isEqualTo(authMember.refreshToken());
                     }
             );
         }
@@ -91,7 +92,7 @@ class AuthServiceTest extends ServiceTest {
             authService.logout(userId);
 
             // then
-            Optional<RefreshToken> findToken = refreshTokenRedisRepository.findById(userId);
+            Optional<Token> findToken = tokenRepository.findById(userId);
             assertThat(findToken).isEmpty();
         }
     }

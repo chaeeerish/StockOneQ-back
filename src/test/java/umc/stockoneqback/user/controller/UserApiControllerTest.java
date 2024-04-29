@@ -9,9 +9,9 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.field.exception.StoreErrorCode;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.controller.dto.request.SignUpManagerRequest;
-import umc.stockoneqback.user.controller.dto.request.SignUpPartTimerRequest;
-import umc.stockoneqback.user.controller.dto.request.SignUpSupervisorRequest;
+import umc.stockoneqback.user.dto.request.SignUpManagerRequest;
+import umc.stockoneqback.user.dto.request.SignUpPartTimerRequest;
+import umc.stockoneqback.user.dto.request.SignUpSupervisorRequest;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import static org.mockito.ArgumentMatchers.*;

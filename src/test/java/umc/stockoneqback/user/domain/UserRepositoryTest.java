@@ -90,7 +90,7 @@ class UserRepositoryTest extends RepositoryTest {
                 () -> assertThat(findUser.getPassword().isSamePassword(SAEWOO.getPassword(), ENCODER)).isTrue(),
                 () -> assertThat(findUser.getName()).isEqualTo(SAEWOO.getName()),
                 () -> assertThat(findUser.getPhoneNumber()).isEqualTo(SAEWOO.getPhoneNumber()),
-                () -> assertThat(finduser.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
+                () -> assertThat(findUser.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
                 () -> assertThat(findUser.getStatus()).isEqualTo(Status.NORMAL)
         );
     }
@@ -108,7 +108,7 @@ class UserRepositoryTest extends RepositoryTest {
                 () -> assertThat(findUser.getPassword().isSamePassword(SAEWOO.getPassword(), ENCODER)).isTrue(),
                 () -> assertThat(findUser.getName()).isEqualTo(SAEWOO.getName()),
                 () -> assertThat(findUser.getPhoneNumber()).isEqualTo(SAEWOO.getPhoneNumber()),
-                () -> assertThat(finduser.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
+                () -> assertThat(findUser.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
                 () -> assertThat(findUser.getStatus()).isEqualTo(Status.NORMAL)
         );
     }
@@ -126,7 +126,7 @@ class UserRepositoryTest extends RepositoryTest {
                 () -> assertThat(findUser.getPassword().isSamePassword(SAEWOO.getPassword(), ENCODER)).isTrue(),
                 () -> assertThat(findUser.getName()).isEqualTo(SAEWOO.getName()),
                 () -> assertThat(findUser.getPhoneNumber()).isEqualTo(SAEWOO.getPhoneNumber()),
-                () -> assertThat(finduser.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
+                () -> assertThat(findUser.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
                 () -> assertThat(findUser.getStatus()).isEqualTo(Status.NORMAL)
         );
     }

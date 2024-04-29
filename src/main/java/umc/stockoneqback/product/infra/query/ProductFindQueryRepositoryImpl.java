@@ -7,14 +7,14 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.product.domain.ProductSortCondition;
-import umc.stockoneqback.product.domain.SearchCondition;
-import umc.stockoneqback.product.domain.StoreCondition;
-import umc.stockoneqback.product.infra.query.dto.ProductFindPage;
-import umc.stockoneqback.product.infra.query.dto.QProductFindPage;
+import umc.stockoneqback.product.domain.model.ProductSortCondition;
+import umc.stockoneqback.product.domain.model.SearchCondition;
+import umc.stockoneqback.product.domain.model.StoreCondition;
+import umc.stockoneqback.product.dto.response.ProductFindPage;
+import umc.stockoneqback.product.dto.response.QProductFindPage;
 import umc.stockoneqback.user.exception.UserErrorCode;
 
 import java.time.LocalDate;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.querydsl.core.types.dsl.Expressions.booleanTemplate;
-import static umc.stockoneqback.product.domain.QProduct.product;
+import static umc.stockoneqback.product.domain.model.QProduct.product;
 
 @Transactional(readOnly = true)
 @RequiredArgsConstructor

@@ -8,6 +8,8 @@ import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.global.exception.GlobalErrorCode;
 import umc.stockoneqback.global.utils.EnumConverter;
 
+import java.util.Set;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -22,8 +24,8 @@ class UserTest {
         @Test
         @DisplayName("존재하지 않는 역할은 역할 Enum Class로 변환할 수 없다")
         void throwExceptionByRoleNotFound() {
-            assertThatThrownBy(() -> User.createUser(Email.from(ANNE.getEmail()), ANNE.getLoginId(), Password.encrypt(ANNE.getPassword(), ENCODER), ANNE.getName(), ANNE.getBirth(), ANNE.getPhoneNumber(), RoleType.valueOf("사장님")));
-            assertThatThrownBy(() -> User.createUser(Email.from(ANNE.getEmail()), ANNE.getLoginId(), Password.encrypt(ANNE.getPassword(), ENCODER), ANNE.getName(), ANNE.getBirth(), ANNE.getPhoneNumber(), new EnumConverter<>(RoleType.class).convertToEntityAttribute("시장님")))
+            assertThatThrownBy(() -> User.createUser(Email.from(ANNE.getEmail()), ANNE.getLoginId(), Password.encrypt(ANNE.getPassword(), ENCODER), ANNE.getName(), ANNE.getBirth(), ANNE.getPhoneNumber(), Set.of(RoleType.valueOf("사장님"))));
+            assertThatThrownBy(() -> User.createUser(Email.from(ANNE.getEmail()), ANNE.getLoginId(), Password.encrypt(ANNE.getPassword(), ENCODER), ANNE.getName(), ANNE.getBirth(), ANNE.getPhoneNumber(), Set.of(new EnumConverter<>(RoleType.class).convertToEntityAttribute("시장님"))))
                     .isInstanceOf(BaseException.class)
                     .hasMessage(GlobalErrorCode.INVALID_ENUM.getMessage());
         }
@@ -31,7 +33,7 @@ class UserTest {
         @Test
         @DisplayName("User 생성에 성공한다")
         void success() {
-            User user = User.createUser(Email.from(SAEWOO.getEmail()), SAEWOO.getLoginId(), Password.encrypt(SAEWOO.getPassword(), ENCODER), SAEWOO.getName(), SAEWOO.getBirth(), SAEWOO.getPhoneNumber(), SAEWOO.getRoleType());
+            User user = User.createUser(Email.from(SAEWOO.getEmail()), SAEWOO.getLoginId(), Password.encrypt(SAEWOO.getPassword(), ENCODER), SAEWOO.getName(), SAEWOO.getBirth(), SAEWOO.getPhoneNumber(), Set.of(SAEWOO.getRoleType()));
 
             assertAll(
                     () -> assertThat(user.getEmail().getValue()).isEqualTo(SAEWOO.getEmail()),
@@ -48,7 +50,7 @@ class UserTest {
     @Test
     @DisplayName("회원 정보를 수정한다")
     void updateInformation() {
-        User user = User.createUser(Email.from(SAEWOO.getEmail()), SAEWOO.getLoginId(), Password.encrypt(SAEWOO.getPassword(), ENCODER), SAEWOO.getName(), SAEWOO.getBirth(), SAEWOO.getPhoneNumber(), SAEWOO.getRoleType());
+        User user = User.createUser(Email.from(SAEWOO.getEmail()), SAEWOO.getLoginId(), Password.encrypt(SAEWOO.getPassword(), ENCODER), SAEWOO.getName(), SAEWOO.getBirth(), SAEWOO.getPhoneNumber(), Set.of(SAEWOO.getRoleType()));
         user.updateInformation(Email.from(WIZ.getEmail()), WIZ.getLoginId(), Password.encrypt(WIZ.getPassword(), ENCODER), WIZ.getName(), WIZ.getBirth(), WIZ.getPhoneNumber());
 
         assertAll(

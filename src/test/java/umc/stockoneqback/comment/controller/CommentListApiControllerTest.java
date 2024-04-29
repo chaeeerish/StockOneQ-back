@@ -7,17 +7,15 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.comment.controller.dto.CommentListResponse;
-import umc.stockoneqback.comment.controller.dto.CustomCommentListResponse;
+import umc.stockoneqback.comment.dto.response.CommentListResponse;
+import umc.stockoneqback.comment.dto.response.CustomCommentListResponse;
 import umc.stockoneqback.common.ControllerTest;
-import umc.stockoneqback.reply.controller.dto.ReplyListResponse;
+import umc.stockoneqback.reply.dto.response.ReplyListResponse;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doReturn;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
@@ -90,8 +88,7 @@ class CommentListApiControllerTest extends ControllerTest {
         @DisplayName("댓글 목록 조회(등록순)에 성공한다")
         void success() throws Exception{
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getCustomCommentListResponse())
                     .when(commentListService)
                     .getCommentList(USER_ID, BOARD_ID, PAGE);

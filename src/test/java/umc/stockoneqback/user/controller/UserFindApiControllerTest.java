@@ -9,14 +9,14 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.user.dto.FindManager;
+import umc.stockoneqback.user.dto.response.FindManagerResponse;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
-import umc.stockoneqback.user.service.dto.response.FindManagerResponse;
 
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.BDDMockito.given;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
@@ -191,8 +191,7 @@ class UserFindApiControllerTest extends ControllerTest {
         @DisplayName("친구 찾기(매니저 검색)에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getFindFriendManagerResponse())
                     .when(userFindService)
                     .findFriendManagers(USER_ID, LAST_USER_ID, SEARCH_TYPE, SEARCH_WORD);
@@ -389,8 +388,6 @@ class UserFindApiControllerTest extends ControllerTest {
         @DisplayName("점주 찾기(매니저 검색)에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(getFindBusinessManagerResponse())
                     .when(userFindService)
                     .findBusinessManagers(USER_ID, LAST_USER_ID, SEARCH_TYPE, SEARCH_WORD);

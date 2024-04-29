@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.business.domain.BusinessRepository;
 import umc.stockoneqback.common.RepositoryTest;
-import umc.stockoneqback.share.repository.ShareRepository;
+import umc.stockoneqback.share.domain.repository.ShareRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 

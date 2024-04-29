@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.business.infra.query.dto.BusinessList;
-import umc.stockoneqback.business.service.dto.BusinessListResponse;
+import umc.stockoneqback.business.dto.response.BusinessList;
+import umc.stockoneqback.business.dto.response.BusinessListResponse;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.exception.UserErrorCode;
@@ -15,8 +15,8 @@ import umc.stockoneqback.user.exception.UserErrorCode;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.BDDMockito.given;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
@@ -134,8 +134,7 @@ class BusinessListApiControllerTest extends ControllerTest {
         @DisplayName("연결된 슈퍼바이저 목록 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getBusinessListResponse())
                     .when(businessListService)
                     .getSupervisors(USER_ID, LAST_USER_ID, SEARCH);
@@ -268,8 +267,7 @@ class BusinessListApiControllerTest extends ControllerTest {
         @DisplayName("연결된 점주 목록 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getBusinessListResponse())
                     .when(businessListService)
                     .getManagers(USER_ID, LAST_USER_ID);

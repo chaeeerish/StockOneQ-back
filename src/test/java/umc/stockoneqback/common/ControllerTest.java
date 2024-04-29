@@ -3,6 +3,7 @@ package umc.stockoneqback.common;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -21,6 +22,7 @@ import umc.stockoneqback.auth.controller.TokenReissueApiController;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.auth.service.jwt.TokenReissueService;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
+import umc.stockoneqback.auth.utils.TokenResponseWriter;
 import umc.stockoneqback.board.controller.BoardApiController;
 import umc.stockoneqback.board.controller.BoardListApiController;
 import umc.stockoneqback.board.controller.like.BoardLikeApiController;
@@ -197,6 +199,9 @@ public abstract class ControllerTest {
 
     @MockBean
     protected BusinessListService businessListService;
+
+    @MockBean
+    protected TokenResponseWriter tokenResponseWriter;
 
     @BeforeEach
     void setUp(WebApplicationContext context, RestDocumentationContextProvider provider) {

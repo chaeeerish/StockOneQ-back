@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.board.domain.Board;
-import umc.stockoneqback.comment.domain.Comment;
+import umc.stockoneqback.comment.domain.model.Comment;
 import umc.stockoneqback.common.ServiceTest;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.reply.domain.Reply;
+import umc.stockoneqback.reply.domain.model.Reply;
 import umc.stockoneqback.reply.exception.ReplyErrorCode;
 import umc.stockoneqback.user.domain.User;
 

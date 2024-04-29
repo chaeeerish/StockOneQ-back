@@ -7,15 +7,13 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
-import umc.stockoneqback.friend.infra.query.dto.response.FriendInformation;
-import umc.stockoneqback.friend.service.dto.FriendAssembler;
+import umc.stockoneqback.friend.dto.response.FriendAssembler;
+import umc.stockoneqback.friend.dto.response.FriendInformation;
 import umc.stockoneqback.global.base.RelationStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doReturn;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
@@ -81,8 +79,6 @@ class FriendInformationControllerTest extends ControllerTest {
         @DisplayName("친구 리스트 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(getAcceptFriendAssembler())
                     .when(friendInformationService)
                     .getFriends(USER_ID, LAST_USER_ID);
@@ -168,8 +164,6 @@ class FriendInformationControllerTest extends ControllerTest {
         @DisplayName("수락 대기중인 친구 리스트 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(getRequestFriendAssembler())
                     .when(friendInformationService)
                     .getWaitingFriends(USER_ID, LAST_USER_ID);
@@ -255,8 +249,7 @@ class FriendInformationControllerTest extends ControllerTest {
         @DisplayName("요청이 들어온 친구 리스트 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getRequestFriendAssembler())
                     .when(friendInformationService)
                     .getRequestedFriends(USER_ID, LAST_USER_ID);

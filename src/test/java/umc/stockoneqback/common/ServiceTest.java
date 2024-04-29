@@ -7,19 +7,19 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.Transactional;
 import umc.stockoneqback.admin.domain.StaticFARedisRepository;
 import umc.stockoneqback.auth.domain.repository.FcmTokenRedisRepository;
-import umc.stockoneqback.auth.domain.repository.RefreshTokenRedisRepository;
+import umc.stockoneqback.auth.domain.repository.TokenRepository;
 import umc.stockoneqback.board.domain.BoardRepository;
 import umc.stockoneqback.board.domain.like.BoardLikeRepository;
 import umc.stockoneqback.board.domain.views.ViewsRedisRepository;
 import umc.stockoneqback.business.domain.BusinessRepository;
-import umc.stockoneqback.comment.domain.CommentRepository;
-import umc.stockoneqback.field.domain.company.CompanyRepository;
-import umc.stockoneqback.field.domain.store.PartTimerRepository;
-import umc.stockoneqback.field.domain.store.StoreRepository;
-import umc.stockoneqback.friend.domain.FriendRepository;
-import umc.stockoneqback.product.domain.ProductRepository;
-import umc.stockoneqback.reply.domain.ReplyRepository;
-import umc.stockoneqback.share.repository.ShareRepository;
+import umc.stockoneqback.comment.domain.repository.CommentRepository;
+import umc.stockoneqback.field.domain.repository.CompanyRepository;
+import umc.stockoneqback.field.domain.repository.PartTimerRepository;
+import umc.stockoneqback.field.domain.repository.StoreRepository;
+import umc.stockoneqback.friend.domain.repository.FriendRepository;
+import umc.stockoneqback.product.domain.repository.ProductRepository;
+import umc.stockoneqback.reply.domain.repository.ReplyRepository;
+import umc.stockoneqback.share.domain.repository.ShareRepository;
 import umc.stockoneqback.user.domain.UserRepository;
 
 @SpringBootTest
@@ -36,6 +36,9 @@ public class ServiceTest {
     protected UserRepository userRepository;
 
     @Autowired
+    protected TokenRepository tokenRepository;
+
+    @Autowired
     protected StoreRepository storeRepository;
 
     @Autowired
@@ -49,9 +52,6 @@ public class ServiceTest {
   
     @Autowired
     protected BoardRepository boardRepository;
-
-    @Autowired
-    protected RefreshTokenRedisRepository refreshTokenRedisRepository;
 
     @Autowired
     protected CommentRepository commentRepository;

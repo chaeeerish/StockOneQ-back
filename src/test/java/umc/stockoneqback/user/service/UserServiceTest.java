@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.auth.service.jwt.AuthService;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.company.Company;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Company;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.User;
@@ -46,7 +46,7 @@ class UserServiceTest extends ServiceTest {
                 () -> assertThat(findManager.getPassword().isSamePassword(ELLA.getPassword(), ENCODER)).isTrue(),
                 () -> assertThat(findManager.getBirth()).isEqualTo(ELLA.getBirth()),
                 () -> assertThat(findManager.getPhoneNumber()).isEqualTo(ELLA.getPhoneNumber()),
-                () -> assertThat(findManager.getRoleType()).isEqualTo(ELLA.getRoleType())
+                () -> assertThat(findManager.getRoles().get(0).getRoleType()).isEqualTo(ELLA.getRoleType())
         );
     }
 
@@ -88,7 +88,7 @@ class UserServiceTest extends ServiceTest {
                     () -> assertThat(findPartTimer.getPassword().isSamePassword(SAEWOO.getPassword(), ENCODER)).isTrue(),
                     () -> assertThat(findPartTimer.getBirth()).isEqualTo(SAEWOO.getBirth()),
                     () -> assertThat(findPartTimer.getPhoneNumber()).isEqualTo(SAEWOO.getPhoneNumber()),
-                    () -> assertThat(findPartTimer.getRoleType()).isEqualTo(SAEWOO.getRoleType()),
+                    () -> assertThat(findPartTimer.getRoles().get(0).getRoleType()).isEqualTo(SAEWOO.getRoleType()),
                     () -> assertThat(findStore.getPartTimers().getPartTimers().size()).isEqualTo(1),
                     () -> assertThat(findStore.getPartTimers().getPartTimers().get(0).getPartTimer().getId()).isEqualTo(savedPartTimerId)
             );
@@ -135,7 +135,7 @@ class UserServiceTest extends ServiceTest {
                     () -> assertThat(findSupervisor.getPassword().isSamePassword(JACK.getPassword(), ENCODER)).isTrue(),
                     () -> assertThat(findSupervisor.getBirth()).isEqualTo(JACK.getBirth()),
                     () -> assertThat(findSupervisor.getPhoneNumber()).isEqualTo(JACK.getPhoneNumber()),
-                    () -> assertThat(findSupervisor.getRoleType()).isEqualTo(JACK.getRoleType()),
+                    () -> assertThat(findSupervisor.getRoles().get(0).getRoleType()).isEqualTo(JACK.getRoleType()),
                     () -> assertThat(findCompany.getEmployees().size()).isEqualTo(1),
                     () -> assertThat(findCompany.getEmployees()).contains(findSupervisor),
                     () -> assertThat(findSupervisor.getCompany()).isEqualTo(findCompany)
@@ -157,7 +157,7 @@ class UserServiceTest extends ServiceTest {
         User expiredUser = userRepository.findById(user.getId()).orElseThrow();
         assertAll(
                 () -> assertThat(expiredUser.getStatus()).isEqualTo(Status.EXPIRED),
-                () -> assertThat(refreshTokenRedisRepository.findById(user.getId()).isEmpty()).isTrue()
+                () -> assertThat(tokenRepository.findById(user.getId()).isEmpty()).isTrue()
         );
     }
 

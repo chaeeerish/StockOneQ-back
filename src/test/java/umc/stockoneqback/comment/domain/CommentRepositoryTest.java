@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.board.domain.Board;
 import umc.stockoneqback.board.domain.BoardRepository;
+import umc.stockoneqback.comment.domain.model.Comment;
+import umc.stockoneqback.comment.domain.repository.CommentRepository;
 import umc.stockoneqback.common.RepositoryTest;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;

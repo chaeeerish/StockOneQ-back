@@ -11,8 +11,6 @@ import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
@@ -77,8 +75,6 @@ public class BoardLikeApiControllerTest extends ControllerTest {
         @DisplayName("본인의 게시글에는 좋아요를 누를 수 없다")
         void throwExceptionBySelfFollowNotAllowed() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doThrow(BaseException.type(BoardErrorCode.SELF_BOARD_LIKE_NOT_ALLOWED))
                     .when(boardLikeService)
                     .register(anyLong(), anyLong());
@@ -124,8 +120,6 @@ public class BoardLikeApiControllerTest extends ControllerTest {
         @DisplayName("한 게시글에 두 번 이상 좋아요를 누를 수 없다")
         void throwExceptionByAlreadyBoardLike() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doThrow(BaseException.type(BoardErrorCode.ALREADY_BOARD_LIKE))
                     .when(boardLikeService)
                     .register(anyLong(), anyLong());
@@ -171,8 +165,6 @@ public class BoardLikeApiControllerTest extends ControllerTest {
         @DisplayName("게시글좋아요 등록에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doReturn(1L)
                     .when(boardLikeService)
                     .register(anyLong(), anyLong());
@@ -250,8 +242,6 @@ public class BoardLikeApiControllerTest extends ControllerTest {
         @DisplayName("좋아요를 누르지 않은 게시글의 좋아요는 취소할 수 없다")
         void throwExceptionByBoardLikeNotFound() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doThrow(BaseException.type(BoardErrorCode.BOARD_LIKE_NOT_FOUND))
                     .when(boardLikeService)
                     .cancel(anyLong(), anyLong());
@@ -297,8 +287,6 @@ public class BoardLikeApiControllerTest extends ControllerTest {
         @DisplayName("게시글좋아요 취소에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
             doNothing()
                     .when(boardLikeService)
                     .cancel(anyLong(), anyLong());

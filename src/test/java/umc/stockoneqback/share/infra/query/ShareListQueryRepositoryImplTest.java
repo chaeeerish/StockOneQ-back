@@ -8,12 +8,12 @@ import umc.stockoneqback.business.domain.Business;
 import umc.stockoneqback.business.domain.BusinessRepository;
 import umc.stockoneqback.common.RepositoryTest;
 import umc.stockoneqback.fixture.ShareFixture;
-import umc.stockoneqback.share.domain.Category;
-import umc.stockoneqback.share.domain.Share;
-import umc.stockoneqback.share.domain.ShareSearchType;
-import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
-import umc.stockoneqback.share.infra.query.dto.ShareList;
-import umc.stockoneqback.share.repository.ShareRepository;
+import umc.stockoneqback.share.domain.model.Category;
+import umc.stockoneqback.share.domain.model.Share;
+import umc.stockoneqback.share.domain.model.ShareSearchType;
+import umc.stockoneqback.share.domain.repository.ShareRepository;
+import umc.stockoneqback.share.dto.response.CustomShareListPage;
+import umc.stockoneqback.share.dto.response.ShareList;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 

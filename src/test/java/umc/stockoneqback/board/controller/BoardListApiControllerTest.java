@@ -7,9 +7,9 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.board.controller.dto.CustomBoardListResponse;
+import umc.stockoneqback.board.dto.response.BoardList;
+import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.exception.BoardErrorCode;
-import umc.stockoneqback.board.infra.query.dto.BoardList;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
 
@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
@@ -201,8 +200,7 @@ class BoardListApiControllerTest extends ControllerTest {
         @DisplayName("정렬 기준과 검색에 따른 게시글 목록 조회에 성공한다")
         void success() throws Exception{
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getCustomBoardListResponse())
                     .when(boardListService)
                     .getBoardList(USER_ID, PAGE, SORT_BY_TIME, SEARCH_TYPE, SEARCH_WORD);
@@ -409,8 +407,7 @@ class BoardListApiControllerTest extends ControllerTest {
         @DisplayName("정렬 기준과 검색에 따른 내가 쓴 글 조회에 성공한다")
         void success() throws Exception{
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getCustomBoardListResponse())
                     .when(boardListService)
                     .getMyBoardList(USER_ID, PAGE, SORT_BY_TIME, SEARCH_TYPE, SEARCH_WORD);

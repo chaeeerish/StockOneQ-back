@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import umc.stockoneqback.auth.utils.JwtTokenProvider;
-import umc.stockoneqback.global.exception.dto.request.DiscordMessage;
+import umc.stockoneqback.global.dto.request.DiscordMessage;
 
 import java.time.LocalDateTime;
 import java.util.List;

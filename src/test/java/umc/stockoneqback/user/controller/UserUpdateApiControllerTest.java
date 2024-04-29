@@ -8,11 +8,11 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
-import umc.stockoneqback.user.controller.dto.request.UpdatePasswordRequest;
-import umc.stockoneqback.user.controller.dto.request.UserInfoRequest;
-import umc.stockoneqback.user.controller.dto.request.ValidateUpdatePasswordRequest;
+import umc.stockoneqback.user.dto.request.UpdatePasswordRequest;
+import umc.stockoneqback.user.dto.request.UserInfoRequest;
+import umc.stockoneqback.user.dto.request.ValidateUpdatePasswordRequest;
+import umc.stockoneqback.user.dto.response.UpdatePasswordResponse;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.service.dto.response.UpdatePasswordResponse;
 
 import java.time.LocalDate;
 

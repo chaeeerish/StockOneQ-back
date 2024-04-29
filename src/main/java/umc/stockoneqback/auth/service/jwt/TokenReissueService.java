@@ -2,7 +2,6 @@ package umc.stockoneqback.auth.service.jwt;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import umc.stockoneqback.auth.controller.dto.request.ReissueTokenRequest;
 import umc.stockoneqback.auth.domain.model.jwt.AuthToken;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
 import umc.stockoneqback.auth.utils.TokenProvider;
@@ -14,9 +13,9 @@ public class TokenReissueService {
     private final TokenProvider tokenProvider;
     private final TokenIssuer tokenIssuer;
 
-    public AuthToken invoke(final ReissueTokenRequest request) {
-        final Long userId = tokenProvider.getId(request.refreshToken());
-        validateUserToken(userId, request.refreshToken());
+    public AuthToken invoke(final String refreshToken) {
+        final Long userId = tokenProvider.getId(refreshToken);
+        validateUserToken(userId, refreshToken);
         return tokenIssuer.reissueAuthorityToken(userId);
     }
 

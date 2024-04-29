@@ -5,12 +5,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.RepositoryTest;
-import umc.stockoneqback.field.domain.store.Store;
-import umc.stockoneqback.field.domain.store.StoreRepository;
+import umc.stockoneqback.field.domain.model.Store;
+import umc.stockoneqback.field.domain.repository.StoreRepository;
 import umc.stockoneqback.user.domain.User;
 import umc.stockoneqback.user.domain.UserRepository;
 import umc.stockoneqback.user.domain.search.UserSearchType;
-import umc.stockoneqback.user.infra.query.dto.FindManager;
+import umc.stockoneqback.user.dto.FindManager;
 
 import java.util.List;
 

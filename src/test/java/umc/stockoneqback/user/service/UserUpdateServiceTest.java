@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import umc.stockoneqback.common.ServiceTest;
-import umc.stockoneqback.field.domain.company.Company;
-import umc.stockoneqback.field.domain.store.Store;
+import umc.stockoneqback.field.domain.model.Company;
+import umc.stockoneqback.field.domain.model.Store;
 import umc.stockoneqback.global.base.Status;
 import umc.stockoneqback.global.exception.BaseException;
 import umc.stockoneqback.user.domain.User;
+import umc.stockoneqback.user.dto.response.UpdatePasswordResponse;
 import umc.stockoneqback.user.exception.UserErrorCode;
-import umc.stockoneqback.user.service.dto.response.UpdatePasswordResponse;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;

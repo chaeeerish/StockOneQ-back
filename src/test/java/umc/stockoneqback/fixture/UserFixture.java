@@ -8,6 +8,8 @@ import umc.stockoneqback.user.domain.RoleType;
 import umc.stockoneqback.user.domain.User;
 
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.HashSet;
 
 import static umc.stockoneqback.global.utils.PasswordEncoderUtils.ENCODER;
 
@@ -39,6 +41,6 @@ public enum UserFixture {
     private final RoleType roleType;
 
     public User toUser() {
-        return User.createUser(Email.from(email), loginId, Password.encrypt(password, ENCODER), name, birth, phoneNumber, roleType);
+        return User.createUser(Email.from(email), loginId, Password.encrypt(password, ENCODER), name, birth, phoneNumber, new HashSet<>(Collections.singleton(roleType)));
     }
 }

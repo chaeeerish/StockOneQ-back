@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import umc.stockoneqback.auth.domain.model.jwt.Authenticated;
-import umc.stockoneqback.board.controller.dto.CustomBoardListResponse;
-import umc.stockoneqback.board.infra.query.dto.BoardList;
+import umc.stockoneqback.board.dto.response.BoardList;
+import umc.stockoneqback.board.dto.response.CustomBoardListResponse;
 import umc.stockoneqback.board.service.BoardListService;
 import umc.stockoneqback.global.annotation.Auth;
 

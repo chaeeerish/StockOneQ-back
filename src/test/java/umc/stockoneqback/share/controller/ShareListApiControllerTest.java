@@ -7,21 +7,21 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.business.infra.query.dto.FilteredBusinessUser;
-import umc.stockoneqback.business.infra.query.dto.FindBusinessUser;
+import umc.stockoneqback.business.dto.response.FilteredBusinessUser;
+import umc.stockoneqback.business.dto.response.FindBusinessUser;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
+import umc.stockoneqback.share.dto.response.CustomShareListPage;
+import umc.stockoneqback.share.dto.response.ShareList;
 import umc.stockoneqback.share.exception.ShareErrorCode;
-import umc.stockoneqback.share.infra.query.dto.CustomShareListPage;
-import umc.stockoneqback.share.infra.query.dto.ShareList;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.BDDMockito.given;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
@@ -92,8 +92,7 @@ class ShareListApiControllerTest extends ControllerTest {
         @DisplayName("유저 셀렉트박스 반환에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getFilteredBusinessUser())
                     .when(shareListService)
                     .userSelectBox(USER_ID);
@@ -117,7 +116,7 @@ class ShareListApiControllerTest extends ControllerTest {
                                     responseFields(
                                             fieldWithPath("total").type(JsonFieldType.NUMBER).description("반환되는 전체 유저의 수"),
                                             fieldWithPath("businessUserList[].userBusinessId").type(JsonFieldType.NUMBER).description("(해당 유저와의) 비즈니스 id"),
-                                            fieldWithPath("businessUserList[].userId").type(JsonFieldType.NUMBER).description("유저 id"),
+                                            fieldWithPath("businessUserList[].id").type(JsonFieldType.NUMBER).description("유저 id"),
                                             fieldWithPath("businessUserList[].name").type(JsonFieldType.STRING).description("유저 이름")
                                     )
                             )
@@ -289,8 +288,7 @@ class ShareListApiControllerTest extends ControllerTest {
         @DisplayName("자료 목록 조회에 성공한다")
         void success() throws Exception {
             // given
-            given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-            given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
+
             doReturn(getCustomShareListPage())
                     .when(shareListService)
                     .getShareList(USER_ID, SELECTED_BUSINESS_ID, PAGE, CATEGORY, SEARCH_TYPE, SEARCH_WORD);

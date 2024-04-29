@@ -7,8 +7,8 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import umc.stockoneqback.auth.exception.AuthErrorCode;
-import umc.stockoneqback.board.controller.dto.BoardRequest;
-import umc.stockoneqback.board.controller.dto.BoardResponse;
+import umc.stockoneqback.board.dto.request.BoardRequest;
+import umc.stockoneqback.board.dto.response.BoardResponse;
 import umc.stockoneqback.board.exception.BoardErrorCode;
 import umc.stockoneqback.common.ControllerTest;
 import umc.stockoneqback.global.exception.BaseException;
@@ -18,7 +18,6 @@ import java.time.LocalDate;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
@@ -411,8 +410,6 @@ public class BoardApiControllerTest extends ControllerTest {
             @DisplayName("게시글조회수 증가에 성공한다")
             void success() throws Exception {
                 // given
-                given(jwtTokenProvider.isTokenValid(anyString())).willReturn(true);
-                given(jwtTokenProvider.getId(anyString())).willReturn(USER_ID);
                 doNothing()
                         .when(boardService)
                         .updateHit(anyLong(), anyLong());
